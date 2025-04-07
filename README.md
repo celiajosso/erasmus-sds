@@ -15,7 +15,9 @@
   
 - Tommi LUCAS (Developer) is reponsible for:
 
-- Filip VUJEVA (Developer) is reponsible for:
+- Filip VUJEVA (Developer) is reponsible for...
+  - maintaining the CI/CD pipeline and ensuring the connection between instances
+  - developing basic backend functionalities
 
 ## Comunication stategies
 
@@ -23,3 +25,11 @@
 - Github Projects, Github issues...
 
 ## Installation manual
+
+For Linux and MacOS:
+```bash
+docker-compose up --build
+```
+Now the database, frontend and backend are running on your local machine. You can access 
+- frontend: localhost:3000
+- backend: localhost:8080

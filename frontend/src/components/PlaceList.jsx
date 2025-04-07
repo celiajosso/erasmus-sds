@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const PlaceList = () => {
   const [places, setPlaces] = useState([]);
   const [loading, setLoading] = useState(true);
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
-    axios.get('http://localhost:8080/api/places')
+    axios.get(`${apiUrl}/api/places`)
       .then((res) => {
         setPlaces(res.data);
         setLoading(false);
@@ -15,7 +17,7 @@ const PlaceList = () => {
         console.error("Failed to fetch places:", err);
         setLoading(false);
       });
-  }, []);
+  }, [apiUrl]);
 
   if (loading) {
     return (
@@ -45,6 +47,7 @@ const PlaceList = () => {
             <div className="card-body">
               <h2 className="card-title">{place.name}</h2>
               <div className="badge badge-secondary">{place.category}</div>
+              <Link to={`/places/${place.id}/details`} className="btn btn-primary mt-4">See Details</Link>
             </div>
           </div>
         ))}
