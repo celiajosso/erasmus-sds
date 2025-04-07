@@ -26,7 +26,7 @@
 
 ## Installation manual
 
-For Linux and MacOS:
+For Linux and MacOS, in project root directory run:
 ```bash
 docker-compose up --build
 ```
