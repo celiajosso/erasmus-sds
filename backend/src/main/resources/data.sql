@@ -1,0 +1,10 @@
+INSERT INTO place (name, category, image_url) VALUES ('Old Market Square', 'Monument', 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Old_marketplace_and_city_hall_in_Pozna%C5%84.jpg/500px-Old_marketplace_and_city_hall_in_Pozna%C5%84.jpg');
+INSERT INTO place (name, category, image_url) VALUES ('Poznań Cathedral', 'Monument', 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Catedral_de_Poznan%2C_Poznan%2C_Polonia%2C_2014-09-18%2C_DD_10.jpg/500px-Catedral_de_Poznan%2C_Poznan%2C_Polonia%2C_2014-09-18%2C_DD_10.jpg');
+INSERT INTO place (name, category, image_url) VALUES ('Imperial Castle', 'Monument', 'https://s.inyourpocket.com/gallery/321112.jpg');
+INSERT INTO place (name, category, image_url) VALUES ('Croissant Museum', 'Museum', 'https://upload.wikimedia.org/wikipedia/commons/f/f6/Apteka_Pod_Bia%C5%82ym_Or%C5%82em_Pozna%C5%84_01.jpg');
+INSERT INTO place (name, category, image_url) VALUES ('Brama Poznania', 'Museum', 'https://bramapoznania.pl/images/thb2/dsc-7926_2.jpg');
+INSERT INTO place (name, category, image_url) VALUES ('Malta Lake', 'Park', 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Malta_Trybuny_Pozna%C5%84_RB1.JPG/1200px-Malta_Trybuny_Pozna%C5%84_RB1.JPG');
+INSERT INTO place (name, category, image_url) VALUES ('New Zoo', 'Zoo', 'https://s.inyourpocket.com/gallery/156848.jpg');
+INSERT INTO place (name, category, image_url) VALUES ('Palm House', 'Park', 'https://s.inyourpocket.com/gallery/291210.jpg');
+INSERT INTO place (name, category, image_url) VALUES ('Citadel Park', 'Park', 'https://s.inyourpocket.com/gallery/poznan/2021/06/poznan-citadel-park-%20Radoslaw%20Maciejewski.jpg');
+INSERT INTO place (name, category, image_url) VALUES ('Stary Browar', 'Shopping Center', 'https://i2.wp.com/wielkopolska.travel/wp-content/uploads/2019/04/Stary-Browar-Jakub-Wittchen.jpg?fit=1920%2C1080&ssl=1');

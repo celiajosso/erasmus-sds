@@ -1,0 +1,56 @@
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+
+const PlaceList = () => {
+  const [places, setPlaces] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    axios.get('http://localhost:8080/api/places')
+      .then((res) => {
+        setPlaces(res.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Failed to fetch places:", err);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <span className="loading loading-dots loading-lg text-primary"></span>
+      </div>
+    );
+  }
+
+  return (
+    <div className="p-6">
+      <h1 className="text-4xl font-bold text-center text-primary mb-12">🌍 Explore Places</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        {places.map((place) => (
+          <div key={place.id} className="card bg-base-100 shadow-xl hover:shadow-2xl transition duration-300">
+            <figure>
+              <img
+                src={place.imageUrl}
+                alt={place.name}
+                className="w-full h-48 object-cover"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = "https://via.placeholder.com/300x200?text=No+Image";
+                }}
+              />
+            </figure>
+            <div className="card-body">
+              <h2 className="card-title">{place.name}</h2>
+              <div className="badge badge-secondary">{place.category}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default PlaceList;
