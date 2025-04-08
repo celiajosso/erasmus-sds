@@ -4,15 +4,12 @@
 
 - Samuel PONZO (Product Owner) is reponsible for:
   - creating the product backlog
-  
 - Célia JOSSO : Scrum Master; is reponsible for...
   - creating the Discord Server (channels, roles, webhook)
   - enabling the Github repository (Github Projects)
   - making sure the communication works
   - making sure we organize retrospectives
-  
 - Elouan LECORGNE (Developer) is reponsible for:
-  
 - Tommi LUCAS (Developer) is reponsible for:
 
 - Filip VUJEVA (Developer) is reponsible for...
@@ -33,3 +30,16 @@ docker-compose up --build
 Now the database, frontend and backend are running on your local machine. You can access 
 - frontend: localhost:3000
 - backend: localhost:8080
+
+
+for the frontend :
+
+- requirements : have node and npm
+
+- list of commands :
+
+```
+cd frontend
+npm install
+npx react-scripts start
+```
