@@ -32,24 +32,26 @@ const PlaceList = () => {
       <h1 className="text-4xl font-bold text-center text-primary mb-12">🌍 Explore Places</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         {places.map((place) => (
-          <div key={place.id} className="card bg-base-100 shadow-xl hover:shadow-2xl transition duration-300">
-            <figure>
-              <img
-                src={place.imageUrl}
-                alt={place.name}
-                className="w-full h-48 object-cover"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = "https://via.placeholder.com/300x200?text=No+Image";
-                }}
-              />
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title">{place.name}</h2>
-              <div className="badge badge-secondary">{place.category}</div>
-              <Link to={`/places/${place.id}/details`} className="btn btn-primary mt-4">See Details</Link>
+          <Link to={`/places/${place.id}/details`}>
+            <div key={place.id} className="card bg-base-100 shadow-xl hover:shadow-2xl transition duration-300">
+              <figure>
+                <img
+                  src={place.imageUrl}
+                  alt={place.name}
+                  className="w-full h-48 object-cover"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = "https://via.placeholder.com/300x200?text=No+Image";
+                  }}
+                />
+              </figure>
+              <div className="card-body">
+                <h2 className="card-title">{place.name}</h2>
+                <div className="badge badge-secondary">{place.category}</div>
+                <div className="btn btn-primary mt-4">See Details</div>
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

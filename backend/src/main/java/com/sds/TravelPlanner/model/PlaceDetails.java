@@ -21,5 +21,8 @@ public class PlaceDetails {
     private Accessibility accessibilityInfo;
 
     private String locationDetails;
+
+    private double longitude;
+    private double latitude;
 }
 
