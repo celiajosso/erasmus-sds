@@ -12,7 +12,7 @@ INSERT INTO place (name, category, image_url) VALUES
                                                   ('Stary Browar', 'Shopping Center', 'https://i2.wp.com/wielkopolska.travel/wp-content/uploads/2019/04/Stary-Browar-Jakub-Wittchen.jpg?fit=1920%2C1080&ssl=1');
 
 -- PlaceDetails seed data
-INSERT INTO place_details (description, accessibility_info, location_details, place_id, longitude, latitude) VALUES
+INSERT INTO place_details (description, accessibility_info, location_details, place_id, latitude, longitude) VALUES
                                                                                             ('A beautiful historic square with colorful buildings and city hall.', 'WHEELCHAIR_ACCESSIBLE', 'Poznań Old Town, near Wroniecka Street', 1, 52.408362241091524, 16.933536319308796),
                                                                                             ('One of the oldest churches in Poland with Romanesque elements.', 'PARTIALLY_ACCESSIBLE', 'Ostrów Tumski, Poznań', 2, 52.411847205951325, 16.948722320235813),
                                                                                             ('Impressive architecture from the German Empire era.', 'WHEELCHAIR_ACCESSIBLE', 'Święty Marcin 80/82, Poznań', 3, 52.407930447162400, 16.919139206775096),
