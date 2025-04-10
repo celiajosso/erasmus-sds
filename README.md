@@ -45,3 +45,7 @@ docker compose up
 cd frontend
 npm start
 ```
+
+Now the database, frontend and backend are running on your local machine. You can access 
+- frontend: localhost:3000
+- backend: localhost:8080
