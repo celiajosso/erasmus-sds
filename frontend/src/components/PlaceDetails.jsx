@@ -21,35 +21,61 @@ export default function PlaceDetailsPage() {
   const details = data.details || {};
 
   return (
-    <div className="max-w-4xl mx-auto p-4 space-y-4">
-      <h1 className="text-3xl font-bold">{place.name || "Unknown Place"}</h1>
-      <p className="text-gray-600">{place.category || "Uncategorized"}</p>
-      <img
-        src={place.imageUrl}
-        alt={place.name}
-        className="rounded-lg shadow-lg w-full max-h-96 object-cover"
-        onError={(e) => {
-          e.target.onerror = null;
-          e.target.src = "https://via.placeholder.com/600x400?text=No+Image";
-        }}
-      />
+    <div className="p-6 max-w-4xl mx-auto">
+      <h1 className="text-4xl font-bold text-center text-primary mb-6">
+        {place.name || "Unknown Place"}
+      </h1>
+      <div className="badge badge-secondary">{place.category}</div>
 
-      <div className="mt-4">
-        <h2 className="text-xl font-semibold">Description</h2>
-        <p>{details.description || "No description available."}</p>
+      <div className="rounded-xl overflow-hidden shadow-xl my-8">
+        <img
+          src={place.imageUrl}
+          alt={place.name}
+          className="w-full h-96 object-cover"
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src = "https://via.placeholder.com/600x400?text=No+Image";
+          }}
+        />
       </div>
 
-      <div>
-        <h2 className="text-xl font-semibold">Accessibility</h2>
-        <p>{details.accessibilityInfo?.replace("_", " ") || "No accessibility info provided."}</p>
-      </div>
-
-      <div>
-        <h2 className="text-xl font-semibold">Location Details</h2>
-        <p>{details.locationDetails || "No location details provided."}</p>
-      </div>
-
-      <div ref={mapContainer} className="h-80 w-full rounded-lg shadow" />
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+      <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-6 transition duration-300">
+        <h2 className="text-xl font-bold mb-3 flex items-center gap-2">
+          📝 <span>Description</span>
+        </h2>
+        <p className="text-gray-600 leading-relaxed">
+          {details.description || "No description available."}
+        </p>
     </div>
+
+    <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-6 transition duration-300">
+      <h2 className="text-xl font-bold mb-3 flex items-center gap-2">
+        ♿ <span>Accessibility</span>
+      </h2>
+      <p className="text-gray-600 leading-relaxed">
+        {details.accessibilityInfo?.replace("_", " ") || "No accessibility info provided."}
+      </p>
+    </div>
+
+    <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-6 transition duration-300">
+      <h2 className="text-xl font-bold mb-3 flex items-center gap-2">
+        🗺️ <span>Location Details</span>
+      </h2>
+      <p className="text-gray-600 leading-relaxed">
+        {details.locationDetails || "No location details provided."}
+      </p>
+    </div>
+  </div>
+
+  <div>
+    <h2 className="text-xl font-bold mb-3 flex items-center gap-2">📍 <span>Map</span></h2>
+    WIP...
+    {/* <p>{details.longitude}</p>
+    <p>{details.latitude}</p>
+    <div ref={mapContainer} className="h-80 w-full rounded-2xl shadow-lg border border-gray-200" /> */}
+  </div>
+
+  </div>
   );
 }
