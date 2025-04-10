@@ -23,6 +23,7 @@ public class PlaceDetails {
     private String locationDetails;
 
     private double longitude;
+
     private double latitude;
 }
 
