@@ -70,9 +70,10 @@ export default function PlaceDetailsPage() {
 
   <div>
     <h2 className="text-xl font-bold mb-3 flex items-center gap-2">📍 <span>Map</span></h2>
-    <p>{details.longitude}</p>
+    WIP...
+    {/* <p>{details.longitude}</p>
     <p>{details.latitude}</p>
-    <div ref={mapContainer} className="h-80 w-full rounded-2xl shadow-lg border border-gray-200" />
+    <div ref={mapContainer} className="h-80 w-full rounded-2xl shadow-lg border border-gray-200" /> */}
   </div>
 
   </div>
