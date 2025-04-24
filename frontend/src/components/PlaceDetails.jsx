@@ -15,7 +15,7 @@ export default function PlaceDetailsPage() {
     if (!minutes || minutes <= 0) return "No duration available.";
     const hours = Math.floor(minutes / 60);
     const remainingMinutes = minutes % 60;
-    return `Durée : ${hours} ${hours > 1 ? "heures" : "heure"}${remainingMinutes > 0 ? ` et ${remainingMinutes} minutes` : ""}`;
+    return `Duration : ${hours} ${hours > 1 ? "hours" : "hour"}${remainingMinutes > 0 ? ` and ${remainingMinutes} minutes` : ""}`;
   };
 
   useEffect(() => {
