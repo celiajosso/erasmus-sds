@@ -58,7 +58,7 @@ export default function PlaceDetailsPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
         <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-6 transition duration-300">
-          <h2 className="text-xl font-bold mb-3 flex items-center gap-2">
+          <h2 className="text-xl text-[#282c34] font-bold mb-3 flex items-center gap-2">
             📝 <span>Description</span>
           </h2>
           <p className="text-gray-600 leading-relaxed">
@@ -67,7 +67,7 @@ export default function PlaceDetailsPage() {
         </div>
 
         <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-6 transition duration-300">
-          <h2 className="text-xl font-bold mb-3 flex items-center gap-2">
+          <h2 className="text-xl text-[#282c34] font-bold mb-3 flex items-center gap-2">
             ♿ <span>Accessibility</span>
           </h2>
           <p className="text-gray-600 leading-relaxed">
@@ -76,7 +76,7 @@ export default function PlaceDetailsPage() {
         </div>
 
         <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-6 transition duration-300">
-          <h2 className="text-xl font-bold mb-3 flex items-center gap-2">
+          <h2 className="text-xl text-[#282c34] font-bold mb-3 flex items-center gap-2">
             🗺️ <span>Location Details</span>
           </h2>
           <p className="text-gray-600 leading-relaxed">
