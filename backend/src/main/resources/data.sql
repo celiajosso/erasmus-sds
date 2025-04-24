@@ -12,14 +12,14 @@ INSERT INTO place (name, category, image_url) VALUES
                                                   ('Stary Browar', 'Shopping Center', 'https://i2.wp.com/wielkopolska.travel/wp-content/uploads/2019/04/Stary-Browar-Jakub-Wittchen.jpg?fit=1920%2C1080&ssl=1');
 
 -- PlaceDetails seed data
-INSERT INTO place_details (description, accessibility_info, location_details, place_id) VALUES
-                                                                                            ('A beautiful historic square with colorful buildings and city hall.', 'WHEELCHAIR_ACCESSIBLE', 'Poznań Old Town, near Wroniecka Street', 1),
-                                                                                            ('One of the oldest churches in Poland with Romanesque elements.', 'PARTIALLY_ACCESSIBLE', 'Ostrów Tumski, Poznań', 2),
-                                                                                            ('Impressive architecture from the German Empire era.', 'WHEELCHAIR_ACCESSIBLE', 'Święty Marcin 80/82, Poznań', 3),
-                                                                                            ('Fun and educational experience of Poznań’s St. Martin croissant tradition.', 'PARTIALLY_ACCESSIBLE', 'Klasztorna 23, Poznań', 4),
-                                                                                            ('Modern museum built over the Warta river, great multimedia exhibits.', 'WHEELCHAIR_ACCESSIBLE', 'Gdańska 2, Poznań', 5),
-                                                                                            ('Large artificial lake with walking and biking trails.', 'WHEELCHAIR_ACCESSIBLE', 'Around Baraniaka Street, Poznań', 6),
-                                                                                            ('One of Poland’s largest zoos, great for families.', 'PARTIALLY_ACCESSIBLE', 'Krańcowa 81, Poznań', 7),
-                                                                                            ('Tropical plants, aquariums and greenhouses.', 'WHEELCHAIR_ACCESSIBLE', 'Matejki 18, Poznań', 8),
-                                                                                            ('Historical park with sculptures and war memorials.', 'WHEELCHAIR_ACCESSIBLE', 'al. Armii Poznań, Poznań', 9),
-                                                                                            ('Modern shopping and arts center built in a former brewery.', 'WHEELCHAIR_ACCESSIBLE', 'Półwiejska 42, Poznań', 10);
+INSERT INTO place_details (description, accessibility_info, location_details, place_id, latitude, longitude) VALUES
+                                                                                            ('A beautiful historic square with colorful buildings and city hall.', 'WHEELCHAIR_ACCESSIBLE', 'Poznań Old Town, near Wroniecka Street', 1, 52.408362241091524, 16.933536319308796),
+                                                                                            ('One of the oldest churches in Poland with Romanesque elements.', 'PARTIALLY_ACCESSIBLE', 'Ostrów Tumski, Poznań', 2, 52.411847205951325, 16.948722320235813),
+                                                                                            ('Impressive architecture from the German Empire era.', 'WHEELCHAIR_ACCESSIBLE', 'Święty Marcin 80/82, Poznań', 3, 52.407930447162400, 16.919139206775096),
+                                                                                            ('Fun and educational experience of Poznań’s St. Martin croissant tradition.', 'PARTIALLY_ACCESSIBLE', 'Klasztorna 23, Poznań', 4, 52.408632659740430, 16.935014077974790),
+                                                                                            ('Modern museum built over the Warta river, great multimedia exhibits.', 'WHEELCHAIR_ACCESSIBLE', 'Gdańska 2, Poznań', 5, 52.412468702619805, 16.951408603112835),
+                                                                                            ('Large artificial lake with walking and biking trails.', 'WHEELCHAIR_ACCESSIBLE', 'Around Baraniaka Street, Poznań', 6, 52.402775958573564, 16.968976923089130),
+                                                                                            ('One of Poland’s largest zoos, great for families.', 'PARTIALLY_ACCESSIBLE', 'Krańcowa 81, Poznań', 7, 52.400900458425966, 16.994453793674914),
+                                                                                            ('Tropical plants, aquariums and greenhouses.', 'WHEELCHAIR_ACCESSIBLE', 'Matejki 18, Poznań', 8, 52.402105902345600, 16.901825442996017),
+                                                                                            ('Historical park with sculptures and war memorials.', 'WHEELCHAIR_ACCESSIBLE', 'al. Armii Poznań, Poznań', 9, 52.421854130244040, 16.93612426261012),
+                                                                                            ('Modern shopping and arts center built in a former brewery.', 'WHEELCHAIR_ACCESSIBLE', 'Półwiejska 42, Poznań', 10, 52.401461270578180, 16.928053712820162);
