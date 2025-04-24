@@ -11,6 +11,13 @@ export default function PlaceDetailsPage() {
   const [data, setData] = useState(null);
   const apiUrl = process.env.REACT_APP_API_URL;
 
+  const formatDuration = (minutes) => {
+    if (!minutes || minutes <= 0) return "No duration available.";
+    const hours = Math.floor(minutes / 60);
+    const remainingMinutes = minutes % 60;
+    return `Duration : ${hours} ${hours > 1 ? "hours" : "hour"}${remainingMinutes > 0 ? ` and ${remainingMinutes} minutes` : ""}`;
+  };
+
   useEffect(() => {
     axios.get(`${apiUrl}/api/places/${placeId}/details`)
       .then(res => setData(res.data))
@@ -43,6 +50,10 @@ export default function PlaceDetailsPage() {
         {place.name || "Unknown Place"}
       </h1>
       <div className="badge badge-secondary">{place.category}</div>
+
+      <p className="text-white mt-4">
+        {formatDuration(details.duration) || "No duration available."}
+      </p>
 
       <div className="rounded-xl overflow-hidden shadow-xl my-8">
         <img

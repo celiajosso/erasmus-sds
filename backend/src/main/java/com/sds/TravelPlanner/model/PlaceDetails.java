@@ -17,6 +17,8 @@ public class PlaceDetails {
 
     private String description;
 
+    private int duration; //duration in minutes
+
     @Enumerated(EnumType.STRING)
     private Accessibility accessibilityInfo;
 
