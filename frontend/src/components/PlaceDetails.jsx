@@ -15,7 +15,7 @@ export default function PlaceDetailsPage() {
     if (!minutes || minutes <= 0) return "No duration available.";
     const hours = Math.floor(minutes / 60);
     const remainingMinutes = minutes % 60;
-    return `Duration : ${hours} ${hours > 1 ? "hours" : "hour"}${remainingMinutes > 0 ? ` and ${remainingMinutes} minutes` : ""}`;
+    return `${hours} ${hours > 1 ? "hours" : "hour"}${remainingMinutes > 0 ? ` and ${remainingMinutes} minutes` : ""}`;
   };
 
   useEffect(() => {
@@ -51,10 +51,6 @@ export default function PlaceDetailsPage() {
       </h1>
       <div className="badge badge-secondary">{place.category}</div>
 
-      <p className="text-white mt-4">
-        {formatDuration(details.duration) || "No duration available."}
-      </p>
-
       <div className="rounded-xl overflow-hidden shadow-xl my-8">
         <img
           src={place.imageUrl}
@@ -67,13 +63,22 @@ export default function PlaceDetailsPage() {
         />
       </div>
 
+      <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-6 transition duration-300 mb-6">
+        <h2 className="text-xl text-[#282c34] font-bold mb-3 flex items-center gap-2">
+          📝 <span>Description</span>
+        </h2>
+        <p className="text-gray-600 leading-relaxed">
+          {details.description || "No description available."}
+        </p>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
         <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-6 transition duration-300">
           <h2 className="text-xl text-[#282c34] font-bold mb-3 flex items-center gap-2">
-            📝 <span>Description</span>
+            ⏱️ <span>Duration</span>
           </h2>
           <p className="text-gray-600 leading-relaxed">
-            {details.description || "No description available."}
+          {formatDuration(details.duration) || "No duration available."}
           </p>
         </div>
 
