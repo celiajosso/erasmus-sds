@@ -10,6 +10,7 @@ import com.sds.TravelPlanner.repository.PlaceRepository;
 
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/favorites")
@@ -25,6 +26,7 @@ public class FavoriteController {
     public ResponseEntity<?> addFavorite(@RequestParam String userId, @RequestParam Long placeId) {
         if (favoriteRepository.existsByUserIdAndPlaceId(userId, placeId)) {
             return ResponseEntity.badRequest().body("Place already in favorites");
+
         }
 
         Place place = placeRepository.findById(placeId).orElse(null);
@@ -36,8 +38,9 @@ public class FavoriteController {
         favorite.setUserId(userId);
         favorite.setPlace(place);
         favoriteRepository.save(favorite);
+     System.out.println("Deleting favorite for userId: ");
 
-        return ResponseEntity.ok("Place added to favorites");
+        return ResponseEntity.ok("Place added to favoritess");
     }
 
     @GetMapping
@@ -45,11 +48,21 @@ public class FavoriteController {
         return favoriteRepository.findByUserId(userId);
     }
 
-    @DeleteMapping
-    public ResponseEntity<?> removeFavorite(@RequestParam String userId, @RequestParam Long placeId) {
-        favoriteRepository.deleteAll(favoriteRepository.findByUserId(userId).stream()
-                .filter(fav -> fav.getPlace().getId().equals(placeId))
-                .toList());
-        return ResponseEntity.ok("Place removed from favorites");
+    
+
+@DeleteMapping("/api/favorites")
+public ResponseEntity<?> deleteFavorite(@RequestParam String userId, @RequestParam Long id) {
+    System.out.println("Received delete request for userId=" + userId + ", id=" + id);
+
+    Optional<Favorite> favoriteOpt = favoriteRepository.findByIdAndUserId(id, userId);
+    if (favoriteOpt.isPresent()) {
+        favoriteRepository.delete(favoriteOpt.get());
+        return ResponseEntity.noContent().build(); 
+    } 
+    else {
+        return ResponseEntity.notFound().build();
     }
+}
+
+
 }

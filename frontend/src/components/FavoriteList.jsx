@@ -15,15 +15,18 @@ const FavoriteList = () => {
 
   const handleDelete = (favoriteId) => {
     console.log("Deleting favorite with ID:", favoriteId);
-    
-    axios.delete(`${apiUrl}/api/favorites/${favoriteId}`)  
-      .then(() => {
-        setFavorites((prevFavorites) => prevFavorites.filter((fav) => fav.id !== favoriteId));
-      })
-      .catch((err) => {
-        console.error("Failed to delete favorite:", err);
-      });
+  
+    axios.delete(`${apiUrl}/api/favorites`, {
+      params: {
+        
+        userId: userId,
+        id: favoriteId
+      }
+    })
+    .then(() => alert("Deleted from favorites"))
+    .catch((err) => alert("Failed to delete"));
   };
+  
 
   return (
     <div className="p-6">
