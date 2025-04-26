@@ -1,0 +1,132 @@
+[
+    {
+        "name": "Old Market Square",
+        "category": "Monument",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Old_marketplace_and_city_hall_in_Pozna%C5%84.jpg/500px-Old_marketplace_and_city_hall_in_Pozna%C5%84.jpg",
+        "details": {
+        "description": "A beautiful historic square with colorful buildings and city hall.",
+        "duration": 150,
+        "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+        "location_details": "Poznań Old Town, near Wroniecka Street",
+        "latitude": 52.408362241091524,
+        "longitude": 16.933536319308796
+        }
+    },
+    {
+        "name": "Poznań Cathedral",
+        "category": "Monument",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Catedral_de_Poznan%2C_Poznan%2C_Polonia%2C_2014-09-18%2C_DD_10.jpg/500px-Catedral_de_Poznan%2C_Poznan%2C_Polonia%2C_2014-09-18%2C_DD_10.jpg",
+        "details": {
+        "description": "One of the oldest churches in Poland with Romanesque elements.",
+        "duration": 120,
+        "accessibility_info": "PARTIALLY_ACCESSIBLE",
+        "location_details": "Ostrów Tumski, Poznań",
+        "latitude": 52.411847205951325,
+        "longitude": 16.948722320235813
+        }
+    },
+    {
+        "name": "Imperial Castle",
+        "category": "Monument",
+        "image_url": "https://s.inyourpocket.com/gallery/321112.jpg",
+        "details": {
+        "description": "Impressive architecture from the German Empire era.",
+        "duration": 240,
+        "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+        "location_details": "Święty Marcin 80/82, Poznań",
+        "latitude": 52.4079304471624,
+        "longitude": 16.919139206775096
+        }
+    },
+    {
+        "name": "Croissant Museum",
+        "category": "Museum",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Apteka_Pod_Bia%C5%82ym_Or%C5%82em_Pozna%C5%84_01.jpg",
+        "details": {
+        "description": "Fun and educational experience of Poznań’s St. Martin croissant tradition.",
+        "duration": 60,
+        "accessibility_info": "PARTIALLY_ACCESSIBLE",
+        "location_details": "Klasztorna 23, Poznań",
+        "latitude": 52.40863265974043,
+        "longitude": 16.93501407797479
+        }
+    },
+    {
+        "name": "Brama Poznania",
+        "category": "Museum",
+        "image_url": "https://bramapoznania.pl/images/thb2/dsc-7926_2.jpg",
+        "details": {
+        "description": "Modern museum built over the Warta river, great multimedia exhibits.",
+        "duration": 90,
+        "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+        "location_details": "Gdańska 2, Poznań",
+        "latitude": 52.412468702619805,
+        "longitude": 16.951408603112835
+        }
+    },
+    {
+        "name": "Malta Lake",
+        "category": "Park",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Malta_Trybuny_Pozna%C5%84_RB1.JPG/1200px-Malta_Trybuny_Pozna%C5%84_RB1.JPG",
+        "details": {
+        "description": "Large artificial lake with walking and biking trails.",
+        "duration": 180,
+        "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+        "location_details": "Around Baraniaka Street, Poznań",
+        "latitude": 52.402775958573564,
+        "longitude": 16.96897692308913
+        }
+    },
+    {
+        "name": "New Zoo",
+        "category": "Zoo",
+        "image_url": "https://s.inyourpocket.com/gallery/156848.jpg",
+        "details": {
+        "description": "One of Poland’s largest zoos, great for families.",
+        "duration": 300,
+        "accessibility_info": "PARTIALLY_ACCESSIBLE",
+        "location_details": "Krańcowa 81, Poznań",
+        "latitude": 52.400900458425966,
+        "longitude": 16.994453793674914
+        }
+    },
+    {
+        "name": "Palm House",
+        "category": "Park",
+        "image_url": "https://s.inyourpocket.com/gallery/291210.jpg",
+        "details": {
+        "description": "Tropical plants, aquariums and greenhouses.",
+        "duration": 90,
+        "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+        "location_details": "Matejki 18, Poznań",
+        "latitude": 52.4021059023456,
+        "longitude": 16.901825442996017
+        }
+    },
+    {
+        "name": "Citadel Park",
+        "category": "Park",
+        "image_url": "https://s.inyourpocket.com/gallery/poznan/2021/06/poznan-citadel-park-%20Radoslaw%20Maciejewski.jpg",
+        "details": {
+        "description": "Historical park with sculptures and war memorials.",
+        "duration": 240,
+        "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+        "location_details": "al. Armii Poznań, Poznań",
+        "latitude": 52.42185413024404,
+        "longitude": 16.93612426261012
+        }
+    },
+    {
+        "name": "Stary Browar",
+        "category": "Shopping Center",
+        "image_url": "https://i2.wp.com/wielkopolska.travel/wp-content/uploads/2019/04/Stary-Browar-Jakub-Wittchen.jpg?fit=1920%2C1080&ssl=1",
+        "details": {
+        "description": "Modern shopping and arts center built in a former brewery.",
+        "duration": 180,
+        "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+        "location_details": "Półwiejska 42, Poznań",
+        "latitude": 52.40146127057818,
+        "longitude": 16.928053712820162
+        }
+    }
+]
