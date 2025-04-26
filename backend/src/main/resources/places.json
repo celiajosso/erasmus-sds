@@ -128,5 +128,135 @@
         "latitude": 52.40146127057818,
         "longitude": 16.928053712820162
         }
+    },
+    {
+        "name": "Museum of Armament",
+        "category": "Museum",
+        "image_url": "https://s.inyourpocket.com/gallery/173694.jpg",
+        "details": {
+        "description": "A museum dedicated to military vehicles and armoured equipment.",
+        "duration": 120,
+        "accessibility_info": "PARTIALLY_ACCESSIBLE",
+        "location_details": "Aleja Armii Poznań, 61-663 Poznań",
+        "latitude": 52.42024130731194,
+        "longitude": 16.932847906816395
+        }
+    },
+    {
+        "name": "Enigma Cipher Museum",
+        "category": "Museum",
+        "image_url": "https://lh3.googleusercontent.com/p/AF1QipPYVDe-itqUD0o3pszjMudP18h2OjWt9uYAtqTq=w408-h271-k-no",
+        "details": {
+        "description": "Interactive museum showcasing the history of the Enigma machine.",
+        "duration": 90,
+        "accessibility_info": "PARTIALLY_ACCESSIBLE",
+        "location_details": "Święty Marcin 78, 61-809 Poznań",
+        "latitude": 52.407573499169175,
+        "longitude": 16.919777280131143
+        }
+    },
+    {
+        "name": "Museum of Applied Arts",
+        "category": "Museum",
+        "image_url": "https://mnp.art.pl/wp-content/uploads/2022/10/5..jpg",
+        "details": {
+        "description": "Museum displaying decorative arts and design.",
+        "duration": 120,
+        "accessibility_info": "PARTIALLY_ACCESSIBLE",
+        "location_details": "Góra Przemysła 1, 61-768 Poznań",
+        "latitude": 52.409263550255944,
+        "longitude": 16.931125551683404
+        }
+    },
+    {
+        "name": "Posnania",
+        "category": "Shopping Center",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Posnania_Gallery_in_Poznan_%285%29.jpg",
+        "details": {
+        "description": "Large modern shopping mall with a wide range of stores.",
+        "duration": 180,
+        "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+        "location_details": "ul. Pleszewska 1, Poznań",
+        "latitude": 52.3967395611729, 
+        "longitude": 16.955497822860913
+        }
+    },
+    {
+        "name": "Avenida",
+        "category": "Shopping Center",
+        "image_url": "https://lh3.googleusercontent.com/p/AF1QipO6pE9lyHy94mpj_TO8kfspNSYltCnDuk91OPVA=w408-h272-k-no",
+        "details": {
+        "description": "Shopping center with boutiques and cafes.",
+        "duration": 180,
+        "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+        "location_details": "Stanisława Matyi 2, 61-586 Poznań",
+        "latitude": 52.40218111052152,
+        "longitude": 16.914082293330548
+        }
+    },
+    {
+        "name": "Royal Castle and Observation Tower",
+        "category": "Monument",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjHPsOx2v50-13iSGnU9hHjEV88eG8Ay5mEg&s",
+        "details": {
+        "description": "Castle with great views over Poznań from its observation tower.",
+        "duration": 150,
+        "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+        "location_details": "Góra Przemysła 1, 60-101 Poznań",
+        "latitude": 52.40922005081846, 
+        "longitude": 16.931031168130072
+        }
+    },
+    {
+        "name": "Wiejskie Jadło",
+        "category": "Restaurant",
+        "image_url": "https://img.grouponcdn.com/deal/9PUnvxbkpPeaVLV6mZKY/Wt-960x576/v1/c870x524.jpg",
+        "details": {
+        "description": "Traditional Polish cuisine with a cozy atmosphere.",
+        "duration": 90,
+        "accessibility_info": "PARTIALLY_ACCESSIBLE",
+        "location_details": "Stary Rynek 77 /wejście od, Franciszkańska, 61-772 Poznań",
+        "latitude": 52.408353444646785, 
+        "longitude": 16.93232135969791
+        }
+    },
+    {
+        "name": "Pierogarnia Stary Młyn",
+        "category": "Restaurant",
+        "image_url": "https://www.pierogarnie.com/wp-content/uploads/2021/10/15.png",
+        "details": {
+        "description": "Famous for its Polish dumplings (pierogi).",
+        "duration": 90,
+        "accessibility_info": "PARTIALLY_ACCESSIBLE",
+        "location_details": "Zamkowa 7, 61-768 Poznań",
+        "latitude": 52.40900411617683,
+        "longitude": 16.93211992152673
+        }
+    },
+    {
+        "name": "Woodrow Wilson Park",
+        "category": "Park",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC6RfdmmnHdiYzW1nhS-WQOjkA9AdBO2CjLg&s",
+        "details": {
+        "description": "A peaceful green space ideal for relaxing or a leisurely stroll.",
+        "duration": 120,
+        "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+        "location_details": "Śniadeckich 30, 61-001 Poznań",
+        "latitude": 52.39947202728865, 
+        "longitude": 16.902162236619176
+        }
+    },
+    {
+        "name": "3D Mural",
+        "category": "Art",
+        "image_url": "https://images.immediate.co.uk/production/volatile/sites/63/2024/08/79509024137f6bb95764a93060b975b946f82099-499efff.png",
+        "details": {
+            "description": "A visually captivating 3D street art mural.",
+            "duration": 30,
+            "accessibility_info": "PARTIALLY_ACCESSIBLE",
+            "location_details": "Śródka 4, 61-125 Poznań",
+            "latitude": 52.41122338402505,
+            "longitude": 16.95346281051187
+        }
     }
 ]

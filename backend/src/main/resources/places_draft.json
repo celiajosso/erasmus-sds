@@ -1,0 +1,354 @@
+
+[
+    {
+        "name": "Jordan Bridge",
+        "category": "Monument",
+        "image_url": "https://example.com/jordan_bridge.jpg",
+        "details": {
+            "description": "A historical bridge over the Warta River.",
+            "duration": 60,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "Poznań, near Jordan Park",
+            "latitude": 52.409800,
+            "longitude": 16.939550
+        }
+    },
+    {
+        "name": "Cathedral Lock",
+        "category": "Monument",
+        "image_url": "https://example.com/cathedral_lock.jpg",
+        "details": {
+            "description": "A historic lock near the Poznań Cathedral.",
+            "duration": 60,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "Ostrów Tumski, Poznań",
+            "latitude": 52.411600,
+            "longitude": 16.949400
+        }
+    },
+    {
+        "name": "Malta Ski",
+        "category": "Sport",
+        "image_url": "https://example.com/malta_ski.jpg",
+        "details": {
+            "description": "Skiing and snowboarding in the heart of Poznań.",
+            "duration": 120,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "Baraniaka 7, Poznań",
+            "latitude": 52.402890,
+            "longitude": 16.973500
+        }
+    },
+    {
+        "name": "Rope Park",
+        "category": "Sport",
+        "image_url": "https://example.com/rope_park.jpg",
+        "details": {
+            "description": "Outdoor rope park for adventurous visitors.",
+            "duration": 150,
+            "accessibility_info": "PARTIALLY_ACCESSIBLE",
+            "location_details": "Wierzbowa 15, Poznań",
+            "latitude": 52.414700,
+            "longitude": 16.951250
+        }
+    },
+    {
+        "name": "Solacki Park",
+        "category": "Park",
+        "image_url": "https://example.com/solacki_park.jpg",
+        "details": {
+            "description": "A peaceful park with ponds and walking trails.",
+            "duration": 120,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "Ul. Solacka 1, Poznań",
+            "latitude": 52.420600,
+            "longitude": 16.945300
+        }
+    },
+    {
+        "name": "Lake Rusalka",
+        "category": "Park",
+        "image_url": "https://example.com/lake_rusalka.jpg",
+        "details": {
+            "description": "A scenic lake surrounded by greenery, perfect for walks and relaxation.",
+            "duration": 180,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "Poznań, near Rusalka Beach",
+            "latitude": 52.402070,
+            "longitude": 16.907450
+        }
+    },
+    {
+        "name": "Adam Mickiewicza University Garden",
+        "category": "Park",
+        "image_url": "https://example.com/university_garden.jpg",
+        "details": {
+            "description": "A beautiful university garden with a variety of plants and flowers.",
+            "duration": 120,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "Umultowska 87, Poznań",
+            "latitude": 52.421200,
+            "longitude": 16.907000
+        }
+    },
+    {
+        "name": "Gallery of Painting and Sculpture",
+        "category": "Museum",
+        "image_url": "https://example.com/gallery_painting_sculpture.jpg",
+        "details": {
+            "description": "A diverse collection of paintings and sculptures from various periods.",
+            "duration": 90,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "Plac Wolności 6, Poznań",
+            "latitude": 52.403900,
+            "longitude": 16.933500
+        }
+    },
+    {
+        "name": "Museum of Archeology",
+        "category": "Museum",
+        "image_url": "https://example.com/archeology_museum.jpg",
+        "details": {
+            "description": "Museum showcasing artifacts and exhibitions related to Poznań’s archaeological history.",
+            "duration": 120,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "Wodna 27, Poznań",
+            "latitude": 52.409300,
+            "longitude": 16.934000
+        }
+    },
+    {
+        "name": "Parish church of St Stanislas",
+        "category": "Monument",
+        "image_url": "https://example.com/church_st_stanislas.jpg",
+        "details": {
+            "description": "A beautiful church in Poznań, dedicated to St. Stanislas.",
+            "duration": 60,
+            "accessibility_info": "PARTIALLY_ACCESSIBLE",
+            "location_details": "Wierzbięcice 23, Poznań",
+            "latitude": 52.407500,
+            "longitude": 16.933000
+        }
+    },
+    {
+        "name": "Post Jesuit College",
+        "category": "Monument",
+        "image_url": "https://example.com/post_jesuit_college.jpg",
+        "details": {
+            "description": "Historical Jesuit College with beautiful architecture.",
+            "duration": 90,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "Fryderyka Chopina 10, Poznań",
+            "latitude": 52.411200,
+            "longitude": 16.939000
+        }
+    },
+    {
+        "name": "A path to the treetops",
+        "category": "Adventure",
+        "image_url": "https://example.com/path_treetops.jpg",
+        "details": {
+            "description": "An exciting treetop adventure path with zip lines and climbing sections.",
+            "duration": 180,
+            "accessibility_info": "PARTIALLY_ACCESSIBLE",
+            "location_details": "Wierzbowa 8, Poznań",
+            "latitude": 52.414200,
+            "longitude": 16.950500
+        }
+    },
+    {
+        "name": "Poznan Philharmonic Orchester",
+        "category": "Music",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Filharmonia_Pozna%C5%84ska.jpg/500px-Filharmonia_Pozna%C5%84ska.jpg",
+        "details": {
+            "description": "A renowned orchestra offering classical music performances.",
+            "duration": 120,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "ul. Św. Marcin 80, Poznań",
+            "latitude": 52.407365,
+            "longitude": 16.919587
+        }
+    },
+    {
+        "name": "Blue Note Jazz Club",
+        "category": "Nightlife",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Blue_Note_Jazz_Club_Pozna%C5%84.jpg/500px-Blue_Note_Jazz_Club_Pozna%C5%84.jpg",
+        "details": {
+            "description": "A popular venue for jazz music lovers with live performances.",
+            "duration": 180,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "ul. Kościuszki 79, Poznań",
+            "latitude": 52.406576,
+            "longitude": 16.935077
+        }
+    },
+    {
+        "name": "Cuba Libre",
+        "category": "Nightlife",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Cuba_Libre_Pozna%C5%84.jpg/500px-Cuba_Libre_Pozna%C5%84.jpg",
+        "details": {
+            "description": "A lively club offering Caribbean music and cocktails.",
+            "duration": 180,
+            "accessibility_info": "PARTIALLY_ACCESSIBLE",
+            "location_details": "ul. Wielka 4, Poznań",
+            "latitude": 52.407115,
+            "longitude": 16.931369
+        }
+    },
+    {
+        "name": "Rewiry",
+        "category": "Nightlife",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Rewiry_Pozna%C5%84.jpg/500px-Rewiry_Pozna%C5%84.jpg",
+        "details": {
+            "description": "A trendy nightclub with electronic music and a vibrant atmosphere.",
+            "duration": 180,
+            "accessibility_info": "PARTIALLY_ACCESSIBLE",
+            "location_details": "ul. Rynkowska 9, Poznań",
+            "latitude": 52.405451,
+            "longitude": 16.924849
+        }
+    },
+    {
+        "name": "Winiarnia Pod Czarnym Kotem",
+        "category": "Restaurant",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Winiarnia_Pod_Czarnym_Kotem_Pozna%C5%84.jpg/500px-Winiarnia_Pod_Czarnym_Kotem_Pozna%C5%84.jpg",
+        "details": {
+            "description": "A cozy wine cellar offering a wide selection of wines and delicious dishes.",
+            "duration": 150,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "ul. Gorzysława 3, Poznań",
+            "latitude": 52.409568,
+            "longitude": 16.931632
+        }
+    },
+    {
+        "name": "Tama",
+        "category": "Nightlife",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Tama_Pozna%C5%84.jpg/500px-Tama_Pozna%C5%84.jpg",
+        "details": {
+            "description": "A chic bar and club offering live music, cocktails, and a great atmosphere.",
+            "duration": 180,
+            "accessibility_info": "PARTIALLY_ACCESSIBLE",
+            "location_details": "ul. Św. Marcin 79, Poznań",
+            "latitude": 52.407825,
+            "longitude": 16.918022
+        }
+    },
+    {
+        "name": "HAH",
+        "category": "Nightlife",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/HAH_Pozna%C5%84.jpg/500px-HAH_Pozna%C5%84.jpg",
+        "details": {
+            "description": "A unique underground club offering experimental music and a cool vibe.",
+            "duration": 180,
+            "accessibility_info": "PARTIALLY_ACCESSIBLE",
+            "location_details": "ul. Dąbrowskiego 14, Poznań",
+            "latitude": 52.414362,
+            "longitude": 16.919631
+        }
+    },
+    {
+        "name": "Pacha",
+        "category": "Nightlife",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Pacha_Pozna%C5%84.jpg/500px-Pacha_Pozna%C5%84.jpg",
+        "details": {
+            "description": "A famous nightclub offering house and dance music, with a stylish ambiance.",
+            "duration": 180,
+            "accessibility_info": "PARTIALLY_ACCESSIBLE",
+            "location_details": "ul. Sierżanta 3, Poznań",
+            "latitude": 52.410252,
+            "longitude": 16.929739
+        }
+    },
+    {
+        "name": "Pryvadka",
+        "category": "Nightlife",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Pryvadka_Pozna%C5%84.jpg/500px-Pryvadka_Pozna%C5%84.jpg",
+        "details": {
+            "description": "An intimate nightclub with a mix of electronic and hip-hop music.",
+            "duration": 180,
+            "accessibility_info": "PARTIALLY_ACCESSIBLE",
+            "location_details": "ul. Dąbrowskiego 8, Poznań",
+            "latitude": 52.410143,
+            "longitude": 16.919322
+        }
+    },
+    {
+        "name": "Lake Rynkowskie",
+        "category": "Park",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Lake_Rynkowskie.jpg",
+        "details": {
+            "description": "A picturesque lake surrounded by green spaces, perfect for picnics, walks, and bird watching.",
+            "duration": 120,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "Rynkowskie, Poznań",
+            "latitude": 52.3890,
+            "longitude": 16.9382
+        }
+    },
+    {
+        "name": "Poznań Science and Technology Park",
+        "category": "Museum/Innovation Center",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Pozna%C5%84_Science_and_Technology_Park.jpg",
+        "details": {
+            "description": "A center for innovation with exhibits on modern technologies and a focus on interactive learning.",
+            "duration": 180,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "ul. Rubież 46, Poznań",
+            "latitude": 52.3808,
+            "longitude": 16.9116
+        }
+    },
+    {
+        "name": "Arboretum in Wolsztyn",
+        "category": "Park",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Arboretum_Wolsztyn.jpg",
+        "details": {
+            "description": "A large, beautiful park with rare plant species and a peaceful atmosphere ideal for nature lovers.",
+            "duration": 150,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "Wolsztyn, Poznań",
+            "latitude": 52.4500,
+            "longitude": 16.9660
+        }
+    },
+    {
+        "name": "Poznań Philharmonic",
+        "category": "Art/Culture",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Pozna%C5%84_Philharmonic.jpg",
+        "details": {
+            "description": "A historic music hall where you can enjoy classical music concerts.",
+            "duration": 120,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "ul. Święty Marcin 87, Poznań",
+            "latitude": 52.4061,
+            "longitude": 16.9332
+        }
+    },
+    {
+        "name": "St. Peter and Paul Church",
+        "category": "Monument",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/St._Peter_and_Paul_Church_Pozna%C5%84.jpg",
+        "details": {
+            "description": "A stunning baroque church with impressive interior and architecture.",
+            "duration": 90,
+            "accessibility_info": "PARTIALLY_ACCESSIBLE",
+            "location_details": "ul. Gorzysława 6, Poznań",
+            "latitude": 52.4065,
+            "longitude": 16.9311
+        }
+    },
+    {
+        "name": "Warta River Promenade",
+        "category": "Park",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Warta_River_Promenade_Pozna%C5%84.jpg",
+        "details": {
+            "description": "A scenic riverside walking path with stunning views and relaxation spots.",
+            "duration": 120,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "Warta River, Poznań",
+            "latitude": 52.4100,
+            "longitude": 16.9230
+        }
+    }
+]
