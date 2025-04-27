@@ -258,5 +258,397 @@
             "latitude": 52.41122338402505,
             "longitude": 16.95346281051187
         }
-    }
+    },
+    {
+        "name": "Jordan Bridge",
+        "category": "Monument",
+        "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AB5caB9vNcAJYBMhGaXbjug-LWzDYXLCLgNDSvg214D5VwdVM0zm7hYMhM7zN9p3evt4jh6nr_NGCDDF3UobYjuzN1_IThI4pmuDds_boqGZ-PabNYvwK9DGYC8PtDGvkL0Zko_3j5Iw=w408-h725-k-no",
+        "details": {
+            "description": "A historical bridge over the Warta River.",
+            "duration": 60,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "Most Biskupa Jordana, 61-003 Poznań",
+            "latitude": 52.411573505993616, 
+            "longitude": 16.95094983529851
+        }
+    },
+    {
+        "name": "Cathedral Lock",
+        "category": "Monument",
+        "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AB5caB9FRlfIZPBPT-Z3IqREm_R8F3rAQndiRrtsdzpw0T-7ZYCIMXyRTSXIEWuXwZtMLj339i57ZyfeLXqSPjneEmGpTsQfd2uL6XFQAnT2QMqmRQDV9nMy_yXqm7QIkByz1nmF4v8=w408-h306-k-no",
+        "details": {
+            "description": "A historic lock near the Poznań Cathedral.",
+            "duration": 60,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "Dziekańska 1, 61-108 Poznań",
+            "latitude": 52.41245762913989, 
+            "longitude": 16.950283320360132
+        }
+    },
+    {
+        "name": "Malta Ski",
+        "category": "Sport",
+        "image_url": "https://lh3.googleusercontent.com/p/AF1QipPvNV4qZ6IPfiT7o5CgQ5kAAEIfjYaH1vh3Z8oR=w631-h240-k-no",
+        "details": {
+            "description": "Skiing and snowboarding in the heart of Poznań.",
+            "duration": 120,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "Wiankowa 2, 61-131 Poznań",
+            "latitude": 52.39989683898019, 
+            "longitude": 16.98010895345073
+        }
+    },
+    {
+        "name": "Pyrland Park",
+        "category": "Sport",
+        "image_url": "https://lh3.googleusercontent.com/p/AF1QipNxkGPWiSWUA6JcWmOn0wef9Do8ryLUR2--YiJN=w408-h408-k-no",
+        "details": {
+            "description": "Baraniaka, 61-131 Poznań",
+            "duration": 150,
+            "accessibility_info": "PARTIALLY_ACCESSIBLE",
+            "location_details": "Wierzbowa 15, Poznań",
+            "latitude": 52.39696035129108, 
+            "longitude": 16.98731657489017
+        }
+    },
+    {
+        "name": "Solacki Park",
+        "category": "Park",
+        "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AB5caB-2ugZyI8cVUAn3w6X8TIh-A51UEB5HDKYxWokPyLbou6HLDbfq5IutDJmX86LmWd1krwySEGcB5Lp8B-FR09Vu_mfkrOWqQiwgWPAye8KcvutjSIK_A3quoi1IxgF7n-QEpkfZ=w408-h306-k-no",
+        "details": {
+            "description": "A peaceful park with ponds and walking trails.",
+            "duration": 120,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "60-619 Poznań",
+            "latitude": 52.42340713348341, 
+            "longitude": 16.89779246147111
+        }
+    },
+    {
+        "name": "Lake Rusalka",
+        "category": "Park",
+        "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AB5caB-QuT6kurVT02WjqB0FC48j60oDns7nHiNBcpfkqANSj1zlMjqkl9DI1M37Gdrk2z2pOatO_y1hJP7u7TFHDoASgwunoFBaFgCFVYTkQN0gIJuFe9EAWsRfC_ZL_YfEiiX4Z1DI=w426-h240-k-no",
+        "details": {
+            "description": "A scenic lake surrounded by greenery, perfect for walks and relaxation.",
+            "duration": 180,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "Poznań, near Rusalka Beach",
+            "latitude": 52.426484462036115, 
+            "longitude": 16.87744033483122
+        }
+    },
+    {
+        "name": "University Botanical Garden",
+        "category": "Park",
+        "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AB5caB8nt4aIRUkxV1T8FS8ihdbsbt173fji76cnvpBbUlhj20ej0XezLVhHfwtG9M4Ci2bOcercqDjUvLHaMLaPwsdoZD4e95lGtfl_vkV1jtbvg20TQ_eHsCY98QHv4J1xOFr7WYvZOw=w408-h305-k-no",
+        "details": {
+            "description": "A beautiful university garden with a variety of plants and flowers.",
+            "duration": 120,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "Jana Henryka Dąbrowskiego 165, 60-594 Poznań",
+            "latitude": 52.419203383518486, 
+            "longitude": 16.87904177297387
+        }
+    },
+    {
+        "name": "Gallery of Painting and Sculpture",
+        "category": "Museum",
+        "image_url": "https://lh3.googleusercontent.com/p/AF1QipPduQ8Yv-oquVOb5o2FQ9k7eG9FvkJlOiWimO4Q=w408-h272-k-no",
+        "details": {
+            "description": "A diverse collection of paintings and sculptures from various periods.",
+            "duration": 90,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "Ignacego Paderewskiego 7, 61-770 Poznań",
+            "latitude": 52.40771248273506, 
+            "longitude": 16.930776553628775
+        }
+    },
+    {
+        "name": "Museum of Archeology",
+        "category": "Museum",
+        "image_url": "https://lh3.googleusercontent.com/p/AF1QipMofSQGKoOmt-7bVofk9pNpcukZkOQkLIXOe8vM=w408-h261-k-no",
+        "details": {
+            "description": "Museum showcasing artifacts and exhibitions related to Poznań’s archaeological history.",
+            "duration": 120,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "Wodna 27, Poznań",
+            "latitude": 52.40737803553129, 
+            "longitude": 16.93471879666799
+        }
+    },
+    {
+        "name": "Parish church of St Stanislas",
+        "category": "Monument",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo19uWyqODg4E7TcLDnhtQ8c5CXPDaVP7zhGnOr6_7z3NoIERryXhznjt1DABVSjy6BjI&usqp=CAU",
+        "details": {
+            "description": "A beautiful church in Poznań, dedicated to St. Stanislas.",
+            "duration": 60,
+            "accessibility_info": "PARTIALLY_ACCESSIBLE",
+            "location_details": "Gołębia 1, 61-779 Poznań",
+            "latitude": 52.40615426275326, 
+            "longitude": 16.934127217270092
+        }
+    },
+    {
+        "name": "Post Jesuit College",
+        "category": "Monument",
+        "image_url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/4c/5c/82/caption.jpg?w=1200&h=1200&s=1",
+        "details": {
+            "description": "Historical Jesuit College with beautiful architecture.",
+            "duration": 90,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "pl. Kolegiacki 17, 61-841 Poznań",
+            "latitude": 52.40588451984202, 
+            "longitude": 16.935044616511426
+        }
+    },
+    {
+        "name": "Dolina Szklarki",
+        "category": "Adventure",
+        "image_url": "https://cdn.podroze.onet.pl/1/1dnk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy85ZDNmOWNhMjg4MDkwYzBjZjNmZjJiNWYzM2VhZTkzMi5qcGeSlQMAzOPND9jNCOmTBc0EsM0Cdt4AAqEwB6ExBA",
+        "details": {
+            "description": "An exciting treetop adventure path with zip lines and climbing sections.",
+            "duration": 180,
+            "accessibility_info": "PARTIALLY_ACCESSIBLE",
+            "location_details": "Pobiedziska 4, 61-049 Poznań",
+            "latitude": 52.40292043180851, 
+            "longitude": 16.994267813851422
+        }
+    },
+    {
+        "name": "Poznan Philharmonic Orchester",
+        "category": "Music",
+        "image_url": "https://lh3.googleusercontent.com/p/AF1QipOx-dxG4_qWnbZrBocbUQT_qevk1PDUCZYuq_7Y=w408-h282-k-no",
+        "details": {
+            "description": "A renowned orchestra offering classical music performances.",
+            "duration": 120,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "ul. Św. Marcin 80, Poznań",
+            "latitude": 52.407898814283705, 
+            "longitude": 16.918549350090526
+        }
+    },
+    {
+        "name": "Blue Note Jazz Club",
+        "category": "Nightlife",
+        "image_url": "https://lh3.googleusercontent.com/p/AF1QipMBIpJF5CIiR7STi_WRMxz-lNbQReRFg3jX4-YR=w408-h272-k-no",
+        "details": {
+            "description": "A popular venue for jazz music lovers with live performances.",
+            "duration": 180,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "ul. Kościuszki 79, Poznań",
+            "latitude": 52.40818802312264, 
+            "longitude": 16.919469145968428
+        }
+    },
+    {
+        "name": "Cuba Libre",
+        "category": "Nightlife",
+        "image_url": "https://cuba-libre.pl/wp-content/uploads/2022/07/DSC3138.jpg",
+        "details": {
+            "description": "A lively club offering Caribbean music and cocktails.",
+            "duration": 180,
+            "accessibility_info": "PARTIALLY_ACCESSIBLE",
+            "location_details": "Wrocławska 21, 61-001 Poznań",
+            "latitude": 52.406296878570295, 
+            "longitude": 16.93318608110181
+        }
+    },
+    {
+        "name": "Rewiry",
+        "category": "Nightlife",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXBdU7NgaT4BOc3J-Qf7rTG6pSGxsOWSnc5g&s",
+        "details": {
+            "description": "A trendy nightclub with electronic music and a vibrant atmosphere.",
+            "duration": 180,
+            "accessibility_info": "PARTIALLY_ACCESSIBLE",
+            "location_details": "Al. Niepodległości 8A, 61-717 Poznań",
+            "latitude": 52.405581893028845, 
+            "longitude": 16.91896657377292
+        }
+    },
+    {
+        "name": "Under the Black Cat",
+        "category": "Restaurant",
+        "image_url": "https://lh3.googleusercontent.com/p/AF1QipPinqmBZwZ1BMZK27c1hsql0pIwAwNlGzHL8Hgz=s1600-w640",
+        "details": {
+            "description": "A cozy wine cellar offering a wide selection of wines and delicious dishes.",
+            "duration": 150,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "Wolsztyńska 1, 61-361 Poznań",
+            "latitude": 52.4048102382536, 
+            "longitude": 16.883678530338543
+        }
+    },
+    {
+        "name": "Tama",
+        "category": "Nightlife",
+        "image_url": "https://lh3.googleusercontent.com/p/AF1QipOQPWS6opvFybTdgVo0X6dkUIqu0rOlvDOrfKao=w408-h612-k-no",
+        "details": {
+            "description": "A chic bar and club offering live music, cocktails, and a great atmosphere.",
+            "duration": 180,
+            "accessibility_info": "PARTIALLY_ACCESSIBLE",
+            "location_details": "Niezłomnych 2, 61-001 Poznań",
+            "latitude": 52.40243265033585, 
+            "longitude": 16.92229365276597
+        }
+    },
+    {
+        "name": "HAH",
+        "category": "Nightlife",
+        "image_url": "https://lh3.googleusercontent.com/p/AF1QipOQR4Wz1Tcgx5RjgYkl-SZunXmMx7AnGyBtqbIR=w408-h272-k-no",
+        "details": {
+            "description": "A unique underground club offering experimental music and a cool vibe.",
+            "duration": 180,
+            "accessibility_info": "PARTIALLY_ACCESSIBLE",
+            "location_details": "Małe Garbary 6, 61-756 Poznań",
+            "latitude": 52.41159385426509, 
+            "longitude": 16.936045242317352
+        }
+    },
+    {
+        "name": "Pacha",
+        "category": "Nightlife",
+        "image_url": "https://epoznan.pl/storage/gallery/9506/2mvfq6zxnfk5v3mqbh85fjyb9yvhtzms_gallery.jpg?1402609212",
+        "details": {
+            "description": "A famous nightclub offering house and dance music, with a stylish ambiance.",
+            "duration": 180,
+            "accessibility_info": "PARTIALLY_ACCESSIBLE",
+            "location_details": "Ignacego Paderewskiego 10, 61-770 Poznań",
+            "latitude": 52.40794391763604, 
+            "longitude": 16.931115685982764
+        }
+    },
+    {
+        "name": "Prywadka",
+        "category": "Nightlife",
+        "image_url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/b3/ff/e3/great-bar.jpg?w=900&h=500&s=1",
+        "details": {
+            "description": "An intimate nightclub with a mix of electronic and hip-hop music.",
+            "duration": 180,
+            "accessibility_info": "PARTIALLY_ACCESSIBLE",
+            "location_details": "Stanisława Taczaka 10, 61-818 Poznań",
+            "latitude": 52.40553316001324,
+            "longitude": 16.92087770695298
+        }
+    },
+    {
+        "name": "Poznań Science and Technology Park",
+        "category": "Museum",
+        "image_url": "https://ppnt.poznan.pl/wp-content/uploads/2016/02/park-naukowy-e1458132847148-800x494.jpg",
+        "details": {
+            "description": "A center for innovation with exhibits on modern technologies and a focus on interactive learning.",
+            "duration": 180,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "ul. Rubież 46, Poznań",
+            "latitude": 52.454552088235204, 
+            "longitude": 16.954664005243263
+        }
+    },
+
+    {
+        "name": "Ethnographic Museum",
+        "category": "Museum",
+        "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AB5caB8_9nXB6E2x7E48yHsB47-O0-6PAR18DmpbzgEML4OWv5JxQZBlf0RLBuYtCBGqz75Ta6i8yUZT92GjIRX9tREBcX-4N-3JI59qaBpo-yrDzitz8UP0P6vsqLpzBQhGGbA1DrYNMg=w408-h304-k-no",
+        "details": {
+            "description": "Museum dedicated to folk traditions, crafts, and rural life in Poland and around the world.",
+            "duration": 90,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "wejście od ul. Mostowej, Grobla 25, 61-854 Poznań",
+            "latitude": 52.4055978687554,
+            "longitude":  16.940656508862578 
+        }
+    },
+    {
+        "name": "Museum of Musical Instruments",
+        "category": "Museum",
+        "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AB5caB-OoWl0j-nLhFOXR6dqjVQYHtut2bbq7vutmcVnjNaQ-PmqrDHOMxFV102XykeTX_CTiVg3aJwbQ8mEscmiF73zm9Oo5qdVVUKDIDA_cmPJ-u5dEeicvncljBBD7PXLCCnrFrSp=w408-h306-k-no",
+        "details": {
+            "description": "Unique museum presenting a vast collection of musical instruments from around the world.",
+            "duration": 90,
+            "accessibility_info": "PARTIALLY_ACCESSIBLE",
+            "location_details": "Stary Rynek 45, 61-772 Poznań",
+            "latitude": 52.40801930029057, 
+            "longitude": 16.934708580044006
+        }
+    },
+    {
+        "name": "Termy Maltańskie",
+        "category": "Sport",
+        "image_url": "https://lh3.googleusercontent.com/p/AF1QipPAotX9LFacVnPwUNXI8tQ1qXjPFkSpHY0zsCnx=w427-h240-k-no",
+        "details": {
+            "description": "One of Poland’s largest aquatic complexes with pools, saunas, and a wellness center.",
+            "duration": 180,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "ul. Termalna 1, 61-028 Poznań",
+            "latitude": 52.40527723755881, 
+            "longitude": 16.974247937289594
+        }
+    },
+    {
+        "name": "Warta River Kayak Tour",
+        "category": "Sport",
+        "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AB5caB-r1klaFIZPu9NVj6InMivXkGHwwnEkzWkMybamonSlQ2rIyKfvFULQ_91fCspaZV3J_XX85nto5gv_EkdUDGnq3JBeBQvWrQLE9xbqtgfvRgWPtrf-IvZXwN_sckveEjTDcDCi=w408-h724-k-no",
+        "details": {
+            "description": "Explore Poznań from a different angle by paddling down the Warta River.",
+            "duration": 150,
+            "accessibility_info": "NOT_ACCESSIBLE",
+            "location_details": "Piaskowa 13E, 61-753 Poznań",
+            "latitude": 52.41201717822341, 
+            "longitude": 16.94322620727007
+        }
+    },
+    
+    {
+        "name": "Rynek Jeżycki",
+        "category": "Market",
+        "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AB5caB8YGusVPo9iI3XQeMKDtyNa1w4VpqQGHQqvZgHD7ALG3N5tpTQruUo9aBqoaHKmOoPqXVTFd24UEqRMI8NSJpeEo6M9ie4eNnEMV17I3vaVGIfGmbx06c0oGpMTT2PT9VHtKhFj=w408-h306-k-no",
+        "details": {
+            "description": "Authentic local market offering fresh produce, flowers, and regional specialties.",
+            "duration": 60,
+            "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
+            "location_details": "Rynek Jeżycki, 61-001 Poznań",
+            "latitude": 52.41204335642118,
+            "longitude": 16.903776175017132
+        }
+    },
+    {
+        "name": "KontenerART",
+        "category": "Art",
+        "image_url": "https://muno.pl/wp-content/uploads/2017/10/kontenerartpoznan-logo220-850x570.jpg",
+        "details": {
+            "description": "Seasonal open-air space with music events, art exhibitions, and food trucks, built from shipping containers.",
+            "duration": 120,
+            "accessibility_info": "PARTIALLY_ACCESSIBLE",
+            "location_details": "ul. Ewangelicka, 61-856 Poznań",
+            "latitude": 52.40585132039982, 
+            "longitude": 16.944932938026085
+        }
+    },
+    {
+        "name": "Key To be Free",
+        "category": "Entertainment",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0i331zFe52-eXomLLBG7bTtCTW-MRoQ53kQ&s",
+        "details": {
+            "description": "Exciting themed escape rooms with puzzles and adventures, suitable for groups of friends, families, or team-building.",
+            "duration": 60,
+            "accessibility_info": "PARTIALLY_ACCESSIBLE",
+            "location_details": "Ratajczaka 26/2, 61-815 Poznań",
+            "latitude": 52.40544802596983, 
+            "longitude": 16.92572584281261
+        }
+    },
+    {
+        "name": "Bungee Jumping Malta Poznań",
+        "category": "Adventure",
+        "image_url": "https://lh3.googleusercontent.com/p/AF1QipPqfYwhq9uniOzX368KS2FucQt27UTaEFjvfkhP=w408-h272-k-no",
+        "details": {
+            "description": "Experience an adrenaline rush by bungee jumping from a crane over the Malta Lake area in Poznań.",
+            "duration": 30,
+            "accessibility_info": "NOT_ACCESSIBLE",
+            "location_details": "Wileńska, 61-024 Poznań",
+            "latitude": 52.4035081739725, 
+            "longitude": 16.976996472357293
+        }
+    }          
 ]
