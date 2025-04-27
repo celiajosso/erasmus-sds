@@ -9,7 +9,15 @@
         "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
         "location_details": "Poznań Old Town, near Wroniecka Street",
         "latitude": 52.408362241091524,
-        "longitude": 16.933536319308796
+        "longitude": 16.933536319308796,
+        "opening_hours": ["", "", "", "", "", "", ""],
+        "closing_hours": ["", "", "", "", "", "", ""],
+        "price": "",
+        "phone": "",
+        "email": "",
+        "website": "",
+        "rating": 0.0,
+        "reviews_count": 0
         }
     },
     {
@@ -22,7 +30,15 @@
         "accessibility_info": "PARTIALLY_ACCESSIBLE",
         "location_details": "Ostrów Tumski, Poznań",
         "latitude": 52.411847205951325,
-        "longitude": 16.948722320235813
+        "longitude": 16.948722320235813,
+        "opening_hours": ["", "", "", "", "", "", ""],
+        "closing_hours": ["", "", "", "", "", "", ""],
+        "price": "",
+        "phone": "",
+        "email": "",
+        "website": "",
+        "rating": 0.0,
+        "reviews_count": 0
         }
     },
     {
@@ -35,7 +51,15 @@
         "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
         "location_details": "Święty Marcin 80/82, Poznań",
         "latitude": 52.4079304471624,
-        "longitude": 16.919139206775096
+        "longitude": 16.919139206775096,
+        "opening_hours": ["", "", "", "", "", "", ""],
+        "closing_hours": ["", "", "", "", "", "", ""],
+        "price": "",
+        "phone": "",
+        "email": "",
+        "website": "",
+        "rating": 0.0,
+        "reviews_count": 0
         }
     },
     {
@@ -48,7 +72,15 @@
         "accessibility_info": "PARTIALLY_ACCESSIBLE",
         "location_details": "Klasztorna 23, Poznań",
         "latitude": 52.40863265974043,
-        "longitude": 16.93501407797479
+        "longitude": 16.93501407797479,
+        "opening_hours": ["", "", "", "", "", "", ""],
+        "closing_hours": ["", "", "", "", "", "", ""],
+        "price": "",
+        "phone": "",
+        "email": "",
+        "website": "",
+        "rating": 0.0,
+        "reviews_count": 0
         }
     },
     {
@@ -61,7 +93,15 @@
         "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
         "location_details": "Gdańska 2, Poznań",
         "latitude": 52.412468702619805,
-        "longitude": 16.951408603112835
+        "longitude": 16.951408603112835,
+        "opening_hours": ["", "", "", "", "", "", ""],
+        "closing_hours": ["", "", "", "", "", "", ""],
+        "price": "",
+        "phone": "",
+        "email": "",
+        "website": "",
+        "rating": 0.0,
+        "reviews_count": 0
         }
     },
     {
@@ -74,7 +114,15 @@
         "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
         "location_details": "Around Baraniaka Street, Poznań",
         "latitude": 52.402775958573564,
-        "longitude": 16.96897692308913
+        "longitude": 16.96897692308913,
+        "opening_hours": ["", "", "", "", "", "", ""],
+        "closing_hours": ["", "", "", "", "", "", ""],
+        "price": "",
+        "phone": "",
+        "email": "",
+        "website": "",
+        "rating": 0.0,
+        "reviews_count": 0
         }
     },
     {
@@ -87,7 +135,15 @@
         "accessibility_info": "PARTIALLY_ACCESSIBLE",
         "location_details": "Krańcowa 81, Poznań",
         "latitude": 52.400900458425966,
-        "longitude": 16.994453793674914
+        "longitude": 16.994453793674914,
+        "opening_hours": ["", "", "", "", "", "", ""],
+        "closing_hours": ["", "", "", "", "", "", ""],
+        "price": "",
+        "phone": "",
+        "email": "",
+        "website": "",
+        "rating": 0.0,
+        "reviews_count": 0
         }
     },
     {
@@ -100,7 +156,15 @@
         "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
         "location_details": "Matejki 18, Poznań",
         "latitude": 52.4021059023456,
-        "longitude": 16.901825442996017
+        "longitude": 16.901825442996017,
+        "opening_hours": ["", "", "", "", "", "", ""],
+        "closing_hours": ["", "", "", "", "", "", ""],
+        "price": "",
+        "phone": "",
+        "email": "",
+        "website": "",
+        "rating": 0.0,
+        "reviews_count": 0
         }
     },
     {
@@ -113,7 +177,15 @@
         "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
         "location_details": "al. Armii Poznań, Poznań",
         "latitude": 52.42185413024404,
-        "longitude": 16.93612426261012
+        "longitude": 16.93612426261012,
+        "opening_hours": ["", "", "", "", "", "", ""],
+        "closing_hours": ["", "", "", "", "", "", ""],
+        "price": "",
+        "phone": "",
+        "email": "",
+        "website": "",
+        "rating": 0.0,
+        "reviews_count": 0
         }
     },
     {
@@ -126,7 +198,15 @@
         "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
         "location_details": "Półwiejska 42, Poznań",
         "latitude": 52.40146127057818,
-        "longitude": 16.928053712820162
+        "longitude": 16.928053712820162,
+        "opening_hours": ["", "", "", "", "", "", ""],
+        "closing_hours": ["", "", "", "", "", "", ""],
+        "price": "",
+        "phone": "",
+        "email": "",
+        "website": "",
+        "rating": 0.0,
+        "reviews_count": 0
         }
     },
     {
@@ -139,7 +219,15 @@
         "accessibility_info": "PARTIALLY_ACCESSIBLE",
         "location_details": "Aleja Armii Poznań, 61-663 Poznań",
         "latitude": 52.42024130731194,
-        "longitude": 16.932847906816395
+        "longitude": 16.932847906816395,
+        "opening_hours": ["", "", "", "", "", "", ""],
+        "closing_hours": ["", "", "", "", "", "", ""],
+        "price": "",
+        "phone": "",
+        "email": "",
+        "website": "",
+        "rating": 0.0,
+        "reviews_count": 0
         }
     },
     {
@@ -152,7 +240,15 @@
         "accessibility_info": "PARTIALLY_ACCESSIBLE",
         "location_details": "Święty Marcin 78, 61-809 Poznań",
         "latitude": 52.407573499169175,
-        "longitude": 16.919777280131143
+        "longitude": 16.919777280131143,
+        "opening_hours": ["", "", "", "", "", "", ""],
+        "closing_hours": ["", "", "", "", "", "", ""],
+        "price": "",
+        "phone": "",
+        "email": "",
+        "website": "",
+        "rating": 0.0,
+        "reviews_count": 0
         }
     },
     {
@@ -165,7 +261,15 @@
         "accessibility_info": "PARTIALLY_ACCESSIBLE",
         "location_details": "Góra Przemysła 1, 61-768 Poznań",
         "latitude": 52.409263550255944,
-        "longitude": 16.931125551683404
+        "longitude": 16.931125551683404,
+        "opening_hours": ["", "", "", "", "", "", ""],
+        "closing_hours": ["", "", "", "", "", "", ""],
+        "price": "",
+        "phone": "",
+        "email": "",
+        "website": "",
+        "rating": 0.0,
+        "reviews_count": 0
         }
     },
     {
@@ -178,7 +282,15 @@
         "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
         "location_details": "ul. Pleszewska 1, Poznań",
         "latitude": 52.3967395611729, 
-        "longitude": 16.955497822860913
+        "longitude": 16.955497822860913,
+        "opening_hours": ["", "", "", "", "", "", ""],
+        "closing_hours": ["", "", "", "", "", "", ""],
+        "price": "",
+        "phone": "",
+        "email": "",
+        "website": "",
+        "rating": 0.0,
+        "reviews_count": 0
         }
     },
     {
@@ -191,7 +303,15 @@
         "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
         "location_details": "Stanisława Matyi 2, 61-586 Poznań",
         "latitude": 52.40218111052152,
-        "longitude": 16.914082293330548
+        "longitude": 16.914082293330548,
+        "opening_hours": ["", "", "", "", "", "", ""],
+        "closing_hours": ["", "", "", "", "", "", ""],
+        "price": "",
+        "phone": "",
+        "email": "",
+        "website": "",
+        "rating": 0.0,
+        "reviews_count": 0
         }
     },
     {
@@ -204,7 +324,15 @@
         "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
         "location_details": "Góra Przemysła 1, 60-101 Poznań",
         "latitude": 52.40922005081846, 
-        "longitude": 16.931031168130072
+        "longitude": 16.931031168130072,
+        "opening_hours": ["", "", "", "", "", "", ""],
+        "closing_hours": ["", "", "", "", "", "", ""],
+        "price": "",
+        "phone": "",
+        "email": "",
+        "website": "",
+        "rating": 0.0,
+        "reviews_count": 0
         }
     },
     {
@@ -217,7 +345,15 @@
         "accessibility_info": "PARTIALLY_ACCESSIBLE",
         "location_details": "Stary Rynek 77 /wejście od, Franciszkańska, 61-772 Poznań",
         "latitude": 52.408353444646785, 
-        "longitude": 16.93232135969791
+        "longitude": 16.93232135969791,
+        "opening_hours": ["", "", "", "", "", "", ""],
+        "closing_hours": ["", "", "", "", "", "", ""],
+        "price": "",
+        "phone": "",
+        "email": "",
+        "website": "",
+        "rating": 0.0,
+        "reviews_count": 0
         }
     },
     {
@@ -230,7 +366,15 @@
         "accessibility_info": "PARTIALLY_ACCESSIBLE",
         "location_details": "Zamkowa 7, 61-768 Poznań",
         "latitude": 52.40900411617683,
-        "longitude": 16.93211992152673
+        "longitude": 16.93211992152673,
+        "opening_hours": ["", "", "", "", "", "", ""],
+        "closing_hours": ["", "", "", "", "", "", ""],
+        "price": "",
+        "phone": "",
+        "email": "",
+        "website": "",
+        "rating": 0.0,
+        "reviews_count": 0
         }
     },
     {
@@ -243,7 +387,15 @@
         "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
         "location_details": "Śniadeckich 30, 61-001 Poznań",
         "latitude": 52.39947202728865, 
-        "longitude": 16.902162236619176
+        "longitude": 16.902162236619176,
+        "opening_hours": ["", "", "", "", "", "", ""],
+        "closing_hours": ["", "", "", "", "", "", ""],
+        "price": "",
+        "phone": "",
+        "email": "",
+        "website": "",
+        "rating": 0.0,
+        "reviews_count": 0
         }
     },
     {
@@ -256,7 +408,15 @@
             "accessibility_info": "PARTIALLY_ACCESSIBLE",
             "location_details": "Śródka 4, 61-125 Poznań",
             "latitude": 52.41122338402505,
-            "longitude": 16.95346281051187
+            "longitude": 16.95346281051187,
+            "opening_hours": ["", "", "", "", "", "", ""],
+            "closing_hours": ["", "", "", "", "", "", ""],
+            "price": "",
+            "phone": "",
+            "email": "",
+            "website": "",
+            "rating": 0.0,
+            "reviews_count": 0
         }
     },
     {
@@ -269,7 +429,15 @@
             "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
             "location_details": "Most Biskupa Jordana, 61-003 Poznań",
             "latitude": 52.411573505993616, 
-            "longitude": 16.95094983529851
+            "longitude": 16.95094983529851,
+            "opening_hours": ["", "", "", "", "", "", ""],
+            "closing_hours": ["", "", "", "", "", "", ""],
+            "price": "",
+            "phone": "",
+            "email": "",
+            "website": "",
+            "rating": 0.0,
+            "reviews_count": 0
         }
     },
     {
@@ -282,7 +450,15 @@
             "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
             "location_details": "Dziekańska 1, 61-108 Poznań",
             "latitude": 52.41245762913989, 
-            "longitude": 16.950283320360132
+            "longitude": 16.950283320360132,
+            "opening_hours": ["", "", "", "", "", "", ""],
+            "closing_hours": ["", "", "", "", "", "", ""],
+            "price": "",
+            "phone": "",
+            "email": "",
+            "website": "",
+            "rating": 0.0,
+            "reviews_count": 0
         }
     },
     {
@@ -295,7 +471,15 @@
             "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
             "location_details": "Wiankowa 2, 61-131 Poznań",
             "latitude": 52.39989683898019, 
-            "longitude": 16.98010895345073
+            "longitude": 16.98010895345073,
+            "opening_hours": ["", "", "", "", "", "", ""],
+            "closing_hours": ["", "", "", "", "", "", ""],
+            "price": "",
+            "phone": "",
+            "email": "",
+            "website": "",
+            "rating": 0.0,
+            "reviews_count": 0
         }
     },
     {
@@ -308,7 +492,15 @@
             "accessibility_info": "PARTIALLY_ACCESSIBLE",
             "location_details": "Wierzbowa 15, Poznań",
             "latitude": 52.39696035129108, 
-            "longitude": 16.98731657489017
+            "longitude": 16.98731657489017,
+            "opening_hours": ["", "", "", "", "", "", ""],
+            "closing_hours": ["", "", "", "", "", "", ""],
+            "price": "",
+            "phone": "",
+            "email": "",
+            "website": "",
+            "rating": 0.0,
+            "reviews_count": 0
         }
     },
     {
@@ -321,7 +513,15 @@
             "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
             "location_details": "60-619 Poznań",
             "latitude": 52.42340713348341, 
-            "longitude": 16.89779246147111
+            "longitude": 16.89779246147111,
+            "opening_hours": ["", "", "", "", "", "", ""],
+            "closing_hours": ["", "", "", "", "", "", ""],
+            "price": "",
+            "phone": "",
+            "email": "",
+            "website": "",
+            "rating": 0.0,
+            "reviews_count": 0
         }
     },
     {
@@ -334,7 +534,15 @@
             "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
             "location_details": "Poznań, near Rusalka Beach",
             "latitude": 52.426484462036115, 
-            "longitude": 16.87744033483122
+            "longitude": 16.87744033483122,
+            "opening_hours": ["", "", "", "", "", "", ""],
+            "closing_hours": ["", "", "", "", "", "", ""],
+            "price": "",
+            "phone": "",
+            "email": "",
+            "website": "",
+            "rating": 0.0,
+            "reviews_count": 0
         }
     },
     {
@@ -347,7 +555,15 @@
             "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
             "location_details": "Jana Henryka Dąbrowskiego 165, 60-594 Poznań",
             "latitude": 52.419203383518486, 
-            "longitude": 16.87904177297387
+            "longitude": 16.87904177297387,
+            "opening_hours": ["", "", "", "", "", "", ""],
+            "closing_hours": ["", "", "", "", "", "", ""],
+            "price": "",
+            "phone": "",
+            "email": "",
+            "website": "",
+            "rating": 0.0,
+            "reviews_count": 0
         }
     },
     {
@@ -360,7 +576,15 @@
             "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
             "location_details": "Ignacego Paderewskiego 7, 61-770 Poznań",
             "latitude": 52.40771248273506, 
-            "longitude": 16.930776553628775
+            "longitude": 16.930776553628775,
+            "opening_hours": ["", "", "", "", "", "", ""],
+            "closing_hours": ["", "", "", "", "", "", ""],
+            "price": "",
+            "phone": "",
+            "email": "",
+            "website": "",
+            "rating": 0.0,
+            "reviews_count": 0
         }
     },
     {
@@ -373,7 +597,15 @@
             "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
             "location_details": "Wodna 27, Poznań",
             "latitude": 52.40737803553129, 
-            "longitude": 16.93471879666799
+            "longitude": 16.93471879666799,
+            "opening_hours": ["", "", "", "", "", "", ""],
+            "closing_hours": ["", "", "", "", "", "", ""],
+            "price": "",
+            "phone": "",
+            "email": "",
+            "website": "",
+            "rating": 0.0,
+            "reviews_count": 0
         }
     },
     {
@@ -386,7 +618,15 @@
             "accessibility_info": "PARTIALLY_ACCESSIBLE",
             "location_details": "Gołębia 1, 61-779 Poznań",
             "latitude": 52.40615426275326, 
-            "longitude": 16.934127217270092
+            "longitude": 16.934127217270092,
+            "opening_hours": ["", "", "", "", "", "", ""],
+            "closing_hours": ["", "", "", "", "", "", ""],
+            "price": "",
+            "phone": "",
+            "email": "",
+            "website": "",
+            "rating": 0.0,
+            "reviews_count": 0
         }
     },
     {
@@ -399,7 +639,15 @@
             "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
             "location_details": "pl. Kolegiacki 17, 61-841 Poznań",
             "latitude": 52.40588451984202, 
-            "longitude": 16.935044616511426
+            "longitude": 16.935044616511426,
+            "opening_hours": ["", "", "", "", "", "", ""],
+            "closing_hours": ["", "", "", "", "", "", ""],
+            "price": "",
+            "phone": "",
+            "email": "",
+            "website": "",
+            "rating": 0.0,
+            "reviews_count": 0
         }
     },
     {
@@ -412,7 +660,15 @@
             "accessibility_info": "PARTIALLY_ACCESSIBLE",
             "location_details": "Pobiedziska 4, 61-049 Poznań",
             "latitude": 52.40292043180851, 
-            "longitude": 16.994267813851422
+            "longitude": 16.994267813851422,
+            "opening_hours": ["", "", "", "", "", "", ""],
+            "closing_hours": ["", "", "", "", "", "", ""],
+            "price": "",
+            "phone": "",
+            "email": "",
+            "website": "",
+            "rating": 0.0,
+            "reviews_count": 0
         }
     },
     {
@@ -425,7 +681,15 @@
             "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
             "location_details": "ul. Św. Marcin 80, Poznań",
             "latitude": 52.407898814283705, 
-            "longitude": 16.918549350090526
+            "longitude": 16.918549350090526,
+            "opening_hours": ["", "", "", "", "", "", ""],
+            "closing_hours": ["", "", "", "", "", "", ""],
+            "price": "",
+            "phone": "",
+            "email": "",
+            "website": "",
+            "rating": 0.0,
+            "reviews_count": 0
         }
     },
     {
@@ -438,7 +702,15 @@
             "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
             "location_details": "ul. Kościuszki 79, Poznań",
             "latitude": 52.40818802312264, 
-            "longitude": 16.919469145968428
+            "longitude": 16.919469145968428,
+            "opening_hours": ["", "", "", "", "", "", ""],
+            "closing_hours": ["", "", "", "", "", "", ""],
+            "price": "",
+            "phone": "",
+            "email": "",
+            "website": "",
+            "rating": 0.0,
+            "reviews_count": 0
         }
     },
     {
@@ -451,7 +723,15 @@
             "accessibility_info": "PARTIALLY_ACCESSIBLE",
             "location_details": "Wrocławska 21, 61-001 Poznań",
             "latitude": 52.406296878570295, 
-            "longitude": 16.93318608110181
+            "longitude": 16.93318608110181,
+            "opening_hours": ["", "", "", "", "", "", ""],
+            "closing_hours": ["", "", "", "", "", "", ""],
+            "price": "",
+            "phone": "",
+            "email": "",
+            "website": "",
+            "rating": 0.0,
+            "reviews_count": 0
         }
     },
     {
@@ -464,7 +744,15 @@
             "accessibility_info": "PARTIALLY_ACCESSIBLE",
             "location_details": "Al. Niepodległości 8A, 61-717 Poznań",
             "latitude": 52.405581893028845, 
-            "longitude": 16.91896657377292
+            "longitude": 16.91896657377292,
+            "opening_hours": ["", "", "", "", "", "", ""],
+            "closing_hours": ["", "", "", "", "", "", ""],
+            "price": "",
+            "phone": "",
+            "email": "",
+            "website": "",
+            "rating": 0.0,
+            "reviews_count": 0
         }
     },
     {
@@ -477,7 +765,15 @@
             "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
             "location_details": "Wolsztyńska 1, 61-361 Poznań",
             "latitude": 52.4048102382536, 
-            "longitude": 16.883678530338543
+            "longitude": 16.883678530338543,
+            "opening_hours": ["", "", "", "", "", "", ""],
+            "closing_hours": ["", "", "", "", "", "", ""],
+            "price": "",
+            "phone": "",
+            "email": "",
+            "website": "",
+            "rating": 0.0,
+            "reviews_count": 0
         }
     },
     {
@@ -490,7 +786,15 @@
             "accessibility_info": "PARTIALLY_ACCESSIBLE",
             "location_details": "Niezłomnych 2, 61-001 Poznań",
             "latitude": 52.40243265033585, 
-            "longitude": 16.92229365276597
+            "longitude": 16.92229365276597,
+            "opening_hours": ["", "", "", "", "", "", ""],
+            "closing_hours": ["", "", "", "", "", "", ""],
+            "price": "",
+            "phone": "",
+            "email": "",
+            "website": "",
+            "rating": 0.0,
+            "reviews_count": 0
         }
     },
     {
@@ -503,7 +807,15 @@
             "accessibility_info": "PARTIALLY_ACCESSIBLE",
             "location_details": "Małe Garbary 6, 61-756 Poznań",
             "latitude": 52.41159385426509, 
-            "longitude": 16.936045242317352
+            "longitude": 16.936045242317352,
+            "opening_hours": ["", "", "", "", "", "", ""],
+            "closing_hours": ["", "", "", "", "", "", ""],
+            "price": "",
+            "phone": "",
+            "email": "",
+            "website": "",
+            "rating": 0.0,
+            "reviews_count": 0
         }
     },
     {
@@ -516,7 +828,15 @@
             "accessibility_info": "PARTIALLY_ACCESSIBLE",
             "location_details": "Ignacego Paderewskiego 10, 61-770 Poznań",
             "latitude": 52.40794391763604, 
-            "longitude": 16.931115685982764
+            "longitude": 16.931115685982764,
+            "opening_hours": ["", "", "", "", "", "", ""],
+            "closing_hours": ["", "", "", "", "", "", ""],
+            "price": "",
+            "phone": "",
+            "email": "",
+            "website": "",
+            "rating": 0.0,
+            "reviews_count": 0
         }
     },
     {
@@ -529,7 +849,15 @@
             "accessibility_info": "PARTIALLY_ACCESSIBLE",
             "location_details": "Stanisława Taczaka 10, 61-818 Poznań",
             "latitude": 52.40553316001324,
-            "longitude": 16.92087770695298
+            "longitude": 16.92087770695298,
+            "opening_hours": ["", "", "", "", "", "", ""],
+            "closing_hours": ["", "", "", "", "", "", ""],
+            "price": "",
+            "phone": "",
+            "email": "",
+            "website": "",
+            "rating": 0.0,
+            "reviews_count": 0
         }
     },
     {
@@ -542,7 +870,15 @@
             "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
             "location_details": "ul. Rubież 46, Poznań",
             "latitude": 52.454552088235204, 
-            "longitude": 16.954664005243263
+            "longitude": 16.954664005243263,
+            "opening_hours": ["", "", "", "", "", "", ""],
+            "closing_hours": ["", "", "", "", "", "", ""],
+            "price": "",
+            "phone": "",
+            "email": "",
+            "website": "",
+            "rating": 0.0,
+            "reviews_count": 0
         }
     },
 
@@ -556,7 +892,15 @@
             "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
             "location_details": "wejście od ul. Mostowej, Grobla 25, 61-854 Poznań",
             "latitude": 52.4055978687554,
-            "longitude":  16.940656508862578 
+            "longitude":  16.940656508862578,
+            "opening_hours": ["", "", "", "", "", "", ""],
+            "closing_hours": ["", "", "", "", "", "", ""],
+            "price": "",
+            "phone": "",
+            "email": "",
+            "website": "",
+            "rating": 0.0,
+            "reviews_count": 0
         }
     },
     {
@@ -569,7 +913,15 @@
             "accessibility_info": "PARTIALLY_ACCESSIBLE",
             "location_details": "Stary Rynek 45, 61-772 Poznań",
             "latitude": 52.40801930029057, 
-            "longitude": 16.934708580044006
+            "longitude": 16.934708580044006,
+            "opening_hours": ["", "", "", "", "", "", ""],
+            "closing_hours": ["", "", "", "", "", "", ""],
+            "price": "",
+            "phone": "",
+            "email": "",
+            "website": "",
+            "rating": 0.0,
+            "reviews_count": 0
         }
     },
     {
@@ -582,7 +934,15 @@
             "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
             "location_details": "ul. Termalna 1, 61-028 Poznań",
             "latitude": 52.40527723755881, 
-            "longitude": 16.974247937289594
+            "longitude": 16.974247937289594,
+            "opening_hours": ["", "", "", "", "", "", ""],
+            "closing_hours": ["", "", "", "", "", "", ""],
+            "price": "",
+            "phone": "",
+            "email": "",
+            "website": "",
+            "rating": 0.0,
+            "reviews_count": 0
         }
     },
     {
@@ -595,7 +955,15 @@
             "accessibility_info": "NOT_ACCESSIBLE",
             "location_details": "Piaskowa 13E, 61-753 Poznań",
             "latitude": 52.41201717822341, 
-            "longitude": 16.94322620727007
+            "longitude": 16.94322620727007,
+            "opening_hours": ["", "", "", "", "", "", ""],
+            "closing_hours": ["", "", "", "", "", "", ""],
+            "price": "",
+            "phone": "",
+            "email": "",
+            "website": "",
+            "rating": 0.0,
+            "reviews_count": 0
         }
     },
     
@@ -609,7 +977,15 @@
             "accessibility_info": "WHEELCHAIR_ACCESSIBLE",
             "location_details": "Rynek Jeżycki, 61-001 Poznań",
             "latitude": 52.41204335642118,
-            "longitude": 16.903776175017132
+            "longitude": 16.903776175017132,
+            "opening_hours": ["", "", "", "", "", "", ""],
+            "closing_hours": ["", "", "", "", "", "", ""],
+            "price": "",
+            "phone": "",
+            "email": "",
+            "website": "",
+            "rating": 0.0,
+            "reviews_count": 0
         }
     },
     {
@@ -622,7 +998,15 @@
             "accessibility_info": "PARTIALLY_ACCESSIBLE",
             "location_details": "ul. Ewangelicka, 61-856 Poznań",
             "latitude": 52.40585132039982, 
-            "longitude": 16.944932938026085
+            "longitude": 16.944932938026085,
+            "opening_hours": ["", "", "", "", "", "", ""],
+            "closing_hours": ["", "", "", "", "", "", ""],
+            "price": "",
+            "phone": "",
+            "email": "",
+            "website": "",
+            "rating": 0.0,
+            "reviews_count": 0
         }
     },
     {
@@ -635,7 +1019,15 @@
             "accessibility_info": "PARTIALLY_ACCESSIBLE",
             "location_details": "Ratajczaka 26/2, 61-815 Poznań",
             "latitude": 52.40544802596983, 
-            "longitude": 16.92572584281261
+            "longitude": 16.92572584281261,
+            "opening_hours": ["", "", "", "", "", "", ""],
+            "closing_hours": ["", "", "", "", "", "", ""],
+            "price": "",
+            "phone": "",
+            "email": "",
+            "website": "",
+            "rating": 0.0,
+            "reviews_count": 0
         }
     },
     {
@@ -648,7 +1040,15 @@
             "accessibility_info": "NOT_ACCESSIBLE",
             "location_details": "Wileńska, 61-024 Poznań",
             "latitude": 52.4035081739725, 
-            "longitude": 16.976996472357293
+            "longitude": 16.976996472357293,
+            "opening_hours": ["", "", "", "", "", "", ""],
+            "closing_hours": ["", "", "", "", "", "", ""],
+            "price": "",
+            "phone": "",
+            "email": "",
+            "website": "",
+            "rating": 0.0,
+            "reviews_count": 0
         }
     }          
 ]

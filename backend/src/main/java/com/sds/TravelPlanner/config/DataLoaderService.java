@@ -45,6 +45,14 @@ public class DataLoaderService {
             details.setLocationDetails(jsonPlace.getDetails().getLocation_details());
             details.setLatitude(jsonPlace.getDetails().getLatitude());
             details.setLongitude(jsonPlace.getDetails().getLongitude());
+            details.setOpeningHours(jsonPlace.getDetails().getOpening_hours());
+            details.setClosingHours(jsonPlace.getDetails().getClosing_hours());
+            details.setPrice(jsonPlace.getDetails().getPrice());
+            details.setPhone(jsonPlace.getDetails().getPhone());
+            details.setEmail(jsonPlace.getDetails().getEmail());
+            details.setWebsite(jsonPlace.getDetails().getWebsite());
+            details.setRating(jsonPlace.getDetails().getRating());
+            details.setReviewsCount(jsonPlace.getDetails().getReviews_count());
             placeDetailsRepository.save(details);
         }
 

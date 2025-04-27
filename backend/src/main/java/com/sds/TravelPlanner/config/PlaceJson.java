@@ -17,5 +17,13 @@ public class PlaceJson {
         private String location_details;
         private double latitude;
         private double longitude;
+        private String[] opening_hours;
+        private String[] closing_hours;
+        private double price;
+        private String phone;
+        private String email;
+        private String website;
+        private double rating;
+        private int reviews_count;
     }
 }

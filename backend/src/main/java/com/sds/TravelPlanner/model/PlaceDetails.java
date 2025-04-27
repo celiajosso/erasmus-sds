@@ -27,5 +27,21 @@ public class PlaceDetails {
     private double longitude;
 
     private double latitude;
+
+    private String[] openingHours;
+
+    private String[] closingHours;
+
+    private double price;
+
+    private String phone;
+
+    private String email;
+
+    private String website;
+
+    private double rating;
+    
+    private int reviewsCount;
 }
 
