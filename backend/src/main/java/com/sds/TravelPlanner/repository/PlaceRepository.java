@@ -2,9 +2,11 @@ package com.sds.TravelPlanner.repository;
 
 import com.sds.TravelPlanner.model.Place;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+
 import java.util.List;
 
-public interface PlaceRepository extends JpaRepository<Place, Long> {
+public interface PlaceRepository extends JpaRepository<Place, Long>, JpaSpecificationExecutor<Place> {
 
     List<Place> findByCategory(String category);
 
