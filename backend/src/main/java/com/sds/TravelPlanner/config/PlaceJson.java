@@ -25,6 +25,7 @@ public class PlaceJson {
         private String phone;
         private String email;
         private String website;
+        private String instagram;
         private double rating;
         private int reviews_count;
     }

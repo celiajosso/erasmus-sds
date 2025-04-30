@@ -42,6 +42,8 @@ public class PlaceDetails {
 
     private String website;
 
+    private String instagram;
+
     private double rating;
     
     private int reviewsCount;
