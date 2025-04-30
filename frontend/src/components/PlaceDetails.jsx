@@ -41,6 +41,24 @@ export default function PlaceDetailsPage() {
 
   if (!data) return <p className="p-4">Loading...</p>;
 
+  const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+  const formatHours = (open, close) => {
+    if (
+      (!open || !close) ||
+      open === "Closed" || close === "Closed" ||
+      open === "" || close === ""
+    ) {
+      return "Closed";
+    }
+  
+    const openArr = Array.isArray(open) ? open : open.split(" - ");
+    const closeArr = Array.isArray(close) ? close : close.split(" - ");
+  
+    return openArr.map((o, idx) => `${o} - ${closeArr[idx] || "?"}`).join(" & ");
+  };
+  
+
   const place = data.details?.place || data.place || {};
   const details = data.details || {};
 
@@ -99,6 +117,24 @@ export default function PlaceDetailsPage() {
             {details.locationDetails || "No location details provided."}
           </p>
         </div>
+      </div>
+
+      <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-6 transition duration-300 mt-12">
+        <h2 className="text-xl text-[#282c34] font-bold mb-3 flex items-center gap-2">
+          🕒 <span>Opening Hours</span>
+        </h2>
+        <table className="w-full text-gray-600">
+          <tbody>
+            {daysOfWeek.map((day, index) => (
+              <tr key={day} className="border-b last:border-b-0">
+                <td className="py-2 font-medium">{day}</td>
+                <td className="py-2 text-right">
+                  {formatHours(details.openingHours?.[index], details.closingHours?.[index])}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
 
       <div>

@@ -45,8 +45,8 @@ public class DataLoaderService {
             details.setLocationDetails(jsonPlace.getDetails().getLocation_details());
             details.setLatitude(jsonPlace.getDetails().getLatitude());
             details.setLongitude(jsonPlace.getDetails().getLongitude());
-            details.setOpeningHours(jsonPlace.getDetails().getOpening_hours());
-            details.setClosingHours(jsonPlace.getDetails().getClosing_hours());
+            details.setOpeningHours(parseHours(jsonPlace.getDetails().getOpening_hours()));
+            details.setClosingHours(parseHours(jsonPlace.getDetails().getClosing_hours()));
             details.setPrice(jsonPlace.getDetails().getPrice());
             details.setPhone(jsonPlace.getDetails().getPhone());
             details.setEmail(jsonPlace.getDetails().getEmail());
@@ -57,5 +57,21 @@ public class DataLoaderService {
         }
 
         log.info("Loaded places from JSON successfully.");
+    }
+
+    private String[] parseHours(List<Object> rawHours) {
+        String[] result = new String[rawHours.size()];
+        for (int i = 0; i < rawHours.size(); i++) {
+            Object hour = rawHours.get(i);
+            if (hour instanceof String) {
+                result[i] = (String) hour;
+            } else if (hour instanceof List) {
+                List<?> hourList = (List<?>) hour;
+                result[i] = String.join(" - ", hourList.stream().map(Object::toString).toArray(String[]::new));
+            } else {
+                throw new UnsupportedOperationException("Unknown type in opening_hours JSON: " + hour);
+            }
+        }
+        return result;
     }
 }
