@@ -1,5 +1,7 @@
 package com.sds.TravelPlanner.config;
 
+import java.util.List;
+
 import lombok.Data;
 
 @Data
@@ -17,8 +19,8 @@ public class PlaceJson {
         private String location_details;
         private double latitude;
         private double longitude;
-        private String[] opening_hours;
-        private String[] closing_hours;
+        private List<Object> opening_hours;
+        private List<Object> closing_hours;
         private double price;
         private String phone;
         private String email;
