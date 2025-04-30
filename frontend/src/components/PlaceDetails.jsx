@@ -52,10 +52,10 @@ export default function PlaceDetailsPage() {
       return "Closed";
     }
   
-    const openArr = Array.isArray(open) ? open : [open];
-    const closeArr = Array.isArray(close) ? close : [close];
+    const openArr = Array.isArray(open) ? open : open.split(" - ");
+    const closeArr = Array.isArray(close) ? close : close.split(" - ");
   
-    return openArr.map((o, idx) => `${o} - ${closeArr[idx]}`).join(" & ");
+    return openArr.map((o, idx) => `${o} - ${closeArr[idx] || "?"}`).join(" & ");
   };
   
 
