@@ -62,6 +62,8 @@ export default function PlaceDetailsPage() {
   const place = data.details?.place || data.place || {};
   const details = data.details || {};
 
+  const hasAnyContact = details.phone || details.email || details.website || details.instagram;
+
   return (
     <div className="p-6 max-w-4xl mx-auto">
       <h1 className="text-4xl font-bold text-center text-primary mb-6">
@@ -90,7 +92,7 @@ export default function PlaceDetailsPage() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
         <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-6 transition duration-300">
           <h2 className="text-xl text-[#282c34] font-bold mb-3 flex items-center gap-2">
             ⏱️ <span>Duration</span>
@@ -128,7 +130,7 @@ export default function PlaceDetailsPage() {
         </div>
       </div>
 
-      <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-6 transition duration-300 mt-12">
+      <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-6 transition duration-300 mb-6">
         <h2 className="text-xl text-[#282c34] font-bold mb-3 flex items-center gap-2">
           🕒 <span>Opening Hours</span>
         </h2>
@@ -150,9 +152,33 @@ export default function PlaceDetailsPage() {
         <h2 className="text-xl font-bold mb-3 flex items-center gap-2">📍 <span>Map</span></h2>
         <div
           ref={mapContainer}
-          className="h-80 w-full rounded-2xl shadow-lg border border-gray-200"
+          className="h-80 w-full rounded-2xl shadow-lg border border-gray-200 mb-6"
         />
       </div>
+
+      <h2 className="text-xl text-white font-bold mb-3 flex items-center gap-2">
+            📞 <span>Contact</span>
+      </h2>
+
+      {hasAnyContact && (
+        <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-6 transition duration-300 mb-6">
+
+          <ul className="text-gray-600 leading-relaxed space-y-2">
+            {details.phone && (
+              <li><strong>Phone:</strong> {details.phone}</li>
+            )}
+            {details.email && (
+              <li><strong>Email:</strong> <a href={`mailto:${details.email}`} className="text-blue-600 hover:underline">{details.email}</a></li>
+            )}
+            {details.website && (
+              <li><strong>Website:</strong> <a href={`https://${details.website}`} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">{details.website}</a></li>
+            )}
+            {details.instagram && (
+              <li><strong>Instagram:</strong> <a href={`https://instagram.com/${details.instagram}`} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">@{details.instagram}</a></li>
+            )}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }

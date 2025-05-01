@@ -51,6 +51,7 @@ public class DataLoaderService {
             details.setPhone(jsonPlace.getDetails().getPhone());
             details.setEmail(jsonPlace.getDetails().getEmail());
             details.setWebsite(jsonPlace.getDetails().getWebsite());
+            details.setInstagram(jsonPlace.getDetails().getInstagram());
             details.setRating(jsonPlace.getDetails().getRating());
             details.setReviewsCount(jsonPlace.getDetails().getReviews_count());
             placeDetailsRepository.save(details);
