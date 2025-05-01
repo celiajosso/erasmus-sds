@@ -34,7 +34,7 @@ public class PlaceDetails {
 
     private String[] closingHours;
 
-    private double price;
+    private String price;
 
     private String phone;
 
