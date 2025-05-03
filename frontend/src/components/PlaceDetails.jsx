@@ -7,7 +7,7 @@ import "maplibre-gl/dist/maplibre-gl.css";
 export default function PlaceDetailsPage() {
   const { id: placeId } = useParams();
   const mapContainer = useRef(null);
-  const mapRef = useRef(null); // Prevent multiple map initializations
+  const mapRef = useRef(null);
   const [data, setData] = useState(null);
   const apiUrl = process.env.REACT_APP_API_URL;
 
@@ -24,7 +24,7 @@ export default function PlaceDetailsPage() {
 
     mapRef.current = new maplibregl.Map({
       container: mapContainer.current,
-      style: "https://raw.githubusercontent.com/go2garret/maps/main/src/assets/json/openStreetMap.json", // You can replace with your own style
+      style: "https://raw.githubusercontent.com/go2garret/maps/main/src/assets/json/openStreetMap.json", 
       center: [longitude, latitude],
       zoom: 14,
     });
