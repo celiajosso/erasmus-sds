@@ -8,7 +8,7 @@ export default function PlaceDetailsPage() {
   const { id: placeId } = useParams();
   const mapContainer = useRef(null);
   const mapRef = useRef(null); // Prevent multiple map initializations
-  const [data, setData] = useState(null);
+  const [data, setData] = useState({ place: null, details: null });
   const apiUrl = process.env.REACT_APP_API_URL;
 
   const formatDuration = (minutes) => {
@@ -20,12 +20,15 @@ export default function PlaceDetailsPage() {
 
   useEffect(() => {
     axios.get(`${apiUrl}/api/places/${placeId}/details`)
-      .then(res => setData(res.data))
+      .then(res => {
+        // Assuming response is { place: { ... }, details: { ... } }
+        setData(res.data);
+      })
       .catch(err => console.error(err));
   }, [placeId, apiUrl]);
 
   useEffect(() => {
-    if (!data?.details?.latitude || !data?.details?.longitude || mapRef.current) return;
+    if (!data.details?.latitude || !data.details?.longitude || mapRef.current) return;
 
     const { latitude, longitude } = data.details;
 
@@ -37,9 +40,9 @@ export default function PlaceDetailsPage() {
     });
 
     new maplibregl.Marker().setLngLat([longitude, latitude]).addTo(mapRef.current);
-  }, [data]);
+  }, [data.details]);
 
-  if (!data) return <p className="p-4">Loading...</p>;
+  if (!data.place || !data.details) return <p className="p-4">Loading...</p>;
 
   const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
@@ -58,9 +61,7 @@ export default function PlaceDetailsPage() {
     return openArr.map((o, idx) => `${o} - ${closeArr[idx] || "?"}`).join(" & ");
   };
   
-
-  const place = data.details?.place || data.place || {};
-  const details = data.details || {};
+  const { place, details } = data;
 
   const hasAnyContact = details.phone || details.email || details.website || details.instagram;
 
@@ -98,7 +99,7 @@ export default function PlaceDetailsPage() {
             ⏱️ <span>Duration</span>
           </h2>
           <p className="text-gray-600 leading-relaxed">
-          {formatDuration(details.duration) || "No duration available."}
+            {formatDuration(details.duration) || "No duration available."}
           </p>
         </div>
 
@@ -148,12 +149,11 @@ export default function PlaceDetailsPage() {
       </div>
 
       <h2 className="text-xl text-white font-bold mb-3 flex items-center gap-2">
-            📞 <span>Contact</span>
+        📞 <span>Contact</span>
       </h2>
 
       {hasAnyContact && (
         <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-6 transition duration-300 mb-6">
-
           <ul className="text-gray-600 leading-relaxed space-y-2">
             {details.phone && (
               <li><strong>Phone:</strong> {details.phone}</li>

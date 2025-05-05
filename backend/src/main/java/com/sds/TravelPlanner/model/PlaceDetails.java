@@ -1,7 +1,5 @@
 package com.sds.TravelPlanner.model;
 
-import java.util.List;
-
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -19,7 +17,7 @@ public class PlaceDetails {
 
     private String description;
 
-    private int duration; //duration in minutes
+    private int duration;
 
     @Enumerated(EnumType.STRING)
     private Accessibility accessibilityInfo;

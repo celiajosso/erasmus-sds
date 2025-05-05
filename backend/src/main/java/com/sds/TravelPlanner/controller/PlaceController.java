@@ -1,24 +1,29 @@
 package com.sds.TravelPlanner.controller;
 
-import com.sds.TravelPlanner.model.Place;
-import com.sds.TravelPlanner.service.PlaceService;
+import com.sds.TravelPlanner.controller.dto.PlacesDto;
+import com.sds.TravelPlanner.controller.mapper.PlaceMapper;
+import com.sds.TravelPlanner.service.PlaceServiceImpl;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin("*")
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/places")
-@CrossOrigin("*")
 public class PlaceController {
 
-    private final PlaceService placeService;
+    private final PlaceMapper placeMapper;
+    private final PlaceServiceImpl placeServiceImpl;
 
     @GetMapping
-    public List<Place> getPlaces(@RequestParam(required = false) String name,
-                                 @RequestParam(required = false) List<String> category) {
-        return placeService.getAllPlaces(name, category);
+    public ResponseEntity<PlacesDto> getPlaces(@RequestParam(required = false) String name,
+                                               @RequestParam(required = false) List<String> category) {
+        var places = placeServiceImpl.getAllPlaces(name, category);
+
+        return ResponseEntity.ok(placeMapper.toResponse(places));
     }
 
 }

@@ -1,13 +1,11 @@
 package com.sds.TravelPlanner.controller;
 
-import com.sds.TravelPlanner.repository.PlaceDetailsRepository;
-import com.sds.TravelPlanner.repository.PlaceRepository;
+import com.sds.TravelPlanner.controller.dto.PlaceDetailsDto;
+import com.sds.TravelPlanner.controller.mapper.PlaceDetailsMapper;
+import com.sds.TravelPlanner.service.PlaceDetailsServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.HashMap;
-import java.util.Map;
 
 @CrossOrigin("*")
 @RestController
@@ -15,22 +13,14 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class PlaceDetailsController {
 
-    private final PlaceRepository placeRepository;
-    private final PlaceDetailsRepository placeDetailsRepository;
+    private final PlaceDetailsMapper placeDetailsMapper;
+    private final PlaceDetailsServiceImpl placeDetailsServiceImpl;
 
     @GetMapping("/{id}/details")
-    public ResponseEntity<?> getPlaceWithDetails(@PathVariable Long id) {
-        var place = placeRepository.findById(id);
-        var details = placeDetailsRepository.findByPlaceId(id);
+    public ResponseEntity<PlaceDetailsDto> getPlaceWithDetails(@PathVariable Long id) {
+        var details = placeDetailsServiceImpl.getDetails(id);
 
-        if (place.isPresent() && details.isPresent()) {
-            Map<String, Object> response = new HashMap<>();
-            response.put("place", place.get());
-            response.put("details", details.get());
-            return ResponseEntity.ok(response);
-        }
-
-        return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(placeDetailsMapper.toResponse(details));
     }
 }
 
