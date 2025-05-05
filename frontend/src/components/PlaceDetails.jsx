@@ -124,7 +124,7 @@ export default function PlaceDetailsPage() {
           <h2 className="text-xl text-[#282c34] font-bold mb-3 flex items-center gap-2">
             💳 <span>Prices</span>
           </h2>
-          <p className="text-gray-600 leading-relaxed">
+          <p className="text-gray-600 leading-relaxed whitespace-pre-line">
             {details.price || "No prices details provided."}
           </p>
         </div>
