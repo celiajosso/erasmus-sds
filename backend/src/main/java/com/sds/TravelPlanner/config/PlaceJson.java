@@ -21,7 +21,7 @@ public class PlaceJson {
         private double longitude;
         private List<Object> opening_hours;
         private List<Object> closing_hours;
-        private double price;
+        private String price;
         private String phone;
         private String email;
         private String website;
