@@ -15,7 +15,6 @@ const App = () => {
         <Route path="/favorites" element={<FavoriteList />} />
         <Route path="/playlists" element={<PlaylistList />} />
         <Route path="/playlists/:id" element={<PlaylistDetails />} />
-
       </Routes>
     </Router>
   );

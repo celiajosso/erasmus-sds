@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 
+
 const PlaceList = () => {
   const [places, setPlaces] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -226,7 +227,7 @@ const PlaceList = () => {
 
   return (
     <div className="p-6">
-<div className="flex items-center justify-between mb-12">
+      <div className="flex items-center justify-between mb-12">
         <h1 className="text-4xl font-bold text-center text-primary flex-1">🌍 Explore Places</h1>
 
         <div className="relative">
