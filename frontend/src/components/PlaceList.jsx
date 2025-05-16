@@ -195,7 +195,7 @@ const PlaceList = () => {
       );
   
       if (!response.ok) {
-        console.error("Erreur lors de la création de la playlist");
+        console.error("Error when creating playlist");
         return;
       }
   
@@ -209,7 +209,7 @@ const PlaceList = () => {
       );
   
       if (!addResponse.ok) {
-        console.error("Erreur lors de l'ajout du lieu à la playlist");
+        console.error("Error when adding to playlist");
         return;
       }
   
@@ -217,7 +217,7 @@ const PlaceList = () => {
       setNewPlaylistName("");
       setShowModal(false);
     } catch (err) {
-      console.error("Erreur réseau :", err);
+      console.error("Network error :", err);
     }
   };
 
@@ -393,7 +393,7 @@ const PlaceList = () => {
 {showModal && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-white rounded-xl p-6 w-full max-w-md">
-            <h2 className="text-xl font-bold mb-4 text-blue-500">Ajouter à une playlist</h2>  
+            <h2 className="text-xl font-bold mb-4 text-blue-500">Add to a playlist</h2>  
             <ul className="mb-4 max-h-60 overflow-y-auto">
               {playlists.map((pl) => (
                 <li key={pl.id}>
@@ -408,16 +408,16 @@ const PlaceList = () => {
             </ul>
   
             <div className="border-t pt-4 mt-4">
-              <h3 className="text-lg font-semibold mb-2  text-blue-500">Nouvelle playlist</h3>
+              <h3 className="text-lg font-semibold mb-2  text-blue-500">Playlist name</h3>
               <input
                 type="text"
                 value={newPlaylistName}
                 onChange={(e) => setNewPlaylistName(e.target.value)}
                 className="input input-bordered w-full mb-2"
-                placeholder="Nom de la playlist"
+                placeholder="Playlist name"
               />
               <button className="btn btn-primary w-full" onClick={createPlaylistAndAddPlace}>
-                Créer et ajouter
+                Create and add
               </button>
             </div>
   
@@ -425,7 +425,7 @@ const PlaceList = () => {
               className="btn btn-error mt-4 w-full"
               onClick={() => setShowModal(false)}
             >
-              Annuler
+              Cancel
             </button>
           </div>
         </div>

@@ -85,7 +85,7 @@ const PlaylistDetails = () => {
                             if (isLoggedIn) {
                               setIsLoggedIn(false); // Déconnexion
                             } else {
-                              setShowAuthModal(true); // Ouvre le modal de connexion
+                              setShowAuthModal(true); // Opens modal connection
                             }
                           }}
                         >
