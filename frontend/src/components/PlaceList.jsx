@@ -29,7 +29,7 @@ const PlaceList = () => {
       try {
         const result = await axios.get(`${apiUrl}/api/places`, { params });
         setPlaces(result.data.places);
-        const allCategories = [...new Set(result.data.map(p => p.category))];
+        const allCategories = [...new Set(result.data.places.map(p => p.category))];
         setCategories(allCategories);
         setLoading(false);
       } catch (err) {
