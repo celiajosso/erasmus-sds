@@ -193,7 +193,7 @@ export function PlannerForm({
                 )} </div>
                 </div>
 
-      <div className="space-y-4">
+      <div className="space-y-4 max-w-[400px] mx-auto">
         <Label className="text-lg">City</Label>
         <Input
           id="city"
@@ -202,6 +202,7 @@ export function PlannerForm({
           onChange={(e) => setCityName(e.target.value)}
           className="text-white"
         />
+        <br/>
 
         <Label className="text-lg">Select categories</Label>
         <div className="flex flex-wrap gap-4">
@@ -216,21 +217,22 @@ export function PlannerForm({
             </div>
           ))}
         </div>
+        <br/>
 
         <Label className="text-lg">Budget</Label>
         <div className="flex items-center gap-2">
         <Input
           type="number"
           min="0"
-          id="city"
-          placeholder="Enter an budget"
+          id="budget"
+          placeholder="Enter a budget"
           value={budget}
-          onChange={(e) => setCityName(e.target.value)}
+          onChange={(e) => setBudget(e.target.value)}
           className="text-white"
         />
 
         <Select>
-            <SelectTrigger className="w-[180px]">
+            <SelectTrigger className="w-[150px]">
               <SelectValue placeholder="Select a currency" />
             </SelectTrigger>
             <SelectContent>
@@ -241,16 +243,17 @@ export function PlannerForm({
               </SelectGroup>
             </SelectContent>
           </Select>
-          </div>       
+          </div>  
+          <br/>     
 
-        <Label className="text-lg">Select date range</Label>
+        <Label className="text-lg">Select date range</Label><br />
         <Popover>
           <PopoverTrigger asChild>
             <Button
               id="date"
               variant={"outline"}
               className={cn(
-                "w-[300px] justify-start text-left font-normal bg-transparent text-white",
+                "w-full justify-start text-left font-normal bg-transparent text-white",
                 !date && "text-muted-foreground"
               )}
             >
@@ -276,12 +279,12 @@ export function PlannerForm({
               defaultMonth={date?.from}
               selected={date}
               onSelect={setDate}
-              numberOfMonths={2}
+              numberOfMonths={1}
             />
           </PopoverContent>
-        </Popover>
-
-        <Button onClick={handleSearch} >
+        </Popover><br/><br/>
+          
+        <Button className="block mx-auto" onClick={handleSearch} >
           Search
         </Button>
       </div>
