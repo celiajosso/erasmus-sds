@@ -64,6 +64,15 @@ const FavoriteList = () => {
                 </li>
                 <li>
                   <Link
+                    to={`/planner`}
+                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    My Planner
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     to={`/`}
                     className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
                     onClick={() => setIsMenuOpen(false)}
@@ -71,6 +80,7 @@ const FavoriteList = () => {
                     Home
                   </Link>
                 </li>
+                
               </ul>
             </div>
           )}
@@ -113,7 +123,7 @@ const FavoriteList = () => {
               </figure>
               <div className="card-body">
                 <h2 className="card-title">{fav.place.name}</h2>
-                <div className="badge badge-secondary">{fav.place.category}</div>
+                <div className="badge badge-secondary p-2">{fav.place.category}</div>
                 <div className="flex justify-between gap-4 mt-4">
                   <Link to={`/places/${fav.place.id}/details`} className="btn btn-primary">
                     See Details

@@ -228,7 +228,7 @@ const PlaceList = () => {
   return (
     <div className="p-6">
       <div className="flex items-center justify-between mb-12">
-        <h1 className="text-4xl font-bold text-center text-primary flex-1">🌍 Explore Places</h1>
+        <h1 className="text-4xl font-bold text-center text-white flex-1">🌍 Explore Places</h1>
 
         <div className="relative">
           <button
@@ -256,6 +256,15 @@ const PlaceList = () => {
                     onClick={() => setIsMenuOpen(false)}
                   >
                     My Playlists
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to={`/planner`}
+                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    My Planner
                   </Link>
                 </li>
                 <li>
@@ -352,7 +361,7 @@ const PlaceList = () => {
                 </figure>
                 <div className="card-body">
               <h2 className="card-title">{place.name}</h2>
-              <div className="badge badge-secondary">{place.category}</div>
+              <div className="badge badge-secondary p-2">{place.category}</div>
               <div className="flex justify-between mt-4 gap-1 ">
                 <Link to={`/places/${place.id}/details`} key={place.id} className="btn btn-primary">See Details</Link>
                 <button
