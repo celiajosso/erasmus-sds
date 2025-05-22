@@ -16,6 +16,16 @@ import { Input } from "../components/ui/input"
 import { Checkbox } from "../components/ui/checkbox"
 import { Label } from "../components/ui/label"
 
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "../components/ui/select"
+
 import  { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
@@ -34,7 +44,8 @@ export function PlannerForm({
   const [loading, setLoading] = useState(false);
   const [categories, setCategories] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([]);
-  const [searchName, setSearchName] = useState('');
+  const [cityName, setCityName] = useState('');
+  const [budget, setBudget] = useState('');
 
   const apiUrl = process.env.REACT_APP_API_URL;
   const navigate = useNavigate(); // Use useNavigate instead of useHistory
@@ -49,7 +60,7 @@ export function PlannerForm({
     const nameParam = params.get('name');
     const categoriesParam = params.getAll('category');
 
-    if (nameParam) setSearchName(nameParam);
+    if (nameParam) setCityName(nameParam);
     if (categoriesParam.length) setSelectedCategories(categoriesParam);
 
     // Fetch places (with or without filters)
@@ -74,7 +85,7 @@ export function PlannerForm({
   // Handle the search button click and update URL with search filters
   const handleSearch = () => {
     const params = new URLSearchParams();
-    if (searchName) params.append('name', searchName);
+    if (cityName) params.append('name', cityName);
     selectedCategories.forEach(cat => params.append('category', cat));
 
     navigate({ search: params.toString() });  // Use navigate to update the URL with new search filters
@@ -101,7 +112,7 @@ export function PlannerForm({
     const nameParam = params.get('name');
     const categoriesParam = params.getAll('category');
 
-    if (nameParam) setSearchName(nameParam);
+    if (nameParam) setCityName(nameParam);
     if (categoriesParam.length) setSelectedCategories(categoriesParam);
 
     // Fetch places (with or without filters)
@@ -122,23 +133,6 @@ export function PlannerForm({
 
    
   }, [apiUrl, location.search]);
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-
-  
-
 
   return (
     <div className={cn("p-6 space-y-6 text-white", className)}>
@@ -200,13 +194,13 @@ export function PlannerForm({
                 </div>
 
       <div className="space-y-4">
-        <Label htmlFor="search" className="text-lg">Search by name</Label>
+        <Label className="text-lg">City</Label>
         <Input
-          id="search"
-          placeholder="Enter a place name"
-          value={searchName}
-          onChange={(e) => setSearchName(e.target.value)}
-          className="text-black"
+          id="city"
+          placeholder="Enter a city"
+          value={cityName}
+          onChange={(e) => setCityName(e.target.value)}
+          className="text-white"
         />
 
         <Label className="text-lg">Select categories</Label>
@@ -223,6 +217,32 @@ export function PlannerForm({
           ))}
         </div>
 
+        <Label className="text-lg">Budget</Label>
+        <div className="flex items-center gap-2">
+        <Input
+          type="number"
+          min="0"
+          id="city"
+          placeholder="Enter an budget"
+          value={budget}
+          onChange={(e) => setCityName(e.target.value)}
+          className="text-white"
+        />
+
+        <Select>
+            <SelectTrigger className="w-[180px]">
+              <SelectValue placeholder="Select a currency" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                <SelectLabel>Currencies</SelectLabel>
+                <SelectItem value="eur">EUR</SelectItem>
+                <SelectItem value="pln">PLN</SelectItem>
+              </SelectGroup>
+            </SelectContent>
+          </Select>
+          </div>       
+
         <Label className="text-lg">Select date range</Label>
         <Popover>
           <PopoverTrigger asChild>
@@ -230,7 +250,7 @@ export function PlannerForm({
               id="date"
               variant={"outline"}
               className={cn(
-                "w-[300px] justify-start text-left font-normal bg-white text-black",
+                "w-[300px] justify-start text-left font-normal bg-transparent text-white",
                 !date && "text-muted-foreground"
               )}
             >
@@ -261,7 +281,7 @@ export function PlannerForm({
           </PopoverContent>
         </Popover>
 
-        <Button onClick={handleSearch} className="mt-4 bg-blue-600 hover:bg-blue-700 text-white">
+        <Button onClick={handleSearch} >
           Search
         </Button>
       </div>
