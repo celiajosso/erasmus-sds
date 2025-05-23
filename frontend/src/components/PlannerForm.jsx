@@ -40,47 +40,15 @@ export function PlannerForm({
     from: new Date(),
     to: new Date(),
   })
-    const [places, setPlaces] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [categories, setCategories] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([]);
-  const [cityName, setCityName] = useState('');
+  const [cityName, setCityName] = useState('Poznań');
   const [budget, setBudget] = useState('');
+  const [currency, setCurrency] = useState('');
 
   const apiUrl = process.env.REACT_APP_API_URL;
   const navigate = useNavigate(); // Use useNavigate instead of useHistory
   const location = useLocation();
-
-  // Fetch all places and categories on initial load
-  useEffect(() => {
-    setLoading(true);
-
-    // Read the search parameters from the URL
-    const params = new URLSearchParams(location.search);
-    const nameParam = params.get('name');
-    const categoriesParam = params.getAll('category');
-
-    if (nameParam) setCityName(nameParam);
-    if (categoriesParam.length) setSelectedCategories(categoriesParam);
-
-    // Fetch places (with or without filters)
-    const fetchPlaces = async () => {
-      try {
-        const result = await axios.get(`${apiUrl}/api/places`, { params });
-        setPlaces(result.data.places);
-        const allCategories = [...new Set(result.data.places.map(p => p.category))];
-        setCategories(allCategories);
-        setLoading(false);
-      } catch (err) {
-        console.error("Failed to fetch places:", err);
-        setLoading(false);
-      }
-    };
-    
-    fetchPlaces();
-
-    
-  }, [apiUrl, location.search]);
 
   // Handle the search button click and update URL with search filters
   const handleSearch = () => {
@@ -96,16 +64,13 @@ export function PlannerForm({
     prevSelected.includes(category)
       ? prevSelected.filter((c) => c !== category)
       : [...prevSelected, category]
-  );
-};
+    );
+  };
 
- 
   const [isMenuOpen, setIsMenuOpen] = useState(false); 
-
 
   // Fetch all places and categories on initial load
   useEffect(() => {
-    setLoading(true);
 
     // Read the search parameters from the URL
     const params = new URLSearchParams(location.search);
@@ -119,19 +84,13 @@ export function PlannerForm({
     const fetchPlaces = async () => {
       try {
         const result = await axios.get(`${apiUrl}/api/places`, { params });
-        setPlaces(result.data.places);
         const allCategories = [...new Set(result.data.places.map(p => p.category))];
         setCategories(allCategories);
-        setLoading(false);
       } catch (err) {
         console.error("Failed to fetch places:", err);
-        setLoading(false);
       }
     };
-    
     fetchPlaces();
-
-   
   }, [apiUrl, location.search]);
 
   return (
@@ -197,10 +156,12 @@ export function PlannerForm({
         <Label className="text-lg">City</Label>
         <Input
           id="city"
-          placeholder="Enter a city"
+          name="city"
+          // placeholder="Enter a city"
           value={cityName}
-          onChange={(e) => setCityName(e.target.value)}
-          className="text-white"
+          // onChange={(e) => setCityName(e.target.value)}
+          className="text-white cursor-not-allowed"
+          disabled
         />
         <br/>
 
@@ -210,6 +171,7 @@ export function PlannerForm({
             <div key={category} className="flex items-center gap-2">
               <Checkbox
                 id={category}
+                name={category}
                 checked={selectedCategories.includes(category)}
                 onCheckedChange={() => handleToggleCategory(category)}
               />
@@ -224,6 +186,7 @@ export function PlannerForm({
         <Input
           type="number"
           min="0"
+          name="budget"
           id="budget"
           placeholder="Enter a budget"
           value={budget}
@@ -231,18 +194,18 @@ export function PlannerForm({
           className="text-white"
         />
 
-        <Select>
-            <SelectTrigger className="w-[150px]">
-              <SelectValue placeholder="Select a currency" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-                <SelectLabel>Currencies</SelectLabel>
-                <SelectItem value="eur">EUR</SelectItem>
-                <SelectItem value="pln">PLN</SelectItem>
-              </SelectGroup>
-            </SelectContent>
-          </Select>
+        <Select value={currency} onValueChange={setCurrency}>
+          <SelectTrigger className="w-[110px]">
+            <SelectValue placeholder="Currency" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              <SelectLabel>Currencies</SelectLabel>
+              <SelectItem value="eur">EUR</SelectItem>
+              <SelectItem value="pln">PLN</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
           </div>  
           <br/>     
 
@@ -250,7 +213,6 @@ export function PlannerForm({
         <Popover>
           <PopoverTrigger asChild>
             <Button
-              id="date"
               variant={"outline"}
               className={cn(
                 "w-full justify-start text-left font-normal bg-transparent text-white",
@@ -279,7 +241,7 @@ export function PlannerForm({
               defaultMonth={date?.from}
               selected={date}
               onSelect={setDate}
-              numberOfMonths={1}
+              numberOfMonths={2}
             />
           </PopoverContent>
         </Popover><br/><br/>
