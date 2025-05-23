@@ -117,7 +117,7 @@ const PlaylistDetails = () => {
             </figure>
             <div className="card-body">
               <h2 className="card-title">{place.name}</h2>
-              <div className="badge badge-secondary">{place.category}</div>
+              <div className="badge badge-secondary p-2">{place.category}</div>
               <div className="flex justify-between mt-4 gap-1 ">
 
               <Link to={`/places/${place.id}/details`} className="btn btn-primary">See Details</Link>

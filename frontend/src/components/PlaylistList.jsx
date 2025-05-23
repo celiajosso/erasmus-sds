@@ -32,9 +32,9 @@ const PlaylistList = () => {
   };
 
   return (
-    <div className="p-6">
+    <div className="p-6 bg-background">
       <div className="flex items-center justify-between mb-12">
-        <h1 className="text-4xl font-bold text-center text-primary flex-1">Your Playlists</h1>
+        <h1 className="text-4xl font-bold text-center text-white flex-1">Your Playlists</h1>
 
         <div className="relative">
           <button
@@ -63,6 +63,15 @@ const PlaylistList = () => {
                     onClick={() => setIsMenuOpen(false)}
                   >
                     My Playlists
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to={`/planner`}
+                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    My Planner
                   </Link>
                 </li>
                 <li>
