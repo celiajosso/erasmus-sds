@@ -67,10 +67,10 @@ export default function PlaceDetailsPage() {
 
   return (
     <div className="p-6 max-w-4xl mx-auto">
-      <h1 className="text-4xl font-bold text-center text-primary mb-6">
+      <h1 className="text-4xl font-bold text-center text-white mb-6">
         {place.name || "Unknown Place"}
       </h1>
-      <div className="badge badge-secondary">{place.category}</div>
+      <div className="badge badge-secondary p-2">{place.category}</div>
 
       <div className="rounded-xl overflow-hidden shadow-xl my-8">
         <img
