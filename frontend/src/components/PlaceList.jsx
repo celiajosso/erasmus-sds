@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import NavMenu from './general/Nav';
+import Header from './general/Header';
 
 const PlaceList = () => {
   const [places, setPlaces] = useState([]);
@@ -227,10 +227,12 @@ const PlaceList = () => {
 
   return (
     <div className="p-6">
-      <div className="flex items-center justify-between mb-12">
-        <h1 className="text-4xl font-bold text-center text-white flex-1">🌍 Explore Places</h1>
-        <NavMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-      </div>
+      <Header
+        title="🌍 Explore Places"
+        isMenuOpen={isMenuOpen}
+        setIsMenuOpen={setIsMenuOpen}
+      />
+
       {/* Search Controls */}
       <div className="flex flex-col sm:flex-row flex-wrap gap-4 mb-6 justify-center items-center">
         <input

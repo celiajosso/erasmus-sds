@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import NavMenu from './general/Nav';
+import Header from './general/Header';
 
 const PlaylistList = () => {
   const [playlists, setPlaylists] = useState([]);
@@ -34,11 +34,11 @@ const PlaylistList = () => {
 
   return (
     <div className="p-6 bg-background">
-      <div className="flex items-center justify-between mb-12">
-        <h1 className="text-4xl font-bold text-center text-white flex-1">Your Playlists</h1>
-
-        <NavMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-      </div>
+      <Header
+        title="Your Playlists"
+        isMenuOpen={isMenuOpen}
+        setIsMenuOpen={setIsMenuOpen}
+      />
 
       {playlists.length === 0 ? (
         <div className="flex flex-col items-center justify-center mt-20 text-gray-600">

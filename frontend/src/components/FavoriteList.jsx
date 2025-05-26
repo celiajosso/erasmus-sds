@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import NavMenu from './general/Nav';
+import Header from './general/Header';
 
 const FavoriteList = () => {
   const [favorites, setFavorites] = useState([]);
@@ -29,10 +29,11 @@ const FavoriteList = () => {
   
   return (
     <div className="p-6">
-      <div className="flex items-center justify-between mb-12">
-        <h1 className="text-4xl font-bold text-center text-primary text-red-400 flex-1">Your Favorites</h1>
-        <NavMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-      </div>
+      <Header
+        title="Your Favorites"
+        isMenuOpen={isMenuOpen}
+        setIsMenuOpen={setIsMenuOpen}
+      />
   
       {favorites.length === 0 ? (
   <div className="flex flex-col items-center justify-center mt-20 text-red-400">

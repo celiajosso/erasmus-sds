@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import NavMenu from './general/Nav';
+import Header from './general/Header';
 
 
 const PlaylistDetails = () => {
@@ -39,12 +39,11 @@ const PlaylistDetails = () => {
 
   return (
     <div className="p-6">
-      <div className="flex items-center justify-between mb-12">
-      <h1 className="text-4xl font-bold text-center text-primary flex-1">{playlist.name}</h1>
-      
-
-      <NavMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-      </div>
+          <Header
+        title={playlist.name}
+        isMenuOpen={isMenuOpen}
+        setIsMenuOpen={setIsMenuOpen}
+      />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         {playlist.places.map((place) => (

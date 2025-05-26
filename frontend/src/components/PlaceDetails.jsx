@@ -3,7 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
-import NavMenu from "./general/Nav";
+import Header from './general/Header';
 
 export default function PlaceDetailsPage() {
   const { id: placeId } = useParams();
@@ -70,12 +70,12 @@ export default function PlaceDetailsPage() {
 
   return (
     <div className="p-6">
-      <div className="flex items-center justify-between mb-12">
-        <h1 className="text-4xl font-bold text-center text-primary text-white flex-1">
-        {place.name || "Unknown Place"}
-      </h1>
-      <NavMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-      </div>
+      <Header
+        title={place.name}
+        isMenuOpen={isMenuOpen}
+        setIsMenuOpen={setIsMenuOpen}
+      />
+      
       
       <div className="badge badge-secondary p-2">{place.category}</div>
       <div className="rounded-xl overflow-hidden shadow-xl my-8">

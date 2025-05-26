@@ -30,7 +30,7 @@ import  { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 
-import NavMenu from './general/Nav';
+import Header from './general/Header';
 
 export function PlannerForm({
   className,
@@ -94,12 +94,13 @@ export function PlannerForm({
 
   return (
     <div className={cn("p-6 space-y-6 text-white", className)}>
-      <div className="flex items-center justify-between mb-12">
+      <Header
+        title="🗓️ Plan Your Trip"
+        isMenuOpen={isMenuOpen}
+        setIsMenuOpen={setIsMenuOpen}
+      />
 
-      <h1 className="text-4xl font-bold text-center text-white flex-1">🗓️ Plan Your Trip</h1>
-
-      <NavMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-                </div>
+    
 
       <div className="space-y-4 max-w-[400px] mx-auto">
         <Label className="text-lg">City</Label>
