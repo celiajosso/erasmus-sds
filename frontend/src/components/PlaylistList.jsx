@@ -1,7 +1,12 @@
-import { Link } from "react-router-dom";
+import { usePlaylistList } from "./scripts/PlaylistListLogic";
+
 import Header from "./general/Header";
 import GoBack from "./general/GoBack";
-import { usePlaylistList } from "./scripts/PlaylistListLogic";
+
+import EmptyState from "./pages/FavoritePlaylistList/EmptyState";
+import PlaylistCard from "./pages/FavoritePlaylistList/PlaylistCard";
+
+const plusIcon = <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" />;
 
 const PlaylistList = () => {
   const userId = "user123";
@@ -18,85 +23,19 @@ const PlaylistList = () => {
       <GoBack />
 
       {playlists.length === 0 ? (
-        <div className="flex flex-col items-center justify-center mt-20 text-gray-600">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-24 w-24 mb-4 animate-spin-slow text-indigo-400"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <circle
-              className="opacity-25"
-              cx="12"
-              cy="12"
-              r="10"
-              stroke="currentColor"
-              strokeWidth="4"
-            />
-            <path
-              className="opacity-75"
-              fill="currentColor"
-              d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
-            />
-          </svg>
-          <p className="text-2xl font-semibold mb-2">No playlists found</p>
-          <p className="text-gray-400 mb-6">
-            Start creating your favorite playlists!
-          </p>
-          <Link
-            to={`/`}
-            className="px-6 py-2 bg-indigo-500 hover:bg-indigo-600 text-white rounded-md transition"
-          >
-            Explore places
-          </Link>
-        </div>
+        <EmptyState
+          icon={plusIcon}
+          title="No playlists yet"
+          subtitle="Start creating your favorite playlists!"
+        />
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {playlists.map((playlist) => (
-            <div
+            <PlaylistCard
               key={playlist.id}
-              className="card bg-base-100 shadow-xl hover:shadow-2xl transition duration-300"
-            >
-              <figure>
-                <img
-                  src={
-                    playlist.places && playlist.places.length > 0
-                      ? playlist.places[0].imageUrl
-                      : "https://via.placeholder.com/400x200?text=No+Image"
-                  }
-                  alt={`${playlist.name} cover`}
-                  className="w-full h-40 object-cover"
-                  onError={(e) => {
-                    e.target.className = "w-32 h-32 object-cover mx-auto";
-                    e.target.onerror = null;
-                    e.target.src =
-                      "https://cdn-icons-png.flaticon.com/512/11696/11696711.png";
-                  }}
-                />
-              </figure>
-              <div className="card-body">
-                <h2 className="card-title text-xl">{playlist.name}</h2>
-                <p className="text-sm text-gray-500">
-                  {playlist.places?.length ?? 0} place
-                  {(playlist.places?.length ?? 0) !== 1 && "s"}
-                </p>
-                <div className="flex justify-between items-center mt-4">
-                  <Link
-                    to={`/playlists/${playlist.id}`}
-                    className="btn btn-primary btn-sm"
-                  >
-                    View
-                  </Link>
-                  <button
-                    className="btn btn-error btn-sm"
-                    onClick={() => handleDeletePlaylist(playlist.id)}
-                  >
-                    Delete
-                  </button>
-                </div>
-              </div>
-            </div>
+              playlist={playlist}
+              onDelete={handleDeletePlaylist}
+            />
           ))}
         </div>
       )}

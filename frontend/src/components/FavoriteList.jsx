@@ -1,7 +1,14 @@
-import { Link } from "react-router-dom";
+import useFavoriteListLogic from "./scripts/FavoriteListLogic";
+
 import Header from "./general/Header";
 import GoBack from "./general/GoBack";
-import useFavoriteListLogic from "./scripts/FavoriteListLogic";
+
+import FavoriteCard from "./pages/FavoritePlaylistList/FavoriteCard";
+import EmptyState from "./pages/FavoritePlaylistList/EmptyState";
+
+const heartIcon = (
+  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+);
 
 const FavoriteList = () => {
   const { favorites, handleDelete, isMenuOpen, setIsMenuOpen } =
@@ -17,67 +24,15 @@ const FavoriteList = () => {
       <GoBack />
 
       {favorites.length === 0 ? (
-        <div className="flex flex-col items-center justify-center mt-20 text-red-400">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-20 w-20 mb-4 animate-pulse"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-            stroke="none"
-          >
-            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-          </svg>
-          <p className="text-xl font-semibold">No favorites yet</p>
-          <p className="text-gray-400 mt-1">
-            Add some places to your favorites to see them here.
-          </p>
-          <Link
-            to={`/`}
-            className="mt-6 px-6 py-2 bg-red-500 hover:bg-red-600 text-white rounded-md transition"
-          >
-            Explore places
-          </Link>
-        </div>
+        <EmptyState
+          icon={heartIcon}
+          title="No favorites yet"
+          subtitle="Add some places to your favorites to see them here."
+        />
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {favorites.map((fav) => (
-            <div
-              key={fav.id}
-              className="card bg-base-100 shadow-xl hover:shadow-2xl transition duration-300"
-            >
-              <figure>
-                <img
-                  src={fav.place.imageUrl}
-                  alt={fav.place.name}
-                  className="w-full h-48 object-cover"
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src =
-                      "https://via.placeholder.com/300x200?text=No+Image";
-                  }}
-                />
-              </figure>
-              <div className="card-body">
-                <h2 className="card-title">{fav.place.name}</h2>
-                <div className="badge badge-secondary p-2">
-                  {fav.place.category}
-                </div>
-                <div className="flex justify-between gap-4 mt-4">
-                  <Link
-                    to={`/places/${fav.place.id}/details`}
-                    className="btn btn-primary"
-                  >
-                    See Details
-                  </Link>
-                  <button
-                    className="btn btn-error"
-                    onClick={() => handleDelete(fav.id)}
-                  >
-                    Delete from Favorite
-                  </button>
-                </div>
-              </div>
-            </div>
+            <FavoriteCard key={fav.id} fav={fav} onDelete={handleDelete} />
           ))}
         </div>
       )}

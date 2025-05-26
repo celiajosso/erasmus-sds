@@ -2,6 +2,7 @@ import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 
 import { cn } from "../lib/utils";
+
 import { Button } from "../components/ui/button";
 import { Calendar } from "../components/ui/calendar";
 import {
@@ -12,6 +13,7 @@ import {
 import { Input } from "../components/ui/input";
 import { Checkbox } from "../components/ui/checkbox";
 import { Label } from "../components/ui/label";
+
 import {
   Select,
   SelectContent,
@@ -35,7 +37,6 @@ export function PlannerForm() {
     selectedCategories,
     handleToggleCategory,
     cityName,
-    setCityName,
     budget,
     setBudget,
     currency,
@@ -52,6 +53,7 @@ export function PlannerForm() {
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
       />
+
       <GoBack />
 
       <div className="space-y-4 max-w-[400px] mx-auto">
@@ -156,3 +158,5 @@ export function PlannerForm() {
     </div>
   );
 }
+
+export default PlannerForm;
