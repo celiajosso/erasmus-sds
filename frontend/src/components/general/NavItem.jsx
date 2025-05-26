@@ -1,18 +1,17 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const NavItem = ({ to, label, onClick, isLast }) => {
-  const location = useLocation();
-  const isActive = location.pathname === to;
-
+const NavItem = ({ isFirst, to, label, onClick, isLast }) => {
   return (
     <li>
       <Link
         to={to}
         onClick={onClick}
-        className={`block p-2 hover:bg-gray-100 ${
-          isActive ? 'font-bold text-gray-900' : 'text-gray-800'
-        } ${isLast ? '' : 'border-b border-gray-500'}`}
+        className={`block p-2 text-gray-800 hover:bg-gray-100
+          border-b ${isFirst ? 'border-t rounded-t-xl' : ''} 
+          ${isLast ? 'rounded-b-xl' : ''}
+          ${!isLast ? 'border-gray-500 border-xl' : ''}
+        `}
       >
         {label}
       </Link>

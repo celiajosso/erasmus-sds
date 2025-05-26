@@ -18,9 +18,9 @@ const Nav = () => {
       <Bars3Icon className="size-6" />
       </button>
       {isMenuOpen && (
-        <div className="absolute right-0 mt-2 w-44 bg-white rounded-lg shadow-lg z-10">
+        <div className="absolute right-6 top-20 w-44 bg-white rounded-xl shadow-lg z-10">
           <ul>
-            <NavItem to="/" label="🌍 Explore Places" onClick={closeMenu} />
+            <NavItem to="/" label="🌍 Explore Places" onClick={closeMenu} isFirst />
             <NavItem to="/planner" label="🗓️ Plan My Trip" onClick={closeMenu} />
             <NavItem to="/favorites" label="📍 My Favorites" onClick={closeMenu} />
             <NavItem to="/playlists" label="🧭 My Playlists" onClick={closeMenu} isLast />
