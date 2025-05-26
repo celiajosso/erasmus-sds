@@ -35,7 +35,7 @@ const PlaylistList = () => {
   return (
     <div className="p-6 bg-background">
       <Header
-        title="Your Playlists"
+        title="🧭 My Playlists"
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
       />
@@ -65,7 +65,7 @@ const PlaylistList = () => {
           </svg>
           <p className="text-2xl font-semibold mb-2">No playlists found</p>
           <p className="text-gray-400 mb-6">Start creating your favorite playlists!</p>
-              <Link to={`/`}             className="px-6 py-2 bg-indigo-500 hover:bg-indigo-600 text-white rounded-md transition">Explore place</Link>
+              <Link to={`/`}             className="px-6 py-2 bg-indigo-500 hover:bg-indigo-600 text-white rounded-md transition">Explore places</Link>
           
 
         </div>

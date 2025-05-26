@@ -95,7 +95,7 @@ export function PlannerForm({
   return (
     <div className={cn("p-6 space-y-6 text-white", className)}>
       <Header
-        title="🗓️ Plan Your Trip"
+        title="🗓️ Plan My Trip"
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
       />

@@ -30,7 +30,7 @@ const FavoriteList = () => {
   return (
     <div className="p-6">
       <Header
-        title="Your Favorites"
+        title="📍My Favorites"
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
       />
@@ -48,7 +48,7 @@ const FavoriteList = () => {
     </svg>
     <p className="text-xl font-semibold">No favorites yet</p>
     <p className="text-gray-400 mt-1">Add some places to your favorites to see them here.</p>
-    <Link to={`/`} className="mt-6 px-6 py-2 bg-red-500 hover:bg-red-600 text-white rounded-md transition">Explore place</Link>
+    <Link to={`/`} className="mt-6 px-6 py-2 bg-red-500 hover:bg-red-600 text-white rounded-md transition">Explore places</Link>
 
   </div>
 ) : (
