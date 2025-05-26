@@ -1,73 +1,27 @@
-import React, { useEffect, useRef, useState } from "react";
-import axios from "axios";
+import { useRef, useState } from "react";
 import { useParams } from "react-router-dom";
-import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import Header from './general/Header';
 import GoBack from './general/GoBack';
-
+import {
+  usePlaceDetails,
+  useMapInitialization,
+  formatDuration,
+  formatHours
+} from './scripts/PlaceDetailsLogic';
 
 export default function PlaceDetailsPage() {
   const { id: placeId } = useParams();
   const mapContainer = useRef(null);
-  const mapRef = useRef(null); // Prevent multiple map initializations
-  const [data, setData] = useState({ place: null, details: null });
-  const apiUrl = process.env.REACT_APP_API_URL;
-    const [isMenuOpen, setIsMenuOpen] = useState(false); 
+  const [isMenuOpen, setIsMenuOpen] = useState(false); 
 
-
-  const formatDuration = (minutes) => {
-    if (!minutes || minutes <= 0) return "No duration available.";
-    const hours = Math.floor(minutes / 60);
-    const remainingMinutes = minutes % 60;
-    return `${hours} ${hours > 1 ? "hours" : "hour"}${remainingMinutes > 0 ? ` and ${remainingMinutes} minutes` : ""}`;
-  };
-
-  useEffect(() => {
-    axios.get(`${apiUrl}/api/places/${placeId}/details`)
-      .then(res => {
-        // Assuming response is { place: { ... }, details: { ... } }
-        setData(res.data);
-      })
-      .catch(err => console.error(err));
-  }, [placeId, apiUrl]);
-
-  useEffect(() => {
-    if (!data.details?.latitude || !data.details?.longitude || mapRef.current) return;
-
-    const { latitude, longitude } = data.details;
-
-    mapRef.current = new maplibregl.Map({
-      container: mapContainer.current,
-      style: "https://raw.githubusercontent.com/go2garret/maps/main/src/assets/json/openStreetMap.json", // You can replace with your own style
-      center: [longitude, latitude],
-      zoom: 14,
-    });
-
-    new maplibregl.Marker().setLngLat([longitude, latitude]).addTo(mapRef.current);
-  }, [data.details]);
+  const data = usePlaceDetails(placeId);
+  useMapInitialization(data.details, mapContainer);
 
   if (!data.place || !data.details) return <p className="p-4">Loading...</p>;
 
-  const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-
-  const formatHours = (open, close) => {
-    if (
-      (!open || !close) ||
-      open === "Closed" || close === "Closed" ||
-      open === "" || close === ""
-    ) {
-      return "Closed";
-    }
-  
-    const openArr = Array.isArray(open) ? open : open.split(" - ");
-    const closeArr = Array.isArray(close) ? close : close.split(" - ");
-  
-    return openArr.map((o, idx) => `${o} - ${closeArr[idx] || "?"}`).join(" & ");
-  };
-  
   const { place, details } = data;
-
+  const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
   const hasAnyContact = details.phone || details.email || details.website || details.instagram;
 
   return (

@@ -1,6 +1,3 @@
-"use client"
-
-import * as React from "react"
 import { format } from "date-fns"
 import { CalendarIcon } from "lucide-react"
 
@@ -15,7 +12,6 @@ import {
 import { Input } from "../components/ui/input"
 import { Checkbox } from "../components/ui/checkbox"
 import { Label } from "../components/ui/label"
-
 import {
   Select,
   SelectContent,
@@ -26,73 +22,28 @@ import {
   SelectValue,
 } from "../components/ui/select"
 
-import  { useEffect, useState } from 'react';
-import axios from 'axios';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import Header from "./general/Header"
+import GoBack from "./general/GoBack"
 
-import Header from './general/Header';
-import GoBack from './general/GoBack';
+import { usePlannerFormLogic } from "./scripts/PlannerFormLogic"
 
-
-export function PlannerForm({
-  className,
-}) {
-  const [date, setDate] = React.useState({
-    from: new Date(),
-    to: new Date(),
-  })
-  const [categories, setCategories] = useState([]);
-  const [selectedCategories, setSelectedCategories] = useState([]);
-  const [cityName, setCityName] = useState('Poznań');
-  const [budget, setBudget] = useState('');
-  const [currency, setCurrency] = useState('');
-
-  const apiUrl = process.env.REACT_APP_API_URL;
-  const navigate = useNavigate(); // Use useNavigate instead of useHistory
-  const location = useLocation();
-
-  // Handle the search button click and update URL with search filters
-  const handleSearch = () => {
-    const params = new URLSearchParams();
-    if (cityName) params.append('name', cityName);
-    selectedCategories.forEach(cat => params.append('category', cat));
-
-    navigate({ search: params.toString() });  // Use navigate to update the URL with new search filters
-  };
-
-  const handleToggleCategory = (category) => {
-  setSelectedCategories((prevSelected) =>
-    prevSelected.includes(category)
-      ? prevSelected.filter((c) => c !== category)
-      : [...prevSelected, category]
-    );
-  };
-
-  const [isMenuOpen, setIsMenuOpen] = useState(false); 
-
-  // Fetch all places and categories on initial load
-  useEffect(() => {
-
-    // Read the search parameters from the URL
-    const params = new URLSearchParams(location.search);
-    const nameParam = params.get('name');
-    const categoriesParam = params.getAll('category');
-
-    if (nameParam) setCityName(nameParam);
-    if (categoriesParam.length) setSelectedCategories(categoriesParam);
-
-    // Fetch places (with or without filters)
-    const fetchPlaces = async () => {
-      try {
-        const result = await axios.get(`${apiUrl}/api/places`, { params });
-        const allCategories = [...new Set(result.data.places.map(p => p.category))];
-        setCategories(allCategories);
-      } catch (err) {
-        console.error("Failed to fetch places:", err);
-      }
-    };
-    fetchPlaces();
-  }, [apiUrl, location.search]);
+export function PlannerForm() {
+  const {
+    date,
+    setDate,
+    categories,
+    selectedCategories,
+    handleToggleCategory,
+    cityName,
+    setCityName,
+    budget,
+    setBudget,
+    currency,
+    setCurrency,
+    isMenuOpen,
+    setIsMenuOpen,
+    handleSearch,
+  } = usePlannerFormLogic()
 
   return (
     <div className="p-6">
@@ -110,9 +61,7 @@ export function PlannerForm({
         <Input
           id="city"
           name="city"
-          // placeholder="Enter a city"
           value={cityName}
-          // onChange={(e) => setCityName(e.target.value)}
           className="text-white cursor-not-allowed"
           disabled
         />

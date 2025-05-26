@@ -1,33 +1,11 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Header from './general/Header';
 import GoBack from './general/GoBack';
+import useFavoriteListLogic from './scripts/FavoriteListLogic';
 
 const FavoriteList = () => {
-  const [favorites, setFavorites] = useState([]);
-  const apiUrl = process.env.REACT_APP_API_URL;
-  const userId = "user123"; 
-  const [isMenuOpen, setIsMenuOpen] = useState(false); 
-  
-  useEffect(() => {
-    axios.get(`${apiUrl}/api/favorites`, { params: { userId } })
-      .then((res) => setFavorites(res.data))
-      .catch((err) => console.error("Failed to fetch favorites:", err));
-  }, [apiUrl]);
+  const { favorites, handleDelete, isMenuOpen, setIsMenuOpen } = useFavoriteListLogic();
 
-  const handleDelete = (favoriteId) => {
-    console.log("Deleting favorite with ID:", favoriteId);
-  
-    axios.delete(`${apiUrl}/api/favorites/${favoriteId}`)
-        .then(() => {
-          setFavorites((prevFavorites) => prevFavorites.filter((fav) => fav.id !== favoriteId));
-        })
-        .catch((err) => {
-          console.error("Failed to delete favorite:", err);
-        });
-  };
-  
   return (
     <div className="p-6">
       <Header

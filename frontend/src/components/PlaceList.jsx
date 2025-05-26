@@ -1,233 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
 import Header from './general/Header';
+import GoBack from './general/GoBack';
 import { HeartIcon as HeartIconSolid, PlusIcon } from '@heroicons/react/24/solid';
 import { HeartIcon as HeartIconOutline } from '@heroicons/react/24/outline';
-import GoBack from './general/GoBack';
+import { usePlaceListLogic } from './scripts/PlaceListLogic';
+import { Link } from 'react-router-dom';
 
 const PlaceList = () => {
-  const [places, setPlaces] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [categories, setCategories] = useState([]);
-  const [selectedCategories, setSelectedCategories] = useState([]);
-  const [searchName, setSearchName] = useState('');
-  const [showModal, setShowModal] = useState(false);
-  const [selectedPlaceId, setSelectedPlaceId] = useState(null);
-  const [playlists, setPlaylists] = useState([]);
-  const [isMenuOpen, setIsMenuOpen] = useState(false); 
-  const [newPlaylistName, setNewPlaylistName] = useState('');
-  const [favorites, setFavorites] = useState([]);
-
-  const apiUrl = process.env.REACT_APP_API_URL;
-  const navigate = useNavigate(); // Use useNavigate instead of useHistory
-  const location = useLocation();
-
-  // Fetch all places and categories on initial load
-  useEffect(() => {
-    setLoading(true);
-
-    // Read the search parameters from the URL
-    const params = new URLSearchParams(location.search);
-    const nameParam = params.get('name');
-    const categoriesParam = params.getAll('category');
-
-    if (nameParam) setSearchName(nameParam);
-    if (categoriesParam.length) setSelectedCategories(categoriesParam);
-
-    // Fetch places (with or without filters)
-    const fetchPlaces = async () => {
-      try {
-        const result = await axios.get(`${apiUrl}/api/places`, { params });
-        setPlaces(result.data.places);
-        const allCategories = [...new Set(result.data.places.map(p => p.category))];
-        setCategories(allCategories);
-        setLoading(false);
-      } catch (err) {
-        console.error("Failed to fetch places:", err);
-        setLoading(false);
-      }
-    };
-    
-    fetchPlaces();
-
-    axios.get(`${apiUrl}/api/favorites`, { params: { userId: "user123" } })
-      .then((res) => {
-        setFavorites(res.data); 
-      })
-      .catch((err) => {
-        console.error("Failed to fetch favorites:", err);
-      });
-  }, [apiUrl, location.search]);
-
-  // Add selected category to the filter list
-  const addCategory = (cat) => {
-    if (!selectedCategories.includes(cat)) {
-      setSelectedCategories([...selectedCategories, cat]);
-    }
-  };
-
-  // Remove selected category from the filter list
-  const removeCategory = (cat) => {
-    setSelectedCategories(selectedCategories.filter(c => c !== cat));
-  };
-
-  // Handle the search button click and update URL with search filters
-  const handleSearch = () => {
-    const params = new URLSearchParams();
-    if (searchName) params.append('name', searchName);
-    selectedCategories.forEach(cat => params.append('category', cat));
-
-    navigate({ search: params.toString() });  // Use navigate to update the URL with new search filters
-  };
-
-  // Clear all filters and reload all places
-  const clearFilters = () => {
-    setSearchName('');
-    setSelectedCategories([]);
-    navigate({ search: '' });  // Clear the URL filters
-  };
-
-
-
-
-  const toggleFavorite = (placeId) => {
-    const favorite = favorites.find(fav => fav.place && fav.place.id === placeId);
-    if (favorite) {
-      // Delete frome Favorite
-      axios.delete(`${apiUrl}/api/favorites/${favorite.id}`)
-        .then(() => {
-          setFavorites((prevFavorites) => prevFavorites.filter((fav) => fav.id !== favorite.id));
-        })
-        .catch((err) => {
-          console.error("Failed to delete favorite:", err);
-        });
-    } else {
-      // Add to Favorite
-      const userId = "user123";
-      axios.post(`${apiUrl}/api/favorites`, null, { params: { userId, placeId } })
-      .then(() => {
-        axios.get(`${apiUrl}/api/favorites`, { params: { userId } })
-          .then((res) => {
-            const validFavorites = res.data.filter(fav => fav.place);
-            setFavorites(validFavorites);
-          });
-      })
-      
-        .catch((err) => console.error("Failed to add to favorites:", err));
-    }
-  };
-  
-  
-
-  const isFavorite = (placeId) => {
-    return favorites.some(fav => fav.place && fav.place.id === placeId); // Verifie if the place is in favorites
-  };
-
-
-
-
-
-  const handleAddToPlaylist = (placeId) => {
-    setSelectedPlaceId(placeId); 
-    setShowModal(true);
-  
-    axios.get(`${apiUrl}/api/playlists`, { params: { userId: "user123" } })
-      .then((res) => setPlaylists(res.data))
-      .catch((err) => console.error("Failed to load playlists:", err));
-  };
-
-
-
-  const addPlaceToPlaylist = async (playlistId) => {
-    if (!selectedPlaceId) {
-      console.error("Place ID is not selected");
-      return;
-    }
-  
-    try {
-      const response = await fetch(`${apiUrl}/api/playlists/${playlistId}`);
-      if (!response.ok) {
-        console.error("Failed to fetch playlist details");
-        return;
-      }
-  
-      const playlist = await response.json();
-      const isPlaceAlreadyInPlaylist = playlist.places.some(
-        (place) => place.id === selectedPlaceId
-      );
-  
-      if (isPlaceAlreadyInPlaylist) {
-        alert("This place is already in the playlist!");
-        return;
-      }
-  
-      const addResponse = await fetch(
-        `${apiUrl}/api/playlists/${playlistId}/places/${selectedPlaceId}`,
-        {
-          method: "POST",
-        }
-      );
-  
-      if (!addResponse.ok) {
-        console.error("Failed to add place to playlist");
-        return;
-      }
-  
-      setShowModal(false);
-    } catch (err) {
-      console.error("Error adding to playlist:", err);
-    }
-  };
-  
-  
-  
-
-  
-
-  const createPlaylistAndAddPlace = async () => {
-    const userId = "user123"; 
-    if (!newPlaylistName.trim() || !selectedPlaceId) return;
-  
-    try {
-      const response = await fetch(
-        `http://localhost:8080/api/playlists?userId=${userId}&name=${encodeURIComponent(newPlaylistName)}`,
-        {
-          method: "POST",
-        }
-      );
-  
-      if (!response.ok) {
-        console.error("Error when creating playlist");
-        return;
-      }
-  
-      const createdPlaylist = await response.json();
-  
-      const addResponse = await fetch(
-        `http://localhost:8080/api/playlists/${createdPlaylist.id}/places/${selectedPlaceId}`,
-        {
-          method: "POST",
-        }
-      );
-  
-      if (!addResponse.ok) {
-        console.error("Error when adding to playlist");
-        return;
-      }
-  
-      setPlaylists([...playlists, createdPlaylist]);
-      setNewPlaylistName("");
-      setShowModal(false);
-    } catch (err) {
-      console.error("Network error :", err);
-    }
-  };
-
-
-
-
-
+  const {
+    places, loading, categories, selectedCategories, searchName, showModal,
+    selectedPlaceId, playlists, isMenuOpen, newPlaylistName,
+    setSearchName, addCategory, removeCategory, handleSearch,
+    clearFilters, toggleFavorite, isFavorite, handleAddToPlaylist,
+    addPlaceToPlaylist, createPlaylistAndAddPlace, setShowModal,
+    setNewPlaylistName, setIsMenuOpen
+  } = usePlaceListLogic();
   return (
     <div className="p-6">
       <Header
@@ -341,7 +127,6 @@ const PlaceList = () => {
               </div>
             </div>
           </div>
-            // </Link>
           ))}
         </div>
       )}
