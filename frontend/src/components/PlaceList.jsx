@@ -4,6 +4,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import Header from './general/Header';
 import { HeartIcon as HeartIconSolid, PlusIcon } from '@heroicons/react/24/solid';
 import { HeartIcon as HeartIconOutline } from '@heroicons/react/24/outline';
+import GoBack from './general/GoBack';
 
 const PlaceList = () => {
   const [places, setPlaces] = useState([]);
@@ -234,6 +235,7 @@ const PlaceList = () => {
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
       />
+      <GoBack />
 
       {/* Search Controls */}
       <div className="flex flex-col sm:flex-row flex-wrap gap-4 mb-6 justify-center items-center">

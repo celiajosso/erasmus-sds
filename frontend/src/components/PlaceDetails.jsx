@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import Header from './general/Header';
+import GoBack from './general/GoBack';
+
 
 export default function PlaceDetailsPage() {
   const { id: placeId } = useParams();
@@ -75,6 +77,7 @@ export default function PlaceDetailsPage() {
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
       />
+      <GoBack />
       
       
       <div className="badge badge-secondary p-2">{place.category}</div>

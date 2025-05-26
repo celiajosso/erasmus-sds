@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Header from './general/Header';
+import GoBack from './general/GoBack';
+
 
 const PlaylistList = () => {
   const [playlists, setPlaylists] = useState([]);
@@ -39,6 +41,7 @@ const PlaylistList = () => {
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
       />
+      <GoBack />
 
       {playlists.length === 0 ? (
         <div className="flex flex-col items-center justify-center mt-20 text-gray-600">

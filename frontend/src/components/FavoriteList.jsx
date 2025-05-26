@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Header from './general/Header';
+import GoBack from './general/GoBack';
 
 const FavoriteList = () => {
   const [favorites, setFavorites] = useState([]);
@@ -34,6 +35,7 @@ const FavoriteList = () => {
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
       />
+      <GoBack />
   
       {favorites.length === 0 ? (
   <div className="flex flex-col items-center justify-center mt-20 text-red-400">

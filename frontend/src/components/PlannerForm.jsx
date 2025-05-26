@@ -31,6 +31,8 @@ import axios from 'axios';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 import Header from './general/Header';
+import GoBack from './general/GoBack';
+
 
 export function PlannerForm({
   className,
@@ -93,12 +95,13 @@ export function PlannerForm({
   }, [apiUrl, location.search]);
 
   return (
-    <div className={cn("p-6 space-y-6 text-white", className)}>
+    <div className="p-6">
       <Header
         title="🗓️ Plan My Trip"
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
       />
+      <GoBack />
 
     
 

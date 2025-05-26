@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Header from './general/Header';
+import GoBack from './general/GoBack';
+
 
 
 const PlaylistDetails = () => {
@@ -44,6 +46,7 @@ const PlaylistDetails = () => {
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
       />
+      <GoBack />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         {playlist.places.map((place) => (

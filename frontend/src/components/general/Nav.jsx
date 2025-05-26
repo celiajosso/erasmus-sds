@@ -10,9 +10,9 @@ const Nav = () => {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <div className="relative">
+    <div>
       <button
-        className="btn btn-circle btn-secondary"
+        className="absolute top-6 right-6 btn btn-circle btn-secondary"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
       <Bars3Icon className="size-6" />
