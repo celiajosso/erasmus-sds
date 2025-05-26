@@ -26,12 +26,15 @@ export function useMapInitialization(details, mapContainerRef) {
 
     mapRef.current = new maplibregl.Map({
       container: mapContainerRef.current,
-      style: "https://raw.githubusercontent.com/go2garret/maps/main/src/assets/json/openStreetMap.json",
+      style:
+        "https://raw.githubusercontent.com/go2garret/maps/main/src/assets/json/openStreetMap.json",
       center: [longitude, latitude],
       zoom: 14,
     });
 
-    new maplibregl.Marker().setLngLat([longitude, latitude]).addTo(mapRef.current);
+    new maplibregl.Marker()
+      .setLngLat([longitude, latitude])
+      .addTo(mapRef.current);
   }, [details, mapContainerRef]);
 }
 
@@ -39,14 +42,19 @@ export function formatDuration(minutes) {
   if (!minutes || minutes <= 0) return "No duration available.";
   const hours = Math.floor(minutes / 60);
   const remainingMinutes = minutes % 60;
-  return `${hours} ${hours > 1 ? "hours" : "hour"}${remainingMinutes > 0 ? ` and ${remainingMinutes} minutes` : ""}`;
+  return `${hours} ${hours > 1 ? "hours" : "hour"}${
+    remainingMinutes > 0 ? ` and ${remainingMinutes} minutes` : ""
+  }`;
 }
 
 export function formatHours(open, close) {
   if (
-    (!open || !close) ||
-    open === "Closed" || close === "Closed" ||
-    open === "" || close === ""
+    !open ||
+    !close ||
+    open === "Closed" ||
+    close === "Closed" ||
+    open === "" ||
+    close === ""
   ) {
     return "Closed";
   }

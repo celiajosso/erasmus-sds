@@ -1,11 +1,12 @@
-import { Link } from 'react-router-dom'
-import Header from './general/Header'
-import GoBack from './general/GoBack'
-import { usePlaylistList } from './scripts/PlaylistListLogic'
+import { Link } from "react-router-dom";
+import Header from "./general/Header";
+import GoBack from "./general/GoBack";
+import { usePlaylistList } from "./scripts/PlaylistListLogic";
 
 const PlaylistList = () => {
-  const userId = "user123"
-  const { playlists, isMenuOpen, setIsMenuOpen, handleDeletePlaylist } = usePlaylistList(userId)
+  const userId = "user123";
+  const { playlists, isMenuOpen, setIsMenuOpen, handleDeletePlaylist } =
+    usePlaylistList(userId);
 
   return (
     <div className="p-6 bg-background">
@@ -40,15 +41,23 @@ const PlaylistList = () => {
             />
           </svg>
           <p className="text-2xl font-semibold mb-2">No playlists found</p>
-          <p className="text-gray-400 mb-6">Start creating your favorite playlists!</p>
-          <Link to={`/`} className="px-6 py-2 bg-indigo-500 hover:bg-indigo-600 text-white rounded-md transition">
+          <p className="text-gray-400 mb-6">
+            Start creating your favorite playlists!
+          </p>
+          <Link
+            to={`/`}
+            className="px-6 py-2 bg-indigo-500 hover:bg-indigo-600 text-white rounded-md transition"
+          >
             Explore places
           </Link>
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {playlists.map((playlist) => (
-            <div key={playlist.id} className="card bg-base-100 shadow-xl hover:shadow-2xl transition duration-300">
+            <div
+              key={playlist.id}
+              className="card bg-base-100 shadow-xl hover:shadow-2xl transition duration-300"
+            >
               <figure>
                 <img
                   src={
@@ -59,20 +68,30 @@ const PlaylistList = () => {
                   alt={`${playlist.name} cover`}
                   className="w-full h-40 object-cover"
                   onError={(e) => {
-                    e.target.className = "w-32 h-32 object-cover mx-auto"
-                    e.target.onerror = null
-                    e.target.src = "https://cdn-icons-png.flaticon.com/512/11696/11696711.png"
+                    e.target.className = "w-32 h-32 object-cover mx-auto";
+                    e.target.onerror = null;
+                    e.target.src =
+                      "https://cdn-icons-png.flaticon.com/512/11696/11696711.png";
                   }}
                 />
               </figure>
               <div className="card-body">
                 <h2 className="card-title text-xl">{playlist.name}</h2>
                 <p className="text-sm text-gray-500">
-                  {playlist.places?.length ?? 0} place{(playlist.places?.length ?? 0) !== 1 && "s"}
+                  {playlist.places?.length ?? 0} place
+                  {(playlist.places?.length ?? 0) !== 1 && "s"}
                 </p>
                 <div className="flex justify-between items-center mt-4">
-                  <Link to={`/playlists/${playlist.id}`} className="btn btn-primary btn-sm">View</Link>
-                  <button className="btn btn-error btn-sm" onClick={() => handleDeletePlaylist(playlist.id)}>
+                  <Link
+                    to={`/playlists/${playlist.id}`}
+                    className="btn btn-primary btn-sm"
+                  >
+                    View
+                  </Link>
+                  <button
+                    className="btn btn-error btn-sm"
+                    onClick={() => handleDeletePlaylist(playlist.id)}
+                  >
                     Delete
                   </button>
                 </div>
@@ -82,7 +101,7 @@ const PlaylistList = () => {
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
 export default PlaylistList;

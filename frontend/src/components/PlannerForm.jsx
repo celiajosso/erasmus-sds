@@ -1,17 +1,17 @@
-import { format } from "date-fns"
-import { CalendarIcon } from "lucide-react"
+import { format } from "date-fns";
+import { CalendarIcon } from "lucide-react";
 
-import { cn } from "../lib/utils"
-import { Button } from "../components/ui/button"
-import { Calendar } from "../components/ui/calendar"
+import { cn } from "../lib/utils";
+import { Button } from "../components/ui/button";
+import { Calendar } from "../components/ui/calendar";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "../components/ui/popover"
-import { Input } from "../components/ui/input"
-import { Checkbox } from "../components/ui/checkbox"
-import { Label } from "../components/ui/label"
+} from "../components/ui/popover";
+import { Input } from "../components/ui/input";
+import { Checkbox } from "../components/ui/checkbox";
+import { Label } from "../components/ui/label";
 import {
   Select,
   SelectContent,
@@ -20,12 +20,12 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "../components/ui/select"
+} from "../components/ui/select";
 
-import Header from "./general/Header"
-import GoBack from "./general/GoBack"
+import Header from "./general/Header";
+import GoBack from "./general/GoBack";
 
-import { usePlannerFormLogic } from "./scripts/PlannerFormLogic"
+import { usePlannerFormLogic } from "./scripts/PlannerFormLogic";
 
 export function PlannerForm() {
   const {
@@ -43,7 +43,7 @@ export function PlannerForm() {
     isMenuOpen,
     setIsMenuOpen,
     handleSearch,
-  } = usePlannerFormLogic()
+  } = usePlannerFormLogic();
 
   return (
     <div className="p-6">
@@ -54,8 +54,6 @@ export function PlannerForm() {
       />
       <GoBack />
 
-    
-
       <div className="space-y-4 max-w-[400px] mx-auto">
         <Label className="text-lg">City</Label>
         <Input
@@ -65,7 +63,7 @@ export function PlannerForm() {
           className="text-white cursor-not-allowed"
           disabled
         />
-        <br/>
+        <br />
 
         <Label className="text-lg">Select categories</Label>
         <div className="flex flex-wrap gap-4">
@@ -81,37 +79,38 @@ export function PlannerForm() {
             </div>
           ))}
         </div>
-        <br/>
+        <br />
 
         <Label className="text-lg">Budget</Label>
         <div className="flex items-center gap-2">
-        <Input
-          type="number"
-          min="0"
-          name="budget"
-          id="budget"
-          placeholder="Enter a budget"
-          value={budget}
-          onChange={(e) => setBudget(e.target.value)}
-          className="text-white"
-        />
+          <Input
+            type="number"
+            min="0"
+            name="budget"
+            id="budget"
+            placeholder="Enter a budget"
+            value={budget}
+            onChange={(e) => setBudget(e.target.value)}
+            className="text-white"
+          />
 
-        <Select value={currency} onValueChange={setCurrency}>
-          <SelectTrigger className="w-[110px]">
-            <SelectValue placeholder="Currency" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectGroup>
-              <SelectLabel>Currencies</SelectLabel>
-              <SelectItem value="eur">EUR</SelectItem>
-              <SelectItem value="pln">PLN</SelectItem>
-            </SelectGroup>
-          </SelectContent>
-        </Select>
-          </div>  
-          <br/>     
+          <Select value={currency} onValueChange={setCurrency}>
+            <SelectTrigger className="w-[110px]">
+              <SelectValue placeholder="Currency" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                <SelectLabel>Currencies</SelectLabel>
+                <SelectItem value="eur">EUR</SelectItem>
+                <SelectItem value="pln">PLN</SelectItem>
+              </SelectGroup>
+            </SelectContent>
+          </Select>
+        </div>
+        <br />
 
-        <Label className="text-lg">Select date range</Label><br />
+        <Label className="text-lg">Select date range</Label>
+        <br />
         <Popover>
           <PopoverTrigger asChild>
             <Button
@@ -146,12 +145,14 @@ export function PlannerForm() {
               numberOfMonths={2}
             />
           </PopoverContent>
-        </Popover><br/><br/>
-          
-        <Button className="block mx-auto" onClick={handleSearch} >
+        </Popover>
+        <br />
+        <br />
+
+        <Button className="block mx-auto" onClick={handleSearch}>
           Search
         </Button>
       </div>
     </div>
-  )
+  );
 }

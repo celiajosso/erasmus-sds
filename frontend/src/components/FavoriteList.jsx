@@ -1,10 +1,11 @@
-import { Link } from 'react-router-dom';
-import Header from './general/Header';
-import GoBack from './general/GoBack';
-import useFavoriteListLogic from './scripts/FavoriteListLogic';
+import { Link } from "react-router-dom";
+import Header from "./general/Header";
+import GoBack from "./general/GoBack";
+import useFavoriteListLogic from "./scripts/FavoriteListLogic";
 
 const FavoriteList = () => {
-  const { favorites, handleDelete, isMenuOpen, setIsMenuOpen } = useFavoriteListLogic();
+  const { favorites, handleDelete, isMenuOpen, setIsMenuOpen } =
+    useFavoriteListLogic();
 
   return (
     <div className="p-6">
@@ -14,24 +15,30 @@ const FavoriteList = () => {
         setIsMenuOpen={setIsMenuOpen}
       />
       <GoBack />
-  
-      {favorites.length === 0 ? (
-  <div className="flex flex-col items-center justify-center mt-20 text-red-400">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      className="h-20 w-20 mb-4 animate-pulse"
-      fill="currentColor"
-      viewBox="0 0 24 24"
-      stroke="none"
-    >
-      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-    </svg>
-    <p className="text-xl font-semibold">No favorites yet</p>
-    <p className="text-gray-400 mt-1">Add some places to your favorites to see them here.</p>
-    <Link to={`/`} className="mt-6 px-6 py-2 bg-red-500 hover:bg-red-600 text-white rounded-md transition">Explore places</Link>
 
-  </div>
-) : (
+      {favorites.length === 0 ? (
+        <div className="flex flex-col items-center justify-center mt-20 text-red-400">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-20 w-20 mb-4 animate-pulse"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            stroke="none"
+          >
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+          </svg>
+          <p className="text-xl font-semibold">No favorites yet</p>
+          <p className="text-gray-400 mt-1">
+            Add some places to your favorites to see them here.
+          </p>
+          <Link
+            to={`/`}
+            className="mt-6 px-6 py-2 bg-red-500 hover:bg-red-600 text-white rounded-md transition"
+          >
+            Explore places
+          </Link>
+        </div>
+      ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {favorites.map((fav) => (
             <div
@@ -45,15 +52,21 @@ const FavoriteList = () => {
                   className="w-full h-48 object-cover"
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = "https://via.placeholder.com/300x200?text=No+Image";
+                    e.target.src =
+                      "https://via.placeholder.com/300x200?text=No+Image";
                   }}
                 />
               </figure>
               <div className="card-body">
                 <h2 className="card-title">{fav.place.name}</h2>
-                <div className="badge badge-secondary p-2">{fav.place.category}</div>
+                <div className="badge badge-secondary p-2">
+                  {fav.place.category}
+                </div>
                 <div className="flex justify-between gap-4 mt-4">
-                  <Link to={`/places/${fav.place.id}/details`} className="btn btn-primary">
+                  <Link
+                    to={`/places/${fav.place.id}/details`}
+                    className="btn btn-primary"
+                  >
                     See Details
                   </Link>
                   <button
@@ -70,7 +83,6 @@ const FavoriteList = () => {
       )}
     </div>
   );
-  
 };
 
 export default FavoriteList;
