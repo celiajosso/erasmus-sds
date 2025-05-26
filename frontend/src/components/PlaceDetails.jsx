@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
+import NavMenu from "./general/Nav";
 
 export default function PlaceDetailsPage() {
   const { id: placeId } = useParams();
@@ -10,6 +11,8 @@ export default function PlaceDetailsPage() {
   const mapRef = useRef(null); // Prevent multiple map initializations
   const [data, setData] = useState({ place: null, details: null });
   const apiUrl = process.env.REACT_APP_API_URL;
+    const [isMenuOpen, setIsMenuOpen] = useState(false); 
+
 
   const formatDuration = (minutes) => {
     if (!minutes || minutes <= 0) return "No duration available.";
@@ -66,12 +69,15 @@ export default function PlaceDetailsPage() {
   const hasAnyContact = details.phone || details.email || details.website || details.instagram;
 
   return (
-    <div className="p-6 max-w-4xl mx-auto">
-      <h1 className="text-4xl font-bold text-center text-white mb-6">
+    <div className="p-6">
+      <div className="flex items-center justify-between mb-12">
+        <h1 className="text-4xl font-bold text-center text-primary text-white flex-1">
         {place.name || "Unknown Place"}
       </h1>
+      <NavMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      </div>
+      
       <div className="badge badge-secondary p-2">{place.category}</div>
-
       <div className="rounded-xl overflow-hidden shadow-xl my-8">
         <img
           src={place.imageUrl}

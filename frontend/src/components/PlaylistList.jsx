@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import NavMenu from './general/Nav';
 
 const PlaylistList = () => {
   const [playlists, setPlaylists] = useState([]);
@@ -36,57 +37,7 @@ const PlaylistList = () => {
       <div className="flex items-center justify-between mb-12">
         <h1 className="text-4xl font-bold text-center text-white flex-1">Your Playlists</h1>
 
-        <div className="relative">
-          <button
-            className="btn btn-circle btn-secondary"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            ☰
-          </button>
-
-          {isMenuOpen && (
-            <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg z-10">
-              <ul className="py-2">
-                <li>
-                  <Link
-                    to={`/favorites`}
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    My Favorites
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to={`/playlists`}
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    My Playlists
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to={`/planner`}
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    My Planner
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to={`/`}
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Home
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          )}
-        </div>
+        <NavMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       </div>
 
       {playlists.length === 0 ? (
