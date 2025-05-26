@@ -163,27 +163,29 @@ export default function PlaceDetailsPage() {
         />
       </div>
 
-      <h2 className="text-xl text-white font-bold mb-3 flex items-center gap-2">
-        📞 <span>Contact</span>
-      </h2>
-
       {hasAnyContact && (
-        <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-6 transition duration-300 mb-6">
-          <ul className="text-gray-600 leading-relaxed space-y-2">
-            {details.phone && (
-              <li><strong>Phone:</strong> {details.phone}</li>
-            )}
-            {details.email && (
-              <li><strong>Email:</strong> <a href={`mailto:${details.email}`} className="text-blue-600 hover:underline">{details.email}</a></li>
-            )}
-            {details.website && (
-              <li><strong>Website:</strong> <a href={`https://${details.website}`} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">{details.website}</a></li>
-            )}
-            {details.instagram && (
-              <li><strong>Instagram:</strong> <a href={`https://instagram.com/${details.instagram}`} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">@{details.instagram}</a></li>
-            )}
-          </ul>
-        </div>
+        <>
+          <h2 className="text-xl text-white font-bold mb-3 flex items-center gap-2">
+            📞 <span>Contact</span>
+          </h2>
+
+          <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-6 transition duration-300 mb-6">
+            <ul className="text-gray-600 leading-relaxed space-y-2">
+              {details.phone && (
+                <li><strong>Phone:</strong> {details.phone}</li>
+              )}
+              {details.email && (
+                <li><strong>Email:</strong> <a href={`mailto:${details.email}`} className="text-blue-600 hover:underline">{details.email}</a></li>
+              )}
+              {details.website && (
+                <li><strong>Website:</strong> <a href={`https://${details.website}`} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">{details.website}</a></li>
+              )}
+              {details.instagram && (
+                <li><strong>Instagram:</strong> <a href={`https://instagram.com/${details.instagram}`} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">@{details.instagram}</a></li>
+              )}
+            </ul>
+          </div>
+        </>
       )}
     </div>
   );
