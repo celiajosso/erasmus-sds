@@ -2,22 +2,36 @@
 
 ## Roles and Responsibilities
 
-- Samuel PONZO (Product Owner) is reponsible for:
+- Samuel PONZO (Product Owner) is responsible for:
   - creating the product backlog
-- Célia JOSSO : Scrum Master; is reponsible for...
+  - creating the sprint backlog
+  - updating the github project if needed
+  - doing some planning poker
+- Célia JOSSO : Scrum Master; is responsible for...
   - creating the Discord Server (channels, roles, webhook)
   - enabling the Github repository (Github Projects)
   - making sure the communication works
   - making sure we organize retrospectives
-  - inproving the frontend
+  - organizing an additionnal meeting on wednesdays
+  - doing/improving the frontend
   - update the documentation
-  - map ??
-- Elouan LECORGNE (Developer) is reponsible for:
-- Tommi LUCAS (Developer) is reponsible for:
-
+  - loading data via json file (rather than sql requests)
+  - cleaning up the code and organize it better
+  - contacting and informing the teacher if needed
+  - fixing some bugs
+  - adding places
+- Elouan LECORGNE (Developer) is responsible for:
+  - adding the favorite feature
+  - adding the playlists feature
+- Tommi LUCAS (Developer) is responsible for:
+  - creating account system (registration, login...)
+  - adding prices to places
 - Filip VUJEVA (Developer) is reponsible for...
   - maintaining the CI/CD pipeline and ensuring the connection between instances
   - developing basic backend functionalities
+  - AI based recommendatiosn
+  - setup the project
+  - frontend
 
 ## Comunication stategies
 
