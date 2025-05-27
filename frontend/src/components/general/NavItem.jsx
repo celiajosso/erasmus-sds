@@ -1,7 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const NavItem = ({ isFirst, to, label, onClick, isLast }) => {
+  const location = useLocation();
+  const isActive = location.pathname === to;
+
   return (
     <li>
       <Link
@@ -11,6 +13,7 @@ const NavItem = ({ isFirst, to, label, onClick, isLast }) => {
           border-b ${isFirst ? 'border-t rounded-t-xl' : ''} 
           ${isLast ? 'rounded-b-xl' : ''}
           ${!isLast ? 'border-gray-500 border-xl' : ''}
+          ${isActive ? 'font-bold text-black' : 'text-gray-800'}
         `}
       >
         {label}

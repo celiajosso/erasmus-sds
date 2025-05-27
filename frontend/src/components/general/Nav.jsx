@@ -18,7 +18,7 @@ const Nav = () => {
       <Bars3Icon className="size-6" />
       </button>
       {isMenuOpen && (
-        <div className="absolute right-6 top-20 w-44 bg-white rounded-xl shadow-lg z-10">
+        <div className="absolute right-6 top-20 w-44 bg-white rounded-xl shadow-lg z-10 border-x border-gray-800">
           <ul>
             <NavItem to="/" label="🌍 Explore Places" onClick={closeMenu} isFirst />
             <NavItem to="/planner" label="🗓️ Plan My Trip" onClick={closeMenu} />
