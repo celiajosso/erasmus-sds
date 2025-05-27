@@ -7,6 +7,11 @@
   - creating the sprint backlog
   - updating the github project if needed
   - doing some planning poker
+  - collaborating tighly with developpers to ensure the sprint goals are achievable
+  - calculating the burn down chart
+  - doing Gantt chart
+  - estimating the velocity of the team and taking that into account when doing the sprint backlog
+  - putting the priorities to the right features
 - Célia JOSSO : Scrum Master; is responsible for...
   - creating the Discord Server (channels, roles, webhook)
   - enabling the Github repository (Github Projects)
