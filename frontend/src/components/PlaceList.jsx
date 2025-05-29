@@ -42,8 +42,6 @@ const PlaceList = () => {
         setIsMenuOpen={setIsMenuOpen}
       />
 
-      <GoBack />
-
       <SearchControls
         searchName={searchName}
         setSearchName={setSearchName}

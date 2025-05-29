@@ -39,7 +39,7 @@ export default function PlaceDetailsPage() {
   ];
 
   return (
-    <div className="p-6">
+    <div className="p-6 max-w-4xl mx-auto">
       <Header
         title={place.name}
         isMenuOpen={isMenuOpen}
