@@ -5,7 +5,6 @@ import org.springframework.data.jpa.domain.Specification;
 
 import java.util.List;
 
-
 public class PlaceSpecification {
 
     public static Specification<Place> searchBy(String name, List<String> categories) {

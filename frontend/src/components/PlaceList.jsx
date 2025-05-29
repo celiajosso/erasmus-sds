@@ -1,444 +1,79 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { usePlaceListLogic } from "./scripts/PlaceListLogic";
 
+import Header from "./general/Header";
+import GoBack from "./general/GoBack";
+
+import AddToPlaylistDialog from "./pages/PlaceList/AddToPlaylistDialog";
+import PlacesGrid from "./pages/PlaceList/PlacesGrid";
+import SearchControls from "./pages/PlaceList/SearchControls";
+import SelectedFilters from "./pages/PlaceList/SelectedFilters";
 
 const PlaceList = () => {
-  const [places, setPlaces] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [categories, setCategories] = useState([]);
-  const [selectedCategories, setSelectedCategories] = useState([]);
-  const [searchName, setSearchName] = useState('');
-  const [showModal, setShowModal] = useState(false);
-  const [selectedPlaceId, setSelectedPlaceId] = useState(null);
-  const [playlists, setPlaylists] = useState([]);
-  const [isMenuOpen, setIsMenuOpen] = useState(false); 
-  const [newPlaylistName, setNewPlaylistName] = useState('');
-  const [favorites, setFavorites] = useState([]);
-
-  const apiUrl = process.env.REACT_APP_API_URL;
-  const navigate = useNavigate(); // Use useNavigate instead of useHistory
-  const location = useLocation();
-
-  // Fetch all places and categories on initial load
-  useEffect(() => {
-    setLoading(true);
-
-    // Read the search parameters from the URL
-    const params = new URLSearchParams(location.search);
-    const nameParam = params.get('name');
-    const categoriesParam = params.getAll('category');
-
-    if (nameParam) setSearchName(nameParam);
-    if (categoriesParam.length) setSelectedCategories(categoriesParam);
-
-    // Fetch places (with or without filters)
-    const fetchPlaces = async () => {
-      try {
-        const result = await axios.get(`${apiUrl}/api/places`, { params });
-        setPlaces(result.data.places);
-        const allCategories = [...new Set(result.data.places.map(p => p.category))];
-        setCategories(allCategories);
-        setLoading(false);
-      } catch (err) {
-        console.error("Failed to fetch places:", err);
-        setLoading(false);
-      }
-    };
-    
-    fetchPlaces();
-
-    axios.get(`${apiUrl}/api/favorites`, { params: { userId: "user123" } })
-      .then((res) => {
-        setFavorites(res.data); 
-      })
-      .catch((err) => {
-        console.error("Failed to fetch favorites:", err);
-      });
-  }, [apiUrl, location.search]);
-
-  // Add selected category to the filter list
-  const addCategory = (cat) => {
-    if (!selectedCategories.includes(cat)) {
-      setSelectedCategories([...selectedCategories, cat]);
-    }
-  };
-
-  // Remove selected category from the filter list
-  const removeCategory = (cat) => {
-    setSelectedCategories(selectedCategories.filter(c => c !== cat));
-  };
-
-  // Handle the search button click and update URL with search filters
-  const handleSearch = () => {
-    const params = new URLSearchParams();
-    if (searchName) params.append('name', searchName);
-    selectedCategories.forEach(cat => params.append('category', cat));
-
-    navigate({ search: params.toString() });  // Use navigate to update the URL with new search filters
-  };
-
-  // Clear all filters and reload all places
-  const clearFilters = () => {
-    setSearchName('');
-    setSelectedCategories([]);
-    navigate({ search: '' });  // Clear the URL filters
-  };
-
-
-
-
-  const toggleFavorite = (placeId) => {
-    const favorite = favorites.find(fav => fav.place && fav.place.id === placeId);
-    if (favorite) {
-      // Delete frome Favorite
-      axios.delete(`${apiUrl}/api/favorites/${favorite.id}`)
-        .then(() => {
-          setFavorites((prevFavorites) => prevFavorites.filter((fav) => fav.id !== favorite.id));
-        })
-        .catch((err) => {
-          console.error("Failed to delete favorite:", err);
-        });
-    } else {
-      // Add to Favorite
-      const userId = "user123";
-      axios.post(`${apiUrl}/api/favorites`, null, { params: { userId, placeId } })
-      .then(() => {
-        axios.get(`${apiUrl}/api/favorites`, { params: { userId } })
-          .then((res) => {
-            const validFavorites = res.data.filter(fav => fav.place);
-            setFavorites(validFavorites);
-          });
-      })
-      
-        .catch((err) => console.error("Failed to add to favorites:", err));
-    }
-  };
-  
-  
-
-  const isFavorite = (placeId) => {
-    return favorites.some(fav => fav.place && fav.place.id === placeId); // Verifie if the place is in favorites
-  };
-
-
-
-
-
-  const handleAddToPlaylist = (placeId) => {
-    setSelectedPlaceId(placeId); 
-    setShowModal(true);
-  
-    axios.get(`${apiUrl}/api/playlists`, { params: { userId: "user123" } })
-      .then((res) => setPlaylists(res.data))
-      .catch((err) => console.error("Failed to load playlists:", err));
-  };
-
-
-
-  const addPlaceToPlaylist = async (playlistId) => {
-    if (!selectedPlaceId) {
-      console.error("Place ID is not selected");
-      return;
-    }
-  
-    try {
-      const response = await fetch(`${apiUrl}/api/playlists/${playlistId}`);
-      if (!response.ok) {
-        console.error("Failed to fetch playlist details");
-        return;
-      }
-  
-      const playlist = await response.json();
-      const isPlaceAlreadyInPlaylist = playlist.places.some(
-        (place) => place.id === selectedPlaceId
-      );
-  
-      if (isPlaceAlreadyInPlaylist) {
-        alert("This place is already in the playlist!");
-        return;
-      }
-  
-      const addResponse = await fetch(
-        `${apiUrl}/api/playlists/${playlistId}/places/${selectedPlaceId}`,
-        {
-          method: "POST",
-        }
-      );
-  
-      if (!addResponse.ok) {
-        console.error("Failed to add place to playlist");
-        return;
-      }
-  
-      setShowModal(false);
-    } catch (err) {
-      console.error("Error adding to playlist:", err);
-    }
-  };
-  
-  
-  
-
-  
-
-  const createPlaylistAndAddPlace = async () => {
-    const userId = "user123"; 
-    if (!newPlaylistName.trim() || !selectedPlaceId) return;
-  
-    try {
-      const response = await fetch(
-        `http://localhost:8080/api/playlists?userId=${userId}&name=${encodeURIComponent(newPlaylistName)}`,
-        {
-          method: "POST",
-        }
-      );
-  
-      if (!response.ok) {
-        console.error("Error when creating playlist");
-        return;
-      }
-  
-      const createdPlaylist = await response.json();
-  
-      const addResponse = await fetch(
-        `http://localhost:8080/api/playlists/${createdPlaylist.id}/places/${selectedPlaceId}`,
-        {
-          method: "POST",
-        }
-      );
-  
-      if (!addResponse.ok) {
-        console.error("Error when adding to playlist");
-        return;
-      }
-  
-      setPlaylists([...playlists, createdPlaylist]);
-      setNewPlaylistName("");
-      setShowModal(false);
-    } catch (err) {
-      console.error("Network error :", err);
-    }
-  };
-
-
-
-
+  const {
+    places,
+    loading,
+    categories,
+    selectedCategories,
+    searchName,
+    showModal,
+    playlists,
+    isMenuOpen,
+    newPlaylistName,
+    setSearchName,
+    addCategory,
+    removeCategory,
+    handleSearch,
+    clearFilters,
+    toggleFavorite,
+    isFavorite,
+    handleAddToPlaylist,
+    addPlaceToPlaylist,
+    createPlaylistAndAddPlace,
+    setShowModal,
+    setNewPlaylistName,
+    setIsMenuOpen,
+  } = usePlaceListLogic();
 
   return (
     <div className="p-6">
-      <div className="flex items-center justify-between mb-12">
-        <h1 className="text-4xl font-bold text-center text-white flex-1">🌍 Explore Places</h1>
+      <Header
+        title="🌍 Explore Places"
+        isMenuOpen={isMenuOpen}
+        setIsMenuOpen={setIsMenuOpen}
+      />
 
-        <div className="relative">
-          <button
-            className="btn btn-circle btn-secondary"
-            onClick={() => setIsMenuOpen(!isMenuOpen)} 
-          >
-            ☰
-          </button>
-          {isMenuOpen && ( 
-            <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg z-10">
-              <ul className="py-2">
-                <li>
-                  <Link
-                    to={`/favorites`}
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    My Favorites
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to={`/playlists`}
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    My Playlists
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to={`/planner`}
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    My Planner
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to={`/`}
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Home
-                  </Link>
-                </li>
-               
-              </ul> 
+      <SearchControls
+        searchName={searchName}
+        setSearchName={setSearchName}
+        categories={categories}
+        selectedCategories={selectedCategories}
+        addCategory={addCategory}
+        handleSearch={handleSearch}
+        clearFilters={clearFilters}
+      />
 
-            </div>
-          )}
-        </div>
-      </div>
-      {/* Search Controls */}
-      <div className="flex flex-col sm:flex-row flex-wrap gap-4 mb-6 justify-center items-center">
-        <input
-          type="text"
-          placeholder="Search by name..."
-          className="input input-bordered w-full sm:w-64"
-          value={searchName}
-          onChange={(e) => setSearchName(e.target.value)}
-        />
+      <SelectedFilters
+        selectedCategories={selectedCategories}
+        removeCategory={removeCategory}
+      />
 
-        <select
-          className="select select-bordered w-full sm:w-64"
-          onChange={(e) => {
-            const selected = e.target.value;
-            if (selected) addCategory(selected);
-            e.target.value = '';
-          }}
-        >
-          <option value="">Add Category Filter</option>
-          {categories
-            .filter((cat) => !selectedCategories.includes(cat))
-            .map((cat) => (
-              <option key={cat} value={cat}>{cat}</option>
-            ))}
-        </select>
+      <PlacesGrid
+        loading={loading}
+        places={places}
+        toggleFavorite={toggleFavorite}
+        isFavorite={isFavorite}
+        handleAddToPlaylist={handleAddToPlaylist}
+      />
 
-        <button className="btn btn-primary" onClick={handleSearch}>
-          Search
-        </button>
-
-        <button className="btn btn-outline" onClick={clearFilters}>
-          Clear Filters
-        </button>
-      </div>
-
-      {/* Selected Filters */}
-      {selectedCategories.length > 0 && (
-        <div className="flex flex-wrap gap-2 justify-center mb-8">
-          {selectedCategories.map((cat) => (
-            <div
-              key={cat}
-              className="badge badge-outline badge-lg flex items-center gap-2 px-3 py-1"
-            >
-              {cat}
-              <button
-                className="ml-1 text-red-500 hover:text-red-700"
-                onClick={() => removeCategory(cat)}
-              >
-                ×
-              </button>
-            </div>
-          ))}
-        </div>
-      )}
-
-      {/* Places Grid or Loading */}
-      {loading ? (
-        <div className="flex justify-center items-center h-64">
-          <span className="loading loading-dots loading-lg text-primary"></span>
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {places.map((place) => (
-            // <Link to={`/places/${place.id}/details`} key={place.id}>
-              <div key={place.id} className="card bg-base-100 shadow-xl hover:shadow-2xl transition duration-300">
-                <figure>
-                  <img
-                    src={place.imageUrl}
-                    alt={place.name}
-                    className="w-full h-48 object-cover"
-                    onError={(e) => {
-                      e.target.onerror = null;
-                      e.target.src = "https://via.placeholder.com/300x200?text=No+Image";
-                    }}
-                  />
-                </figure>
-                <div className="card-body">
-              <h2 className="card-title">{place.name}</h2>
-              <div className="badge badge-secondary p-2">{place.category}</div>
-              <div className="flex justify-between mt-4 gap-1 ">
-                <Link to={`/places/${place.id}/details`} key={place.id} className="btn btn-primary">See Details</Link>
-                <button
-                  onClick={() => toggleFavorite(place.id)}
-                  className="text-white hover:text-slate-200 transition duration-200"
-                  title={isFavorite(place.id) ? "Remove from favorites" : "Add to favorites"}
-                >
-                  {isFavorite(place.id) ? (
-                    // Filled heart
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-10">
-                      <path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
-                    </svg>
-                  ) : (
-                    // Outline heart
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-10">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-                    </svg>
-                  )}
-                </button>
-
-
-
-                <button
-                 onClick={() => handleAddToPlaylist(place.id)}               
-                  className="btn btn-accent"
-                >
-                  +
-                </button>
-              </div>
-            </div>
-          </div>
-            // </Link>
-          ))}
-        </div>
-      )}
-
-
-{showModal && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white rounded-xl p-6 w-full max-w-md">
-            <h2 className="text-xl font-bold mb-4 text-blue-500">Add to a playlist</h2>  
-            <ul className="mb-4 max-h-60 overflow-y-auto">
-              {playlists.map((pl) => (
-                <li key={pl.id}>
-                  <button
-                    className="btn w-full mb-2"
-                    onClick={() => addPlaceToPlaylist(pl.id)}
-                  >
-                    {pl.name}
-                  </button>
-                </li>
-              ))}
-            </ul>
-  
-            <div className="border-t pt-4 mt-4">
-              <h3 className="text-lg font-semibold mb-2  text-blue-500">Playlist name</h3>
-              <input
-                type="text"
-                value={newPlaylistName}
-                onChange={(e) => setNewPlaylistName(e.target.value)}
-                className="input input-bordered w-full mb-2"
-                placeholder="Playlist name"
-              />
-              <button className="btn btn-primary w-full" onClick={createPlaylistAndAddPlace}>
-                Create and add
-              </button>
-            </div>
-  
-            <button
-              className="btn btn-error mt-4 w-full"
-              onClick={() => setShowModal(false)}
-            >
-              Cancel
-            </button>
-          </div>
-        </div>
-      )}
+      <AddToPlaylistDialog
+        showModal={showModal}
+        playlists={playlists}
+        addPlaceToPlaylist={addPlaceToPlaylist}
+        newPlaylistName={newPlaylistName}
+        setNewPlaylistName={setNewPlaylistName}
+        createPlaylistAndAddPlace={createPlaylistAndAddPlace}
+        setShowModal={setShowModal}
+      />
     </div>
   );
 };
