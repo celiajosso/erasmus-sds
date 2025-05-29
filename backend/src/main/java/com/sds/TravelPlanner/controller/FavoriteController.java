@@ -1,6 +1,5 @@
 package com.sds.TravelPlanner.controller;
 
-
 import com.sds.TravelPlanner.model.Favorite;
 import com.sds.TravelPlanner.service.FavoriteService;
 import lombok.RequiredArgsConstructor;

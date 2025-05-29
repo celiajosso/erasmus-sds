@@ -1,6 +1,5 @@
 package com.sds.TravelPlanner.controller;
 
-import com.sds.TravelPlanner.model.Schedule;
 import com.sds.TravelPlanner.service.RecommendationsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
