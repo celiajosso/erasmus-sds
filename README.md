@@ -31,6 +31,8 @@
 - Tommi LUCAS (Developer) is responsible for:
   - creating account system (registration, login...)
   - adding prices to places
+  - adding durations to places
+  - fixing some details
 - Filip VUJEVA (Developer) is reponsible for...
   - maintaining the CI/CD pipeline and ensuring the connection between instances
   - developing basic backend functionalities
