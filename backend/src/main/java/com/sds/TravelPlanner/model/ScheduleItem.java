@@ -8,4 +8,6 @@ import java.time.LocalTime;
 public class ScheduleItem {
     private final LocalTime time;
     private final Place place;
+    private double longitude;
+    private double latitude;
 }

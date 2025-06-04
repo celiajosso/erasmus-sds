@@ -4,6 +4,8 @@ import axios from "axios";
 export function usePlaylistDetails(playlistId) {
   const [playlist, setPlaylist] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [route, setRoute] = useState([]);
+  const [loadingRoute, setLoadingRoute] = useState(false);
   const apiUrl = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
@@ -29,10 +31,41 @@ export function usePlaylistDetails(playlistId) {
       });
   };
 
+  const fetchRoute = async () => {
+  setLoadingRoute(true);
+  try {
+    const res = await axios.get(`${apiUrl}/api/planner/${playlistId}/route`);
+    const routeItems = res.data.items;
+
+    // Attach lat/lng from existing playlist.places (fallback)
+    const enrichedItems = routeItems.map((item) => {
+      const matchingPlace = playlist?.places?.find(p => p.id === item.place.id);
+      return {
+        ...item,
+        place: {
+          ...item.place,
+          lat: matchingPlace?.lat,
+          lng: matchingPlace?.lng
+        }
+      };
+    });
+
+    console.log(enrichedItems);
+    setRoute(enrichedItems);
+  } catch (err) {
+    console.error("Error fetching route", err);
+  }
+  setLoadingRoute(false);
+};
+
+
   return {
     playlist,
     isMenuOpen,
     setIsMenuOpen,
     handleRemovePlace,
+    route,
+    fetchRoute,
+    loadingRoute,
   };
 }
