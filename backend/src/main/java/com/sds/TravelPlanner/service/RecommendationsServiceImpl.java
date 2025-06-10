@@ -24,6 +24,16 @@ public class RecommendationsServiceImpl implements RecommendationsService {
         List<ScheduleItem> recommendedPlaces = null;
         try {
             recommendedPlaces = routePlanner.sendQuery(placeDetails);
+
+            for (ScheduleItem item : recommendedPlaces) {
+                placeDetails.stream()
+                        .filter(pd -> pd.getPlace().getName().equalsIgnoreCase(item.getPlace().getName()))
+                        .findFirst()
+                        .ifPresent(pd -> {
+                            item.setLatitude(pd.getLatitude());
+                            item.setLongitude(pd.getLongitude());
+                        });
+            }
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
