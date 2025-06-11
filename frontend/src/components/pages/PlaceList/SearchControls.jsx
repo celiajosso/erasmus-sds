@@ -12,13 +12,13 @@ const SearchControls = ({
       <input
         type="text"
         placeholder="Search by name..."
-        className="input input-bordered w-full sm:w-64 shadow-md"
+        className="w-full sm:w-64 shadow-md border border-gray-500 rounded px-3 py-2"
         value={searchName}
         onChange={(e) => setSearchName(e.target.value)}
       />
 
       <select
-        className="select select-bordered w-full sm:w-64 shadow-md"
+        className="w-full sm:w-64 shadow-md border border-gray-500 rounded px-3 py-2"
         onChange={(e) => {
           const selected = e.target.value;
           if (selected) addCategory(selected);

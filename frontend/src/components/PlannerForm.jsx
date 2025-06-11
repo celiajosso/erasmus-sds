@@ -44,7 +44,7 @@ export function PlannerForm() {
           id="city"
           name="city"
           value={cityName}
-          className="text-gray-800 dark:text-white cursor-not-allowed shadow-md"
+          className="text-gray-800 dark:text-white cursor-not-allowed shadow-md border border-gray-500"
           disabled
         />
 

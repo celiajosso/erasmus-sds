@@ -8,10 +8,10 @@ export function OpeningHoursCard({
 }) {
   return (
     <Card className="mb-6">
-      <h2 className="text-xl text-[#282c34] font-bold mb-3 flex items-center gap-2">
+      <h2 className="text-xl text-[#282c34] dark:text-white font-bold mb-3 flex items-center gap-2">
         🕒 <span>Opening Hours</span>
       </h2>
-      <table className="w-full text-gray-600">
+      <table className="w-full text-gray-600 dark:text-gray-400">
         <tbody>
           {daysOfWeek.map((day, index) => (
             <tr key={day} className="border-b last:border-b-0">

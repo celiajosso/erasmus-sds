@@ -11,7 +11,7 @@ export function ContactCard({ phone, email, website, instagram }) {
         📞 <span>Contact</span>
       </h2>
       <Card className="mb-6">
-        <ul className="text-gray-600 leading-relaxed space-y-2">
+        <ul className="text-gray-600 dark:text-gray-400 leading-relaxed space-y-2">
           {phone && (
             <li>
               <strong>Phone:</strong> {phone}
