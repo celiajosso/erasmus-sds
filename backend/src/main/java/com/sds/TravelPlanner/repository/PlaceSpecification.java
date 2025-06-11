@@ -12,9 +12,13 @@ public class PlaceSpecification {
             var predicate = cb.conjunction();
 
             if (name != null && !name.isBlank()) {
-                predicate = cb.and(predicate,
+                namePredicate = cb.and(predicate,
                         cb.like(cb.lower(root.get("name")), "%" + name.toLowerCase() + "%")
                 );
+                descriptionPredicate = cb.and(predicate,
+                        cb.like(cb.lower(root.get("description")), "%" + name.toLowerCase() + "%")
+                );
+                predicate = cb.and(predicate, criteriaBuilder.or(namePredicate, descPredicate));
             }
 
             if (categories != null && !categories.isEmpty()) {
