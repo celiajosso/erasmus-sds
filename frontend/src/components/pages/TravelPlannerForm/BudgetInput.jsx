@@ -23,7 +23,7 @@ const BudgetInput = ({ budget, setBudget, currency, setCurrency }) => {
           placeholder="Enter a budget"
           value={budget}
           onChange={(e) => setBudget(e.target.value)}
-          className="text-white"
+          className="text-gray-800 dark:text-white border border-gray-800 shadow-md"
         />
         <Select value={currency} onValueChange={setCurrency}>
           <SelectTrigger className="w-[110px]">

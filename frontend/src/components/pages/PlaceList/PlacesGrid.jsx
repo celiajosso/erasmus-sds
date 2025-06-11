@@ -52,7 +52,7 @@ const PlacesGrid = ({
               </Link>
               <button
                 onClick={() => toggleFavorite(place.id)}
-                className="text-white hover:text-slate-200 transition duration-200"
+                className="text-gray-800 dark:text-white hover:text-slate-200 transition duration-200"
                 title={
                   isFavorite(place.id)
                     ? "Remove from favorites"

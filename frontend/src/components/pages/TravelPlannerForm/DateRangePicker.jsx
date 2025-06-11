@@ -21,7 +21,7 @@ const DateRangePicker = ({ date, setDate }) => {
           <Button
             variant={"outline"}
             className={cn(
-              "w-full justify-start text-left font-normal bg-transparent text-white",
+              "w-full justify-start text-left font-normal bg-transparent text-gray-800 dark:text-white",
               !date && "text-muted-foreground"
             )}
           >

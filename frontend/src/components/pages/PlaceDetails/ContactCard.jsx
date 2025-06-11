@@ -7,7 +7,7 @@ export function ContactCard({ phone, email, website, instagram }) {
 
   return (
     <>
-      <h2 className="text-xl text-white font-bold mb-3 flex items-center gap-2">
+      <h2 className="text-xl text-gray-800 dark:text-white font-bold mb-3 flex items-center gap-2">
         📞 <span>Contact</span>
       </h2>
       <Card className="mb-6">

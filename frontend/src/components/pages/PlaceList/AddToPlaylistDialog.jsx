@@ -37,7 +37,7 @@ const AddToPlaylistDialog = ({
             type="text"
             value={newPlaylistName}
             onChange={(e) => setNewPlaylistName(e.target.value)}
-            className="input input-bordered w-full mb-2"
+            className="input input-bordered w-full mb-2 shadow-md"
             placeholder="Playlist name"
           />
           <button
