@@ -33,13 +33,13 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public String login(String username, String password) {
-        Optional<User> userOpt = userRepository.findByUsername(username);
-        if (userOpt.isEmpty() || !passwordEncoder.matches(password, userOpt.get().getPassword())) {
-            throw new IllegalArgumentException("Invalid credentials");
+        public String login(String username, String password) {
+            Optional<User> userOpt = userRepository.findByUsername(username);
+            if (userOpt.isEmpty() || !passwordEncoder.matches(password, userOpt.get().getPassword())) {
+                throw new IllegalArgumentException("Invalid credentials");
+            }
+            return generateJwtToken(userOpt.get());
         }
-        return generateJwtToken(userOpt.get());
-    }
 
     private String generateJwtToken(User user) {
     return Jwts.builder()
