@@ -12,7 +12,8 @@
   - doing Gantt chart
   - estimating the velocity of the team and taking that into account when doing the sprint backlog
   - putting the priorities to the right features
-- Célia JOSSO : Scrum Master; is responsible for...
+    
+- Célia JOSSO (Scrum Master) is responsible for:
   - creating the Discord Server (channels, roles, webhook)
   - enabling the Github repository (Github Projects)
   - making sure the communication works
@@ -25,15 +26,18 @@
   - contacting and informing the teacher if needed
   - fixing some bugs
   - adding places
+    
 - Elouan LECORGNE (Developer) is responsible for:
   - adding the favorite feature
   - adding the playlists feature
+    
 - Tommi LUCAS (Developer) is responsible for:
   - creating account system (registration, login...)
   - adding prices to places
   - adding durations to places
   - fixing some details
-- Filip VUJEVA (Developer) is reponsible for...
+    
+- Filip VUJEVA (Developer) is reponsible for:
   - maintaining the CI/CD pipeline and ensuring the connection between instances
   - developing basic backend functionalities
   - AI based recommendatiosn
