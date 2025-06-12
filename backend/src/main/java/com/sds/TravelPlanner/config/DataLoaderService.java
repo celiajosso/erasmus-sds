@@ -35,6 +35,7 @@ public class DataLoaderService {
             place.setName(jsonPlace.getName());
             place.setCategory(jsonPlace.getCategory());
             place.setImageUrl(jsonPlace.getImage_url());
+            place.setDescription(jsonPlace.getDetails().getDescription());
             Place savedPlace = placeRepository.save(place);
 
             PlaceDetails details = new PlaceDetails();

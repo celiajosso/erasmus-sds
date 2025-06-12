@@ -12,4 +12,5 @@ public class Place {
     private String name;
     private String category;
     private String imageUrl;
+    private String description;
 }
