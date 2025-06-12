@@ -24,20 +24,20 @@ const Login = () => {
         <input
           type="text"
           placeholder="Username"
-          class="input input-bordered w-full sm:w-64 mb-6"
+          className="w-full mx-auto sm:w-64 shadow-md border border-gray-500 rounded px-3 py-2 mb-4"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
         <input
           type="password"
           placeholder="Password"
-          class="input input-bordered w-full sm:w-64 mb-6"
+          className="w-full mx-auto sm:w-64 shadow-md border border-gray-500 rounded px-3 py-2 mb-4"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
         <button 
           type="submit"
-          class="btn btn-soft btn-success"
+          class="btn btn-soft btn-success border-2 border-green-500"
         >
           Login
         </button>

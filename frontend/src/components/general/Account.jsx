@@ -24,7 +24,7 @@ const Account = () => {
 
   if (!token || !username) {
     return (
-      <div>
+      <div class="hidden lg:flex gap-2">
         <button
           class="btn btn-soft btn-info mr-2"
           onClick={() => navigate("/register")}
@@ -42,8 +42,8 @@ const Account = () => {
   }
 
   return (
-    <div>
-      <span>Welcome, <b>{username}</b></span>
+    <div className="hidden lg:flex">
+      <span class="my-auto pr-1">Welcome, <b>{username}</b></span>
       <button
         class="btn btn-soft btn-error ml-3"
         onClick={handleLogout}
