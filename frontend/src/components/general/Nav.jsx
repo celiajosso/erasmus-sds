@@ -45,7 +45,7 @@ const Nav = () => {
             <NavItem to="/planner" label="🗓️ Plan My Trip" onClick={closeMenu} />
             <NavItem to="/favorites" label="📍 My Favorites" onClick={closeMenu} />
             <NavItem to="/playlists" label="🧭 My Playlists" onClick={closeMenu} isLast />
-             <li className="py-2 border-b rounded-xl flex flex-col gap-2 px-3 lg:hidden">
+             <li className="py-2 border-b rounded- flex flex-col gap-2 px-3 lg:hidden">
               {!username ? (
                 <>
                   <button className="btn btn-soft btn-info border-2 border-sky-500" onClick={() => { navigate("/register"); closeMenu(); }}>
@@ -58,7 +58,7 @@ const Nav = () => {
               ) : (
                 <>
                   <span className="text-gray-800">Welcome, <b>{username}</b></span>
-                  <button className="btn btn-soft btn-error" onClick={handleLogout}>
+                  <button className="btn btn-soft btn-error border-2 bg-red-100 border-red-400" onClick={handleLogout}>
                     Logout
                   </button>
                 </>

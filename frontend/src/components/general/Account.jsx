@@ -26,13 +26,13 @@ const Account = () => {
     return (
       <div class="hidden lg:flex gap-2">
         <button
-          class="btn btn-soft btn-info mr-2"
+          class="btn btn-soft btn-info mr-2 border-2 border-cyan-500"
           onClick={() => navigate("/register")}
         >
           Register
         </button>
         <button
-          class="btn btn-soft btn-success"
+          class="btn btn-soft btn-success border-2 border-green-500"
           onClick={() => navigate("/login")}
         >
           Login
@@ -45,7 +45,7 @@ const Account = () => {
     <div className="hidden lg:flex">
       <span class="my-auto pr-1">Welcome, <b>{username}</b></span>
       <button
-        class="btn btn-soft btn-error ml-3"
+        class="btn btn-soft btn-error ml-3 border-2 border-red-400"
         onClick={handleLogout}
       >
         Logout
