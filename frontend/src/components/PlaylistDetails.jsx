@@ -42,7 +42,7 @@ const PlaylistDetails = () => {
     const markerEl = document.createElement("div");
     markerEl.className = `
       flex items-center justify-center
-      w-7 h-7 rounded-full bg-blue-600 text-white
+      w-7 h-7 rounded-full bg-blue-600 text-gray-800 dark:text-white
       text-sm font-bold ring-2 ring-white shadow
     `;
     markerEl.textContent = (index + 1).toString();
@@ -96,7 +96,7 @@ const PlaylistDetails = () => {
 
       <button
         onClick={fetchRoute}
-        className="px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition"
+        className="px-4 py-2 bg-blue-600 text-gray-800 dark:text-white rounded-xl hover:bg-blue-700 transition"
         disabled={loadingRoute}
       >
         {loadingRoute ? "Generating..." : "Generate Route"}
