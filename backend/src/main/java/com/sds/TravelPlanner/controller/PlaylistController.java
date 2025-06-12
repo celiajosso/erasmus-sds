@@ -11,7 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/playlists")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:3000", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE, RequestMethod.OPTIONS})
+@CrossOrigin("*")
 public class PlaylistController {
 
     private final PlaylistService playlistService;
