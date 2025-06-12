@@ -4,7 +4,7 @@ import axios from "axios";
 export default function useFavoriteListLogic() {
   const [favorites, setFavorites] = useState([]);
   const apiUrl = process.env.REACT_APP_API_URL;
-  const userId = "user123";
+  const userId = localStorage.getItem("userId") || "user123";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -12,7 +12,7 @@ export default function useFavoriteListLogic() {
       .get(`${apiUrl}/api/favorites`, { params: { userId } })
       .then((res) => setFavorites(res.data))
       .catch((err) => console.error("Failed to fetch favorites:", err));
-  }, [apiUrl]);
+  }, [apiUrl, userId]);
 
   const handleDelete = (favoriteId) => {
     console.log("Deleting favorite with ID:", favoriteId);

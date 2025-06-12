@@ -9,7 +9,7 @@ import PlaylistCard from "./pages/FavoritePlaylistList/PlaylistCard";
 const plusIcon = <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" />;
 
 const PlaylistList = () => {
-  const userId = "user123";
+  const userId = localStorage.getItem("userId") || "user123";
   const { playlists, isMenuOpen, setIsMenuOpen, handleDeletePlaylist } =
     usePlaylistList(userId);
 
