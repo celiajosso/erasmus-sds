@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import NavItem from './NavItem';
 import { Bars3Icon } from '@heroicons/react/24/solid'
 

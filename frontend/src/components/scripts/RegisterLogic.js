@@ -1,15 +1,21 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export const useRegister = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  const navigate = useNavigate();
 
   const handleRegister = async (e) => {
     e.preventDefault();
+    if (!username.trim() || !password.trim()) {
+      setMessage("Username and password are required.");
+      return;
+    }
     try {
-      const response = await axios.post("http://localhost:8080/api/auth/register", {
+      await axios.post("http://localhost:8080/api/auth/register", {
         username,
         password,
       }, {
@@ -17,7 +23,7 @@ export const useRegister = () => {
           "Content-Type": "application/json",
         },
       });
-      setMessage("Registration successful!");
+      navigate("/login");
     } catch (error) {
       if (error.response && error.response.data) {
         // server side

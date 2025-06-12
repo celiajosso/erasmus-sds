@@ -1,7 +1,6 @@
 import { usePlaceListLogic } from "./scripts/PlaceListLogic";
 
 import Header from "./general/Header";
-import GoBack from "./general/GoBack";
 
 import AddToPlaylistDialog from "./pages/PlaceList/AddToPlaylistDialog";
 import PlacesGrid from "./pages/PlaceList/PlacesGrid";
