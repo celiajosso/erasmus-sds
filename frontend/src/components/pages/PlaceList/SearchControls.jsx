@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+
 const SearchControls = ({
   searchName,
   setSearchName,
@@ -7,6 +9,21 @@ const SearchControls = ({
   handleSearch,
   clearFilters,
 }) => {
+    const debounceTimer = useRef(null);
+
+      useEffect(() => {
+        if (debounceTimer.current) {
+          clearTimeout(debounceTimer.current);
+        }
+
+        debounceTimer.current = setTimeout(() => {
+          handleSearch();
+        }, 1000);
+
+        return () => clearTimeout(debounceTimer.current);
+        }, [searchName]);
+      //}, [searchName, selectedCategories]);
+
   return (
     <div className="flex flex-col sm:flex-row flex-wrap gap-4 mb-6 justify-center items-center">
       <input
