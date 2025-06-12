@@ -18,10 +18,8 @@ services:
     build:
       context: ./backend
     container_name: spring-backend
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/travel_planner
-      SPRING_DATASOURCE_USERNAME: user
-      SPRING_DATASOURCE_PASSWORD: H2e3zPzZosaTjOujKL53i9zD0djQam7o
+    env_file:
+      - .env
     ports:
       - "8080:8080"
     depends_on:
@@ -30,12 +28,14 @@ services:
   frontend:
     image: node:20
     container_name: react-frontend
+    env_file:
+      - .env.frontend
     working_dir: /app
     volumes:
       - ./frontend:/app
     ports:
       - "3000:3000"
-    command: sh -c "npm install && npm start"
+    command: sh -c "npm install --force && npm start"
     environment:
       - CHOKIDAR_USEPOLLING=true
       - REACT_APP_API_URL=http://localhost:8080
@@ -44,4 +44,3 @@ services:
 
 volumes:
   postgres_data:
-

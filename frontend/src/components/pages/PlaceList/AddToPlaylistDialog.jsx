@@ -11,7 +11,7 @@ const AddToPlaylistDialog = ({
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className="bg-white rounded-xl p-6 w-full max-w-md">
+      <div className="bg-white dark:bg-gray-800 rounded-xl p-6 w-full max-w-md">
         <h2 className="text-xl font-bold mb-4 text-blue-500">
           Add to a playlist
         </h2>
@@ -29,7 +29,7 @@ const AddToPlaylistDialog = ({
           ))}
         </ul>
 
-        <div className="border-t pt-4 mt-4">
+        <div className="border-t pt-4 mt-4 border-gray-800 dark:border-white">
           <h3 className="text-lg font-semibold mb-2 text-blue-500">
             Playlist name
           </h3>
@@ -37,7 +37,7 @@ const AddToPlaylistDialog = ({
             type="text"
             value={newPlaylistName}
             onChange={(e) => setNewPlaylistName(e.target.value)}
-            className="input input-bordered w-full mb-2"
+            className="w-full sm:w-64 shadow-md border border-gray-500 rounded px-3 py-2 mb-4"
             placeholder="Playlist name"
           />
           <button

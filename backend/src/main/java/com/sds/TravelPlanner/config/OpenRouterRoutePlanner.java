@@ -67,7 +67,7 @@ public class OpenRouterRoutePlanner {
 
         var userPrompt = String.format(
                 "I need a route that visits these places in an efficient order considering their locations, " +
-                        "working hours and my available time from 10:00 AM to 6:00 PM. " +
+                        "working hours and my available time from 10:00 AM to 6:00 PM. Add the duration for every visit based on that. " +
                         "Please return the result in JSON format as an array of objects, each with 'placeName' and 'localTime' fields. " +
                         "Example: [{\"placeName\": \"Museum\", \"localTime\": \"10:00\"}, ...]. " +
                         "Places:\\n\\n%s", placeListText.toString()
