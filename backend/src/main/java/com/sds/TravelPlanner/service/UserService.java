@@ -44,6 +44,7 @@ public class UserService {
     private String generateJwtToken(User user) {
     return Jwts.builder()
             .setSubject(user.getUsername())
+            .claim("id", user.getId())
             .setIssuedAt(new Date())
             .setExpiration(new Date(System.currentTimeMillis() + jwtExpirationMs))
             .signWith(jwtSecret, SignatureAlgorithm.HS512)

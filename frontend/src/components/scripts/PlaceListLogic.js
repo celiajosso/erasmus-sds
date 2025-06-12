@@ -45,8 +45,9 @@ export const usePlaceListLogic = () => {
 
     fetchPlaces();
 
+    const userId = localStorage.getItem("userId") || "user123";
     axios
-      .get(`${apiUrl}/api/favorites`, { params: { userId: "user123" } })
+      .get(`${apiUrl}/api/favorites`, { params: { userId } })
       .then((res) => setFavorites(res.data))
       .catch((err) => console.error("Failed to fetch favorites:", err));
   }, [apiUrl, location.search]);
@@ -75,6 +76,7 @@ export const usePlaceListLogic = () => {
   };
 
   const toggleFavorite = (placeId) => {
+    const userId = localStorage.getItem("userId") || "user123";
     const favorite = favorites.find((fav) => fav.place?.id === placeId);
     if (favorite) {
       axios
@@ -86,11 +88,11 @@ export const usePlaceListLogic = () => {
     } else {
       axios
         .post(`${apiUrl}/api/favorites`, null, {
-          params: { userId: "user123", placeId },
+          params: { userId, placeId },
         })
         .then(() => {
           axios
-            .get(`${apiUrl}/api/favorites`, { params: { userId: "user123" } })
+            .get(`${apiUrl}/api/favorites`, { params: { userId } })
             .then((res) => setFavorites(res.data.filter((fav) => fav.place)));
         })
         .catch((err) => console.error("Failed to add favorite:", err));
@@ -101,10 +103,11 @@ export const usePlaceListLogic = () => {
     favorites.some((fav) => fav.place?.id === placeId);
 
   const handleAddToPlaylist = (placeId) => {
+    const userId = localStorage.getItem("userId") || "user123";
     setSelectedPlaceId(placeId);
     setShowModal(true);
     axios
-      .get(`${apiUrl}/api/playlists`, { params: { userId: "user123" } })
+      .get(`${apiUrl}/api/playlists`, { params: { userId } })
       .then((res) => setPlaylists(res.data))
       .catch((err) => console.error("Failed to load playlists:", err));
   };
@@ -134,7 +137,7 @@ export const usePlaceListLogic = () => {
   };
 
   const createPlaylistAndAddPlace = async () => {
-    const userId = "user123";
+    const userId = localStorage.getItem("userId") || "user123";
     if (!newPlaylistName.trim() || !selectedPlaceId) return;
 
     try {

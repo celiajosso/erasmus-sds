@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { jwtDecode } from "jwt-decode";
 
 export const useLogin = () => {
   const [username, setUsername] = useState("");
@@ -18,7 +19,12 @@ export const useLogin = () => {
           "Content-Type": "application/json",
         },
       });
-      setToken(response.data);
+      const token = response.data
+      setToken(token);
+      localStorage.setItem("token", token);
+      const decoded = jwtDecode(token);
+      const userId = decoded.id;
+      localStorage.setItem("userId", userId);
       setMessage("Login successful!");
     } catch (error) {
       if (error.response && error.response.data) {
