@@ -42,7 +42,6 @@ const Nav = () => {
         <div className="absolute right-6 top-20 w-44 bg-white rounded-xl shadow-lg z-10 border-x border-gray-800">
           <ul>
             <NavItem to="/" label="🌍 Explore Places" onClick={closeMenu} isFirst />
-            <NavItem to="/planner" label="🗓️ Plan My Trip" onClick={closeMenu} />
             <NavItem to="/favorites" label="📍 My Favorites" onClick={closeMenu} />
             <NavItem to="/playlists" label="🧭 My Playlists" onClick={closeMenu} isLast />
              <li className="py-2 border-b rounded- flex flex-col gap-2 px-3 lg:hidden">

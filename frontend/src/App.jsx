@@ -4,7 +4,6 @@ import PlaceDetails from './components/PlaceDetails';
 import FavoriteList from './components/FavoriteList'; 
 import PlaylistList from './components/PlaylistList';
 import PlaylistDetails from './components/PlaylistDetails';
-import { PlannerForm } from './components/PlannerForm';
 import Login from './components/Login';
 import Register from './components/Register';
 
@@ -17,7 +16,6 @@ const App = () => {
         <Route path="/favorites" element={<FavoriteList />} />
         <Route path="/playlists" element={<PlaylistList />} />
         <Route path="/playlists/:id" element={<PlaylistDetails />} />
-        <Route path="/planner" element={<PlannerForm />} />
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register/>} />
       </Routes>
